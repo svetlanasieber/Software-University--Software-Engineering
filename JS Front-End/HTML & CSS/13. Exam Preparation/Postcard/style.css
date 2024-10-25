@@ -34,8 +34,8 @@ body {
 .message {
     position: absolute;
     bottom: 20px;
-    left: 1cm; /* Добавяме разстояние от 1 см в ляво */
-    right: 1cm; /* Добавяме разстояние от 1 см в дясно */
+    left: 1cm; 
+    right: 1cm;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 15px;
     border-radius: 10px;
@@ -58,7 +58,7 @@ body {
 
 .recipient {
     padding: 25px;
-    text-align: left; /* Подравняване на текста вляво */
+    text-align: left;
     font-size: 1.3em;
     background-color: #f0f0f0;
     border-top: 1px solid #ddd;
@@ -66,7 +66,7 @@ body {
 
 .recipient h3 {
     font-family: 'Gochi Hand', cursive;
-    font-weight: bold; /* Удебелен шрифт за заглавието */
+    font-weight: bold; 
     margin-bottom: 10px;
 }
 
