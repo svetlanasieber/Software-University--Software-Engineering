@@ -1,0 +1,75 @@
+body {
+    font-family: 'Gochi Hand', cursive;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.postcard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 1200px;
+    max-width: 100%;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message {
+    position: absolute;
+    bottom: 20px;
+    left: 1cm; /* Добавяме разстояние от 1 см в ляво */
+    right: 1cm; /* Добавяме разстояние от 1 см в дясно */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.message h2 {
+    margin: 0;
+    font-size: 2.2em;
+    color: #333;
+}
+
+.message p {
+    font-size: 1.1em;
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.recipient {
+    padding: 25px;
+    text-align: left; /* Подравняване на текста вляво */
+    font-size: 1.3em;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+}
+
+.recipient h3 {
+    font-family: 'Gochi Hand', cursive;
+    font-weight: bold; /* Удебелен шрифт за заглавието */
+    margin-bottom: 10px;
+}
+
+.recipient p {
+    margin: 5px 0;
+}
