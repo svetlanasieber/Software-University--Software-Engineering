@@ -7,9 +7,7 @@ public class ForeignLanguages_06 {
         Scanner scanner = new Scanner(System.in);
 
         String country = scanner.nextLine();
-        //"USA" or "England" -> English
-        //"Spain" or "Argentina" or "Mexico" -> Spanish
-        //other -> unknown
+   
 
         switch (country) {
             case "USA":
