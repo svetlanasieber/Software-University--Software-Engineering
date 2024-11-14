@@ -9,8 +9,8 @@ public class ExactSumOfRealNumbers_03 {
         int count = Integer.parseInt(scanner.nextLine());
 
         BigDecimal sum = new BigDecimal("0");
-        for (int number = 1; number <= count; number++) { //всички числа от първото до последното
-            BigDecimal value = new BigDecimal(scanner.nextLine()); //стойността на въведеното число
+        for (int number = 1; number <= count; number++) { 
+            BigDecimal value = new BigDecimal(scanner.nextLine()); 
 
             sum = sum.add(value);
         }
