@@ -8,16 +8,15 @@ public class VendingMachine_07 {
 
         double sumCoins = 0;
 
-        // "Start" или дробно число
+     
         String input = scanner.nextLine();
         while (!input.equals("Start")) {
 
             double coin = Double.parseDouble(input);
 
-            //1. Проверим дали монетата е валидна
-            //0.1, 0.2, 0.5, 1, and 2
+       
             if (coin == 0.1 || coin == 0.2 || coin == 0.5 || coin == 1 || coin == 2) {
-                //2. Сумираме монетите
+            
                 sumCoins += coin;
             } else {
                 System.out.printf("Cannot accept %.2f\n", coin);
