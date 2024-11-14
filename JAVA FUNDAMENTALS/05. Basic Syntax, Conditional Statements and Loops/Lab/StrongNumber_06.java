@@ -13,13 +13,13 @@ public class StrongNumber_06 {
 
             int digit = Integer.parseInt(inputNumber.charAt(position) + "");
 
-            // Calculate Factorial
+    
             int factorial = 1;
             for (int i = 2; i <= digit; i++) {
                 factorial *= i;
             }
 
-            // Add current Factorial to the SUM
+        
             sumOfFactorials += factorial;
         }
 
