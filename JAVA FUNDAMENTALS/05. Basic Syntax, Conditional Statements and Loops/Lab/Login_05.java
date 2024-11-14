@@ -9,7 +9,7 @@ public class Login_05 {
         String username = scanner.nextLine();
         String password = "";
 
-        // Generate password
+        
         for (int position = username.length() - 1; position >= 0; position--) {
 
             password += username.charAt(position);
