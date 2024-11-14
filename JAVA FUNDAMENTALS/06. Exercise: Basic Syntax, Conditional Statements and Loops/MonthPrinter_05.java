@@ -7,7 +7,7 @@ public class MonthPrinter_05 {
         Scanner scanner = new Scanner(System.in);
 
         int number = Integer.parseInt(scanner.nextLine());
-        //switch -> серия от проверки за точни стойности, само 1 да е вярна
+
 
         switch (number) {
             case 1:
