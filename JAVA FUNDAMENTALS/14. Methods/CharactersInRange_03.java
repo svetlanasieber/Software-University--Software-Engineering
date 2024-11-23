@@ -14,7 +14,7 @@ public class CharactersInRange_03 {
 
     public static void printSymbolsInRange(char firstSymbol, char secondSymbol) {
 
-        // по-малкият до по-големият
+      
         if (firstSymbol < secondSymbol) {
             for (int asciiValue = firstSymbol + 1; asciiValue < secondSymbol; asciiValue++) {
                 System.out.print((char) asciiValue + " ");
