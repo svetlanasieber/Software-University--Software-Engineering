@@ -13,13 +13,13 @@ public class MagicSum_08 {
 
         int number = Integer.parseInt(scanner.nextLine());
 
-        //обхождаме всички елементи в масива
+       
         for (int position = 0; position <= numbers.length - 1; position++) {
             int currentNumber = numbers[position];
-            //обхождаме всички след него
+           
             for (int nextPosition = position + 1; nextPosition <=  numbers.length - 1; nextPosition++) {
-                    int nextNumber = numbers[nextPosition]; //число, което е след моето
-                    //двойка числа: currentNumber  nextNumber
+                    int nextNumber = numbers[nextPosition]; 
+                
                     if (currentNumber + nextNumber == number) {
                         System.out.println(currentNumber + " " + nextNumber);
                     }
