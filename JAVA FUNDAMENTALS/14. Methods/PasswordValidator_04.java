@@ -8,25 +8,25 @@ public class PasswordValidator_04 {
 
         String password = scanner.nextLine();
 
-        //1. Проверяваме дали дължината на паролата е между 6 и 10 символа
+     
         boolean isLengthValid = isLengthValid(password);
         if (!isLengthValid) {
             System.out.println("Password must be between 6 and 10 characters");
         }
 
-        //2. Проверяваме дали съдържа само цифри и букви
+      
         boolean isContentValid = isContentValid(password);
         if (!isContentValid) {
             System.out.println("Password must consist only of letters and digits");
         }
 
-        //3. Проверяваме дали има поне 2 цифри
+      
         boolean isAtLeastTwoDigits = isAtLeastTwoDigits(password);
         if (!isAtLeastTwoDigits) {
             System.out.println("Password must have at least 2 digits");
         }
 
-        // Ако и трите условия са спазени ще кажем, че паролата е валидна:
+     
         if (isLengthValid && isContentValid && isAtLeastTwoDigits) {
             System.out.println("Password is valid");
         }
