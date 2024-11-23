@@ -11,21 +11,20 @@ public class EqualSums_06 {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        // 1. Вземаме всяко едно число от масива
+    
         for (int position = 0; position <= numbers.length - 1; position++) {
 
             int currentNumber = numbers[position];
 
-            // 2 - проверяваме дали сумата на числата в ляво е равна на сумата на числата в дясно
+          
             int leftSum = 0;
             int rightSum = 0;
 
-            // Обхождам всички числа в ляво:
+         
             for (int leftPosition = 0; leftPosition < position; leftPosition++) {
                 leftSum += numbers[leftPosition];
             }
 
-            // Обхождам всички числа в дясно:
             for (int rightPosition = position + 1; rightPosition <= numbers.length - 1; rightPosition++) {
                 rightSum += numbers[rightPosition];
             }
