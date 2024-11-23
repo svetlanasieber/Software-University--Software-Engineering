@@ -17,8 +17,7 @@ public class PalindromeIntegers_09 {
 
     public static boolean isInputPalindrome(String input) {
 
-        //Viko
-        //okiV
+      
 
         //Начин 1:
         String reversedString = "";
@@ -26,7 +25,7 @@ public class PalindromeIntegers_09 {
             reversedString += input.charAt(index);
         }
 
-        //Начин 2:
+        // 2:
 //        StringBuilder builder = new StringBuilder(input);
 //        String reversedString = builder.reverse().toString();
 
