@@ -14,7 +14,7 @@ public class _13_DragonArmy {
 
             String[] tokens = scanner.nextLine().split("\\s+");
 
-            //{type} {name} {damage} {health} {armor}
+    
             String type = tokens[0];
             String name = tokens[1];
             double damage = tokens[2].equals("null") ? 45 : Integer.parseInt(tokens[2]);
