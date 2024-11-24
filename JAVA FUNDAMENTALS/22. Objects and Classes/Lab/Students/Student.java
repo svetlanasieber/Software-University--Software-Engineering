@@ -2,7 +2,7 @@ package ObjectAndClasses.Students;
 
 public class Student {
 
-    //first name, last name, age, and hometown.
+
 
     private  String firstName;
     private  String lastName;
@@ -10,7 +10,7 @@ public class Student {
     private String hometown;
 
     public Student(String firstName, String lastName, int age, String hometown) {
-        //първоначално се създава празен обект
+       
 
         this.firstName = firstName;
         this.lastName = lastName;
