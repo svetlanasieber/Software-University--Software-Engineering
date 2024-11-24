@@ -12,7 +12,7 @@ public class RemoveNegativesAndReverse_03 {
 
         Scanner scanner = new Scanner(System.in);
 
-        //{10 -5 7 9 -33 50}
+
         List<Integer> numbers = Arrays.stream(scanner.nextLine().split(" "))
                 .map(Integer::parseInt).collect(Collectors.toList());
 
@@ -27,8 +27,6 @@ public class RemoveNegativesAndReverse_03 {
         }
 
 
-
-        //numbers.removeIf(n -> n < 0);
 
         Collections.reverse(numbers);//{50, 9, 7, 10}
 
