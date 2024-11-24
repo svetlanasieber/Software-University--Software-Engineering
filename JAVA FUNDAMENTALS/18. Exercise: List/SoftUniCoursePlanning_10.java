@@ -11,12 +11,7 @@ public class SoftUniCoursePlanning_10 {
 
         List<String> lessons = Arrays.stream(scanner.nextLine().split(", ")).collect(Collectors.toList());
 
-        // 1. Add:{lessonTitle} - add the lesson to the end of the schedule, if it does not exist
-        // 2. Insert:{lessonTitle}:{index} - insert the lesson to the given index, if it does not exist
-        // 3. Remove:{lessonTitle} - remove the lesson, if it exists
-        // 4. Swap:{lessonTitle}:{lessonTitle} - change the place of the two lessons, if they exist
-        // 5. Exercise:{lessonTitle} - add Exercise in the schedule right after the lesson index, if the lesson exists and there is no exercise already, in the following format: "{lessonTitle}-Exercise". If the lesson doesn't exist, add the lesson at the end of the course schedule, followed by the Exercise.
-
+      
         String input = scanner.nextLine();
         while (!input.equals("course start")) {
 
