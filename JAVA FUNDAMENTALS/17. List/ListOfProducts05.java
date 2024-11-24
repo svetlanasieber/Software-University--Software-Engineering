@@ -13,11 +13,6 @@ public class ListOfProducts05 {
 
         int numberOfProducts = Integer.parseInt(scanner.nextLine());
 
-        //4
-        //Potatoes
-        //Tomatoes
-        //Onions
-        //Apples
 
         List<String> products = new ArrayList<>();
 
@@ -27,17 +22,15 @@ public class ListOfProducts05 {
 
         }
 
-        //{"Potatoes", "Tomatoes", "Onions, "Apples"}
+   
 
 
-        Collections.sort(products); //{"Apples", "Onions", "Potatoes, "Tomatoes"} -> подрежда продуктите в нарастващ ред (ascending order)
+        Collections.sort(products); 
 
         //int counter = 1;
         for (int index = 0; index < products.size(); index++) {
 
-            System.out.printf("%d.%s%n", (index + 1), products.get(index)); // вместо (index + 1) -> можем да използваме counter
-
-            //counter++;
+            System.out.printf("%d.%s%n", (index + 1), products.get(index)); 
 
 
         }
