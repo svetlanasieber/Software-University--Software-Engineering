@@ -11,29 +11,24 @@ public class Train_01 {
 
         List<Integer> wagons = Arrays.stream(scanner.nextLine().split(" "))
                                         .map(Integer::parseInt).collect(Collectors.toList());
-        //{0, 0, 0, 10, 2, 4, 10}
-
-        int maxCapacity = Integer.parseInt(scanner.nextLine()); //макс брой хора във всеки вагон
+      
+        int maxCapacity = Integer.parseInt(scanner.nextLine()); 
 
         String command = scanner.nextLine();
 
         while (!command.equals("end")) {
 
             if (command.contains("Add")) {
-                //1. command = "Add 10".split(" ") -> ["Add", "10"]
-                //добавяме нов вагон в списъка
-                int count = Integer.parseInt(command.split(" ")[1]); //бр. хората в новия вагон
+               
+                int count = Integer.parseInt(command.split(" ")[1]); 
                 wagons.add(count);
             } else {
-                //2. command = "34"
-                int passengers = Integer.parseInt(command); //бр. хората, които да добавя в някой вагон
-                //{0, 0, 0, 10, 2, 4, 10}
-                //макс = 75
+               
+                int passengers = Integer.parseInt(command);
                 for (int wagon = 0; wagon <= wagons.size() - 1; wagon++) {
-                    int currentCountPassengers = wagons.get(wagon); //бр. хората в текущия вагон
-                    //проверка: мога ли да качвам хора във вагона
-                    if (currentCountPassengers + passengers <= maxCapacity) {
-                        //качвам ги в текущия вагон
+                    int currentCountPassengers = wagons.get(wagon); 
+                   acity) {
+                     
                         wagons.set(wagon, currentCountPassengers + passengers);
                         break;
                     }
