@@ -21,7 +21,7 @@ public class _05_MatrixShuffling {
                 System.out.println("Invalid input!");
             } else {
 
-                // 1. Сменяме елементите
+            
                 String[] commandElements = command.split(" ");
                 int firstRow = Integer.parseInt(commandElements[1]);
                 int firstCol = Integer.parseInt(commandElements[2]);
@@ -32,7 +32,7 @@ public class _05_MatrixShuffling {
                 matrix[firstRow][firstCol] = matrix[secondRow][secondCol];
                 matrix[secondRow][secondCol] = temp;
 
-                // 2. Отпечатваме матрицата
+          
                 printMatrix(matrix);
             }
 
