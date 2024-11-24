@@ -6,7 +6,7 @@ public class _06_StringMatrixRotation {
 
         Scanner scanner = new Scanner(System.in);
 
-        // 90, 180, 360
+ 
         String rotationAngle = scanner.nextLine().replace("Rotate(", "").replace(")", "");
         int rotationTimes = Integer.parseInt(rotationAngle) / 90;
 
@@ -32,15 +32,12 @@ public class _06_StringMatrixRotation {
 
     private static char[][] rotateMatrix90(char[][] oldMatrix) {
 
-        // Редовете == броя на колониите на първият ред от старата матрица
-        // Колоните == броя на редовете от старата матрица
+  
         int newRows = oldMatrix[0].length;
         int newCols = oldMatrix.length;
         char[][] newMatrix = new char[newRows][newCols];
 
-        // Обхождам СТАРАТА матрица и местя елементите в НОВАТА!
-        // Колона: 0 към последна
-        // Ред: последн към 0
+    
         for (int col = 0; col < oldMatrix[0].length; col++) {
             int counter = 0;
             for (int row = oldMatrix.length - 1; row >= 0; row--) {
