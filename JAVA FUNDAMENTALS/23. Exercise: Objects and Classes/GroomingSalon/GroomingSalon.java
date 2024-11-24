@@ -5,17 +5,17 @@ import java.util.List;
 
 public class GroomingSalon {
 
-    // 1. Fields
+  
     private List<Pet> data;
     private int capacity;
 
-    // 2. Constructor
+
     public GroomingSalon(int capacity) {
         this.capacity = capacity;
         this.data = new ArrayList<>();
     }
 
-    // 3. Methods
+ 
     public void add(Pet pet) {
         if (this.data.size() < capacity) {
             this.data.add(pet);
