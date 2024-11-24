@@ -2,19 +2,19 @@ package groomingSalon;
 
 public class Pet {
 
-    // 1. Fields
+  
     private String name;
     private int age;
     private String owner;
 
-    // 2. Constructor
+
     public Pet(String name, int age, String owner) {
         this.name = name;
         this.age = age;
         this.owner = owner;
     }
 
-    // 3. Methods
+
     public String getName() {
         return this.name;
     }
