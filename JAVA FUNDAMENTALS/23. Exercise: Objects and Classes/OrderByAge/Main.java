@@ -16,7 +16,7 @@ public class Main {
         String input = scanner.nextLine();
         while (!input.equals("End")) {
 
-            //"George 123456 20"
+        
             String name = input.split(" ")[0];
             String id = input.split(" ")[1];
             int age = Integer.parseInt(input.split(" ")[2]);
