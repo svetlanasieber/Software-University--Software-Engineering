@@ -2,13 +2,12 @@ package vehicle_catalogue_05;
 
 public class Vehicle {
 
-    // 1. Fields
     private String type;
     private String model;
     private String color;
     private int horsePower;
 
-    // 2.  Constructor
+
     public Vehicle(String type, String model, String color, int horsePower) {
         this.type = type;
         this.model = model;
@@ -16,7 +15,7 @@ public class Vehicle {
         this.horsePower = horsePower;
     }
 
-    // 3. Methods
+
     public String getType() {
         return type;
     }
