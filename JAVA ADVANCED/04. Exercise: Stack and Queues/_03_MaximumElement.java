@@ -19,14 +19,14 @@ public class _03_MaximumElement {
             //[3]
             int[] input = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-            // НАЧИН 1:
+            // var 1:
 //            switch (input[0]) {
 //                case 1 -> stack.push(input[1]);
 //                case 2 -> stack.pop();
 //                case 3 -> System.out.println(Collections.max(stack));
 //            }
 
-            // НАЧИН 2:
+            // var 2:
             switch (input[0]) {
                 case 1:
                     stack.push(input[1]);
