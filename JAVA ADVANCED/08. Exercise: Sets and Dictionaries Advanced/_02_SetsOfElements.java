@@ -26,10 +26,10 @@ public class _02_SetsOfElements {
             secondSet.add(number);
         }
 
-        // Начин 1:
+        //v 1:
         // firstSet.retainAll(secondSet);
 
-        // Начин 2:
+        //v 2:
         for (int number : firstSet) {
             if (secondSet.contains(number)) {
                 System.out.print(number + " ");
