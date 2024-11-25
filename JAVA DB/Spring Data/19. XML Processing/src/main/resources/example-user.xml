@@ -1,0 +1,15 @@
+<user password="pass">
+  <username>user</username>
+  <accountAge>20</accountAge>
+  <contactInfo phone="0888">
+    <email>email</email>
+  </contactInfo>
+  <messages>
+    <singleMessage>
+      <content>first</content>
+    </singleMessage>
+    <singleMessage>
+      <content>second</content>
+    </singleMessage>
+  </messages>
+</user>
