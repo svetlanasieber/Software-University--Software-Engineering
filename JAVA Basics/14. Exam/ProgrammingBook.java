@@ -1,5 +1,3 @@
-package FirstStepsInCoding.Lab.Exam;
-
 import java.util.Scanner;
 
 public class ProgrammingBook {
