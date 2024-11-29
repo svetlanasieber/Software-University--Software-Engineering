@@ -1,0 +1,68 @@
+# 01. Creating Series
+
+import pandas as pd
+
+# For the purpose of this example, let's assume N and the sequence of integers are provided like this:
+N = 4  # This should be read using input() in a real program
+sequence_of_integers = [56, 53, 20, 21]  # This should also be read using input() in a real program
+
+# Transforming the sequence of integers into a Pandas Series
+series = pd.Series(sequence_of_integers)
+
+# Printing the series
+print(series)
+
+
+# 02. Doubled Series
+
+import pandas as pd
+
+# For the purpose of this example, let's assume N and the sequence of integers are provided like this:
+N = 3  # This should be read using input() in a real program
+sequence_of_integers = [15, 155, 1555]  # This should also be read using input() in a real program
+
+# Transforming the sequence of integers into a Pandas Series
+series = pd.Series(sequence_of_integers)
+
+# Multiplying all elements by 2
+doubled_series = series * 2
+
+# Printing the doubled series
+print(doubled_series)
+
+
+
+# 03. Find Duplicates
+
+import pandas as pd
+
+# For the purpose of this example, let's assume N and the sequence of integers are provided like this:
+N = 4  # This should be read using input() in a real program
+sequence_of_integers = [3, 4, 5, 6]  # This should also be read using input() in a real program
+
+# Transforming the sequence of integers into a Pandas Series
+series = pd.Series(sequence_of_integers)
+
+# Checking for duplicates
+has_duplicates = series.duplicated().any()
+
+# Printing whether there are duplicates
+print(has_duplicates)
+
+
+# 04. Drop Duplicates
+
+import pandas as pd
+
+# For the purpose of this example, let's assume N and the sequence of integers are provided like this:
+N = 3  # This should be read using input() in a real program
+sequence_of_integers = [-100, 100, -100]  # This should also be read using input() in a real program
+
+# Transforming the sequence of integers into a Pandas Series
+series = pd.Series(sequence_of_integers)
+
+# Dropping duplicates from the series
+unique_series = series.drop_duplicates()
+
+# Printing the series without duplicates
+print(unique_series)
