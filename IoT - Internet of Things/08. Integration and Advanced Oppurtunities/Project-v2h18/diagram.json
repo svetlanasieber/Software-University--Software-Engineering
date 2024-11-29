@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "author": "Svetlana Sieber",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": -36.02,
+      "left": -122.72,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu2",
+      "top": -36.02,
+      "left": 174.88,
+      "rotate": 180,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "imu1:VCC", "esp:3V3", "red", [ "v21.71", "h94.7", "v-9.6" ] ],
+    [ "imu1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "imu1:SDA", "esp:21", "green", [ "v79.31", "h75.5", "v-115.2", "h144", "v96" ] ],
+    [ "imu1:SCL", "esp:22", "green", [ "v108.11", "h75.5", "v-134.4", "h144", "v57.6" ] ],
+    [ "imu2:GND", "esp:GND.2", "black", [ "v19.2", "h-76.88", "v-9.6" ] ],
+    [ "imu2:VCC", "esp:3V3", "red", [ "v9.6", "h-57.68", "v-28.8", "h-124.8" ] ],
+    [ "imu2:SCL", "esp:22", "green", [ "v0" ] ],
+    [ "imu2:SDA", "esp:21", "green", [ "v0" ] ],
+    [ "esp:3V3", "imu2:AD0", "green", [ "h-4.61", "v-28.8", "h163.2", "v67.2", "h38.4" ] ]
+  ],
+  "dependencies": {}
+}
