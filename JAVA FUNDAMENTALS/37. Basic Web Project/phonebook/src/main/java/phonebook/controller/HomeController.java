@@ -39,10 +39,10 @@ public class HomeController {
     private ModelAndView viewContactToEdit(@PathVariable String name, ModelAndView modelAndView){
         modelAndView.setViewName("edit");
 
-        //вариант 1
+        //variant 1
         Contact contactToEdit = getContact(name);
 
-        //вариант 2
+        //variant 2
         //Contact contactToEdit1 = this.contacts.stream().filter(c -> c.getName().equals(name)).findFirst().get();
 
         modelAndView.addObject(contactToEdit);
