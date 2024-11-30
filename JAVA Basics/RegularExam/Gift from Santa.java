@@ -5,7 +5,7 @@ public class GiftsFromSanta_04 {
         Scanner scanner = new Scanner(System.in);
 
 
-        // Reading input values
+  
         int N = Integer.parseInt(scanner.nextLine());
         int M = Integer.parseInt(scanner.nextLine());
         int S = Integer.parseInt(scanner.nextLine());
