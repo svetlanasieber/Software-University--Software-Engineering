@@ -10,7 +10,7 @@ public class P02_BraceletStand {
                 double totalExpenses = Double.parseDouble(scanner.nextLine());
                 double giftPrice = Double.parseDouble(scanner.nextLine());
 
-                // Calculate
+              
                 double savingsPocket = dailyIncome * 5;
                 double earnings = dailyEarnings * 5;
                 double totalSavings = savingsPocket + earnings - totalExpenses;
