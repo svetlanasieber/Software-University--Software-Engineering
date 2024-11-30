@@ -11,7 +11,7 @@ public class P01_CatDiet {
         int totalCalories = scanner.nextInt();
         int percentWater = scanner.nextInt();
 
-        // Constants for calories per gram
+       
         int oneGramFats = 9;
         int oneGramProteins = 4;
         int oneGramCarbohydrates = 4;
