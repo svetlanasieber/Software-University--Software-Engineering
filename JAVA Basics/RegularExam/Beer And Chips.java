@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class BeerAndChips_02 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        String name = scanner.nextLine();
+        double budget = Double.parseDouble(scanner.nextLine());
+        int numOfBeerBottles = Integer.parseInt(scanner.nextLine());
+        int numOfBagChips = Integer.parseInt(scanner.nextLine());
+
+        double beerPrice = 1.20;
+
+
+        double totalPriceForBeers = numOfBeerBottles * beerPrice;
+        double priceOfChips = totalPriceForBeers * 0.45;
+        double totalPriceForChips = Math.ceil(priceOfChips * numOfBagChips);
+
+        double sumOfChipsAndBeer = totalPriceForBeers + totalPriceForChips;
+
+
+        if (budget >= sumOfChipsAndBeer) {
+            double moneyLeft = budget - sumOfChipsAndBeer;
+            System.out.printf("%s bought a snack and has %.2f leva left.%n", name, moneyLeft);
+        } else {
+            double moneyNeeded = sumOfChipsAndBeer - budget;
+            System.out.printf("%s needs %.2f more leva!%n", name, moneyNeeded);
+        }
+
+        scanner.close();
+    }
+}
