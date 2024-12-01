@@ -1,0 +1,36 @@
+Pizzas:
+Pizza #1
+ID: 2001, Name: Margherita Pizza
+Size: Medium
+Ingredients: Tomato Sauce, Mozzarella Cheese, Basil
+Cooking Method: Baked
+Pizza #2
+ID: 2002, Name: Pepperoni Pizza
+Size: Large
+Ingredients: Tomato Sauce, Mozzarella Cheese, Pepperoni
+Cooking Method: Baked
+Pizza #3
+ID: 2003, Name: BBQ Chicken Pizza
+Size: Extra Large
+Ingredients: BBQ Sauce, Chicken, Red Onions
+Cooking Method: Grilled
+Pizza #4
+ID: 2004, Name: Veggie Supreme Pizza
+Size: Small
+Ingredients: Tomato Sauce, Mozzarella Cheese, Variety of Vegetables
+Cooking Method: Baked
+Pizza #5
+ID: 2005, Name: Hawaiian Pizza
+Size: Medium
+Ingredients: Tomato Sauce, Mozzarella Cheese, Pineapple
+Cooking Method: Baked
+Pizza #6
+ID: 2006, Name: Meat Lovers Pizza
+Size: Large
+Ingredients: Tomato Sauce, Mozzarella Cheese, Assorted Meats
+Cooking Method: Baked
+Pizza #7
+ID: 2007, Name: Pesto Pizza
+Size: Small
+Ingredients: Pesto Sauce, Mozzarella Cheese, Sun-dried Tomatoes
+Cooking Method: Grilled
