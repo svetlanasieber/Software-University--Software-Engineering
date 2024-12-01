@@ -1,0 +1,14 @@
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\bin\Debug\net6.0\01.GiftBoxCoverage.exe
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\bin\Debug\net6.0\01.GiftBoxCoverage.deps.json
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\bin\Debug\net6.0\01.GiftBoxCoverage.runtimeconfig.json
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\bin\Debug\net6.0\01.GiftBoxCoverage.dll
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\bin\Debug\net6.0\01.GiftBoxCoverage.pdb
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\obj\Debug\net6.0\01.GiftBoxCoverage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\obj\Debug\net6.0\01.GiftBoxCoverage.AssemblyInfoInputs.cache
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\obj\Debug\net6.0\01.GiftBoxCoverage.AssemblyInfo.cs
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\obj\Debug\net6.0\01.GiftBoxCoverage.csproj.CoreCompileInputs.cache
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\obj\Debug\net6.0\01.GiftBoxCoverage.dll
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\obj\Debug\net6.0\refint\01.GiftBoxCoverage.dll
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\obj\Debug\net6.0\01.GiftBoxCoverage.pdb
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\obj\Debug\net6.0\01.GiftBoxCoverage.genruntimeconfig.cache
+C:\Users\siebe\OneDrive\Documents\CSharpFundamentalsSept2024\MidExam-26-10-2024\01.GiftBoxCoverage\obj\Debug\net6.0\ref\01.GiftBoxCoverage.dll
