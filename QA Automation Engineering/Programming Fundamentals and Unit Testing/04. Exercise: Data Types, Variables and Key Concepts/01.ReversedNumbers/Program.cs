@@ -1,6 +1,3 @@
-
-//floating-point numbers
-
 double firstNum = double.Parse(Console.ReadLine());
 double secondNum = double.Parse(Console.ReadLine());
 double thirdNum = double.Parse(Console.ReadLine());
