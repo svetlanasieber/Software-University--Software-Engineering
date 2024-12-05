@@ -18,11 +18,11 @@ int main() {
     int minEven = INT_MAX;
     
     for(int i = 0; i < N; ++i) {
-        if(i % 2 == 0) { // even position
+        if(i % 2 == 0) { 
             if(numbers[i] < minEven) {
                 minEven = numbers[i];
             }
-        } else { // odd position
+        } else { 
             if(numbers[i] > maxOdd) {
                 maxOdd = numbers[i];
             }
