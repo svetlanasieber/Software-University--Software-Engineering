@@ -1,4 +1,5 @@
-for (int i = 1; i <= 100; i++)
+
+for (int number = 1; number <= 100; number++)
 {
-    Console.WriteLine(i);
+    Console.WriteLine(number);
 }
