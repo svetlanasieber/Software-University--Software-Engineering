@@ -3,8 +3,17 @@ int power = int.Parse(Console.ReadLine());
 
 int result = 1;
 
-for (int i = 1; i <= power; i++)
+for (int i = 0; i < power; i++)
 {
     result *= num;
 }
 Console.WriteLine(result);
+
+/*
+ int num = int.Parse(Console.ReadLine());
+ int power = int.Parse(Console.ReadLine());
+ 
+ double result = Math.Pow(num, power);
+ 
+ Console.WriteLine(result);
+*/
