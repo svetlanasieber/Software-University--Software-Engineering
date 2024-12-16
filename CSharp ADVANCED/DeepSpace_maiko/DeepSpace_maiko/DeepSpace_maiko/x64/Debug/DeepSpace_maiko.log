@@ -1,0 +1,9 @@
+﻿  DeepSpace_maiko.cpp
+C:\Users\siebe\OneDrive\Documents\Cpp_Advanced\DeepSpace_maiko\DeepSpace_maiko\DeepSpace_maiko.cpp(449,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\siebe\OneDrive\Documents\Cpp_Advanced\DeepSpace_maiko\DeepSpace_maiko\DeepSpace_maiko.cpp(454,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\siebe\OneDrive\Documents\Cpp_Advanced\DeepSpace_maiko\DeepSpace_maiko\DeepSpace_maiko.cpp(469,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\siebe\OneDrive\Documents\Cpp_Advanced\DeepSpace_maiko\DeepSpace_maiko\DeepSpace_maiko.cpp(533,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\siebe\OneDrive\Documents\Cpp_Advanced\DeepSpace_maiko\DeepSpace_maiko\DeepSpace_maiko.cpp(586,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\siebe\OneDrive\Documents\Cpp_Advanced\DeepSpace_maiko\DeepSpace_maiko\DeepSpace_maiko.cpp(591,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\siebe\OneDrive\Documents\Cpp_Advanced\DeepSpace_maiko\DeepSpace_maiko\DeepSpace_maiko.cpp(623,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  DeepSpace_maiko.vcxproj -> C:\Users\siebe\OneDrive\Documents\Cpp_Advanced\DeepSpace_maiko\DeepSpace_maiko\x64\Debug\DeepSpace_maiko.exe
