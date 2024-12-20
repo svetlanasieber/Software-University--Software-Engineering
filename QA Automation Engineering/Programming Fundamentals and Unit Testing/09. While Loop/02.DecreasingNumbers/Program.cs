@@ -1,6 +1,7 @@
-int n = int.Parse(Console.ReadLine());
-while (n >= 1)
+int number = int.Parse(Console.ReadLine());
+
+while (number >= 1)
 {
-    Console.WriteLine(n);
-    n--;
+    Console.WriteLine(number);
+    number--;
 }
