@@ -9,6 +9,9 @@ double[] doubleArray = new double[10];
 string[] stringArray = new string[10];
 
 
+char[] charArray = new char[20];
+
+
 integerArray[0] = 10;
 integerArray[1] = 34;
 integerArray[2] = 56;
@@ -21,4 +24,8 @@ Console.WriteLine(integerArray[0]);
 Console.WriteLine(doubleArray[0]);
 
 double number = doubleArray[0];
+
+Console.WriteLine(integerArray.Length);
+Console.WriteLine(doubleArray.Length);
+
 Console.WriteLine(stringArray[0].Length);
