@@ -10,6 +10,9 @@ string[] stringArray = new string[10];
 
 
 integerArray[0] = 10;
+integerArray[1] = 34;
+integerArray[2] = 56;
+integerArray[3] = 78;
 doubleArray[0] = 10.5;
 stringArray[0] = "Hello";
 
