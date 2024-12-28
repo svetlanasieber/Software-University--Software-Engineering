@@ -5,10 +5,7 @@ connection.Open();
 
 using (connection)
 {
-    //1. DataReader
-    //string sql = "SELECT * FROM Employee";
 
-    
     SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Empleyees", connection);
     int? employeesCount = (int?) await command.ExecuteScalarAsync(); //Asynchronous method
 
