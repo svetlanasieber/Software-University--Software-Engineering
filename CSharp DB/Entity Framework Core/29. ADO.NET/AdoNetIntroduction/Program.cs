@@ -7,7 +7,7 @@ using (connection)
 {
    
     SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Empleyees", connection);
-    int? employeesCount = (int?) await command.ExecuteScalarAsync(); //ExecuteScalar vrushta edin resultat. Asynchronous method
+    int? employeesCount = (int?) await command.ExecuteScalarAsync();
 
     Console.WriteLine($"There are {employeesCount} employees in our company");
 }
