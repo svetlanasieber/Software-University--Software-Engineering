@@ -33,5 +33,15 @@ public class Demo {
         months[11] = "December";
         System.out.println(months[months.length - 1]);
 
+
+             
+        System.out.println(days[0]); 
+
+        String name = "Stoyan";
+
+        //"Stoyan".toCharArray() -> ['S', 't', 'o', 'y', 'a', 'n']
+        char[] letters = name.toCharArray();
+        System.out.println(letters[letters.length - 1]);
+
     }
 }
