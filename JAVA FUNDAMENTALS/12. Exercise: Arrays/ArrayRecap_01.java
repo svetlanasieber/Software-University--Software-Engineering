@@ -1,29 +1,35 @@
-package G03_Arrays;
+package Exercise12_Arrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class ArrayRecap_01 {
+public class ArrayRecap {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] numbers = new int[3];
+        // Integer Array
+        int[] numbers1 = new int[3];
 
-        numbers[0] = 5;
-        numbers[1] = 20;
-        numbers[2] = 25; //numbers: [5, 20, 25]
+        numbers1[0] = 5;
+        numbers1[1] = 20;
+        numbers1[2] = 25;
 
-
-        String[] towns = scanner.nextLine().split(" ");
-
-        //System.out.println();
+        // Read Array from the Console
+    
+        String input = scanner.nextLine();
+        String[] towns = input.split(" ");
 
         // foreach loop
         for (String town : towns) {
             System.out.println(town + " is a nice city.");
-
-            
         }
+
+        // String.join
+        System.out.println(String.join(", ", towns));
+
+        // Reat Integer Array from the Console
+        int[] numbers = Arrays.stream(scanner.nextLine().split(" "))
+                .mapToInt(Integer::parseInt)
+                .toArray();
+
     }
-
-
-
 }
