@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace RoundingNumbers
+namespace P03RoundingNumbers
 {
     class Program
     {
