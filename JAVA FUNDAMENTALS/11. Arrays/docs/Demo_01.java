@@ -9,12 +9,12 @@ public class Demo {
         int[] days = new int[7];
         System.out.println(days.length);
 
-        //Add Element Variant 1
+        //Variant 1
         days[0] = 1;
         days[1] = 2;
         days[2] = 3;
 
-        //Last element
+    
         System.out.println(days[days.length - 1]);
 
         String[] months = new String[12];
@@ -31,10 +31,9 @@ public class Demo {
         months[9] = "October";
         months[10] = "November";
         months[11] = "December";
+
         System.out.println(months[months.length - 1]);
 
-
-             
         System.out.println(days[0]); 
 
         String name = "Stoyan";
@@ -42,6 +41,13 @@ public class Demo {
         //"Stoyan".toCharArray() -> ['S', 't', 'o', 'y', 'a', 'n']
         char[] letters = name.toCharArray();
         System.out.println(letters[letters.length - 1]);
+
+        //Variant 2
+        String[] weekDays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+
+        
+        System.out.printf("%s", weekDays[0]);
+
 
     }
 }
