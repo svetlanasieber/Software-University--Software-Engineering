@@ -14,13 +14,13 @@ internal class Program
         double displayPrice = double.Parse(Console.ReadLine());
         double expenses = 0;
 
-        // Every second lost game, trashes his headset.
+
         int headsetsTrashed = 0;
-        //Every third lost game, trashes his mouse.
+ 
         int miceTrashed = 0;
-        //both his mouse and headset in the same lost game, trashes his keyboard.
+       
         int keyboardsTrashed = 0;
-        //Every second time, when he trashes his keyboard, he also trashes his display
+      
         int displaysTrashed = 0;
 
         for (int i = 1; i <= gamesCount; i++)
