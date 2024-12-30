@@ -2,14 +2,14 @@ package Lab11_Arrays;
 
 import java.util.Scanner;
 
-public class Demo {
+public class Demo1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int[] days = new int[7];
         System.out.println(days.length);
 
-        
+  
         days[0] = 1;
         days[1] = 2;
         days[2] = 3;
@@ -34,7 +34,7 @@ public class Demo {
 
         System.out.println(months[months.length - 1]);
 
-   
+        
         System.out.println(days[0]); 
 
         String name = "Stoyan";
@@ -46,10 +46,10 @@ public class Demo {
        
         String[] weekDays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
-     
+      
         //System.out.printf("%s", weekDays[0]);
 
-     
+       
         System.out.println(weekDays[1]);
 
         String[] students = new String[20];
@@ -65,7 +65,7 @@ public class Demo {
 
         }
 
-        //variant 2 with Foreach Loop 
+       //variant 2 with Foreach-Loop
         for(String day : weekDays) {
             System.out.println(day);
         }
@@ -74,7 +74,26 @@ public class Demo {
             System.out.println(currentDay);
         }
 
+        //Varian 1
+        int[] numbers = {1, 10, 20, 30};
+
+        //Variant 2
+        int[] counts = new int[4];
+        counts[0] = 100;
+        counts[1] = 200;
+        counts[2] = 300;
+        counts[3] = Integer.parseInt(scanner.nextLine());
+
+        int n = Integer.parseInt(scanner.nextLine());
+
+        int[] arr = new int[n];
+
+        for (int position = 0; position < arr.length; position++) {
+            arr[position] = Integer.parseInt(scanner.nextLine());
         }
+
+        }
+
 
 
 
