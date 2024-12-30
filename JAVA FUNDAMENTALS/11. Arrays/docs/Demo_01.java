@@ -49,5 +49,13 @@ public class Demo {
         System.out.printf("%s", weekDays[0]);
 
 
+        String[] students = new String[20];
+
+        students[0] = "Ivancho";
+        students[1] = "Goshko";
+        students[2] = "Pepi";
+        System.out.println();
+
+
     }
 }
