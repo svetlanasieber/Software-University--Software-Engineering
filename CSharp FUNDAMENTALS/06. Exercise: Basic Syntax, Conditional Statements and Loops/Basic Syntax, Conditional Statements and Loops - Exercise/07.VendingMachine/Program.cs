@@ -1,16 +1,13 @@
 using System;
 
-/*
-0.1, 0.2, 0.5, 1 and 2
-Cannot accept {money}
-*/
+
 internal class Program
 {
     static void Main(string[] args)
     {
         double balance = 0;
 
-        // accumulates coins
+      
         string command;
         command = Console.ReadLine();
         while (command != "Start")
@@ -32,33 +29,7 @@ internal class Program
             command = Console.ReadLine();
         }
 
-        // Buying
-        //"Nuts" with a price of 2.0
-        //"Water" with a price of 0.7
-        //"Crisps" with a price of 1.5
-        //"Soda" with a price of 0.8
-        //"Coke" with a price of 1.0
-        //"Purchased {product name}"
-        // "Sorry, not enough money"
-        // "End"
-        /*
-1
-1
-0.5
-0.6
-Start
-Coke
-Soda
-Crisps
-End
 
-1
-Start
-Nuts
-Coke
-End
-
-        */
         double nutsPrice = 2;
         double waterPrice = 0.7;
         double crispsPrice = 1.5;
@@ -141,4 +112,3 @@ End
         Console.WriteLine($"Change: {balance:F2}");
     }
 }
-
