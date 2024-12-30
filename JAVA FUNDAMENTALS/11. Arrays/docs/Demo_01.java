@@ -9,12 +9,12 @@ public class Demo {
         int[] days = new int[7];
         System.out.println(days.length);
 
-        //Variant 1
+        
         days[0] = 1;
         days[1] = 2;
         days[2] = 3;
 
-    
+      
         System.out.println(days[days.length - 1]);
 
         String[] months = new String[12];
@@ -34,6 +34,7 @@ public class Demo {
 
         System.out.println(months[months.length - 1]);
 
+   
         System.out.println(days[0]); 
 
         String name = "Stoyan";
@@ -42,12 +43,14 @@ public class Demo {
         char[] letters = name.toCharArray();
         System.out.println(letters[letters.length - 1]);
 
-        //Variant 2
+       
         String[] weekDays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
-        
-        System.out.printf("%s", weekDays[0]);
+     
+        //System.out.printf("%s", weekDays[0]);
 
+     
+        System.out.println(weekDays[1]);
 
         String[] students = new String[20];
 
@@ -56,6 +59,24 @@ public class Demo {
         students[2] = "Pepi";
         System.out.println();
 
+        //variant 1 with For-Loop
+        for (int i = 0; i < weekDays.length; i++) {
+            System.out.println(weekDays[i]);
+
+        }
+
+        //variant 2 with Foreach Loop 
+        for(String day : weekDays) {
+            System.out.println(day);
+        }
+
+        for (int currentDay : days) {
+            System.out.println(currentDay);
+        }
+
+        }
+
+
 
     }
-}
+
