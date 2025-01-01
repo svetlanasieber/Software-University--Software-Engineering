@@ -1,24 +1,13 @@
 ﻿using System;
 
-/*
-5
-1!0!1!1!0
-0!1!1!0!0
-Clone them!
 
-4
-1!1!0!1
-1!0!0!1
-1!1!0!0
-Clone them!
-*/
 
 internal class Program
 {
     static void Main()
     {
         int sequenceLength = int.Parse(Console.ReadLine());
-        // Fixed by MiroslavaTsaneva january 2024 :)
+       
         int bestSequenceIndex = 1;
         int bestStartIndex = int.MaxValue;
         int bestSum = 0;
