@@ -1,15 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-/*
-6
-3
-52
-71
-13
-65
-4
-*/
+
 internal class Program
 {
     static void Main()
@@ -27,6 +19,6 @@ internal class Program
 
         Console.WriteLine(string.Join(" ", wagons));
         Console.WriteLine(total);
-        //Console.WriteLine(wagons.Sum());
+      
     }
 }
