@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-/* 
-10 5 5 99 3 4 2 5 1 1 4
-*/
+
 internal class Program
 {
     static void Main()
