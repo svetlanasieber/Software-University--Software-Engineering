@@ -1,8 +1,6 @@
 ﻿using System;
 
-/*
-S of t un i
-of i 10 un*/
+
 internal class Program
 {
     static void Main()
