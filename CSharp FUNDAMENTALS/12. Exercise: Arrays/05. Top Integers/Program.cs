@@ -1,13 +1,11 @@
 ﻿using System;
 
-/*
-1 4 3 2
-*/
+
 internal class Program
 {
     static void Main()
     {
-        // INPUT
+    
         string[] inputArr = Console.ReadLine().Split();
         int[] numbers = new int[inputArr.Length];
 
@@ -16,7 +14,7 @@ internal class Program
             numbers[i] = int.Parse(inputArr[i]);
         }
 
-        // SOLUTION
+     
         for (int i = 0; i < numbers.Length; i++)
         {
             bool isTop = true;
@@ -31,7 +29,7 @@ internal class Program
 
             if (isTop)
             {
-                // OUTPUT
+               
                 Console.Write($"{numbers[i]} ");
             }
         }
