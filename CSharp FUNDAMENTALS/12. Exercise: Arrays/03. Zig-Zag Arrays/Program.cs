@@ -1,12 +1,5 @@
 ﻿using System;
 
-/*
-4
-1 5
-9 10
-31 81
-41 20
-*/
 
 internal class Program
 {
