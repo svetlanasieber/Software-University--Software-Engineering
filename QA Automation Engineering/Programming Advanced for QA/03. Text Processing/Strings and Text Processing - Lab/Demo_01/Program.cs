@@ -47,9 +47,11 @@ for (int index = 0; index <= name.Length - 1; index++)
 
 
 string firstName = "Desislava";
-string lastName = "Desislava";
+string lastName = "Topuzakova";
 int age = 20;
 double grade = 5.5;
 string fullName = firstName + " " + lastName;
 Console.WriteLine(fullName);
-Console.WriteLine(firstName + lastName);
+Console.WriteLine(firstName + lastName); //string + string = string
+Console.WriteLine(firstName + age); //string + int = string
+Console.WriteLine(lastName + grade); //string + double = string;
