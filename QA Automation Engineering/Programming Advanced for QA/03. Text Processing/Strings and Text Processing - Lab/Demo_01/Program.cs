@@ -1,5 +1,6 @@
 string name = "Desislava";
 
+
 Console.WriteLine(name.Length);
 int length = name.Length;
 
@@ -33,13 +34,22 @@ Console.WriteLine(newName);
 //1. foreach 
 foreach (char sym in name)
 {
-   
+    
     Console.WriteLine(sym);
 }
-//2. for-loop 
+
+//2. for-loop -
 for (int index = 0; index <= name.Length - 1; index++)
 {
     if (index % 2 == 0)
-    Console.WriteLine(name[index]);
+        Console.WriteLine(name[index]);
 }
 
+
+string firstName = "Desislava";
+string lastName = "Desislava";
+int age = 20;
+double grade = 5.5;
+string fullName = firstName + " " + lastName;
+Console.WriteLine(fullName);
+Console.WriteLine(firstName + lastName);
