@@ -51,6 +51,9 @@ string lastName = "Topuzakova";
 int age = 20;
 double grade = 5.5;
 string fullName = firstName + " " + lastName;
+
+string sentence = "I am " + firstName + " " + lastName + " and I am " + age + " years old.";
+
 Console.WriteLine(fullName);
 Console.WriteLine(firstName + lastName); //string + string = string
 Console.WriteLine(firstName + age); //string + int = string
