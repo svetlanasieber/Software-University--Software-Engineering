@@ -22,23 +22,23 @@ List<double> numsList = Console.ReadLine() //"4 5 6 1 9"
                     .Select(double.Parse)   //[4, 5, 6, 1, 9]
                     .ToList();               //{4, 5, 6, 1, 9}
 
-//минималното число в масив / лист
+
 Console.WriteLine(nums.Min());
 Console.WriteLine(numsList.Min());
 
-//максималното число в масив / лист
+
 Console.WriteLine(nums.Max());
 Console.WriteLine(numsList.Max());
 
-//средна стойност на елементите в масив / лист
+
 Console.WriteLine(nums.Average());
 Console.WriteLine(numsList.Average());
 
-//сума на елементите в масив / лист
+
 Console.WriteLine(nums.Sum());
 Console.WriteLine(numsList.Sum());
 
-//филтрация
+
 int[] positiveNumbersArray = Console.ReadLine()
                               .Split()
                               .Select(int.Parse)
