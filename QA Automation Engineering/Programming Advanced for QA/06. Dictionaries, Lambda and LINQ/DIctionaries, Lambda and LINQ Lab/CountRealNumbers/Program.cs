@@ -1,22 +1,23 @@
-double[]  numbers = Console.ReadLine().Split(" ").Select(double.Parse).ToArray();
+double [] numbers = Console.ReadLine().Split(" ").Select(double.Parse).ToArray();
 
 
-SortedDictionary<double, int> countOccurrences = new SortedDictionary<double, int>();
+SortedDictionary<double, int> countNumbers = new SortedDictionary<double, int>();
 
-foreach (double number in numbers)
+foreach(double number in numbers)
 {
-    if (countOccurrences.ContainsKey(number))
+   
+    if (countNumbers.ContainsKey(number))
     {
-        countOccurrences[number]++;
+        countNumbers[number]++;
     }
     else
     {
-        countOccurrences.Add(number, 1);
+        countNumbers.Add(number, 1);
     }
 }
 
-foreach (KeyValuePair<double, int> entry in countOccurrences)
+foreach (KeyValuePair<double, int> entry in countNumbers)
 {
+  
     Console.WriteLine(entry.Key + " -> " + entry.Value);
 }
-
