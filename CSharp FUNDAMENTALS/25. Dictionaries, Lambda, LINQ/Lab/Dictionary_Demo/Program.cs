@@ -7,3 +7,8 @@ studentAges.Add("Maria", 40);
 
 Console.WriteLine(studentAges["Peter"]);
 Console.WriteLine(studentAges["George"]);
+
+foreach (var student in studentAges)
+{
+    Console.WriteLine($"{student.Key} -> {student.Value}");
+}
