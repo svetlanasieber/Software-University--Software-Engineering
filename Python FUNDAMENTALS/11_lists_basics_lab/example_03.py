@@ -14,6 +14,10 @@ print(my_list)
 numbers = list(map(int, input().split(', ')))
 print(numbers)
 
+
+numbers2 = input().split(', ')
+print(numbers2)
+
 #string.join()
 
 
