@@ -20,7 +20,7 @@
 
 
 
-#string.join()
+#string.join() -> only string
 ny_list = ["a", "b", "c", "d"]
 print(" ".join(ny_list))
 
