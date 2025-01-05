@@ -1,24 +1,27 @@
-list_example = list() #list(['apple', 'cherry']) ; ["apple", "cherry"]
+#list_example = list() #list(['apple', 'cherry']) ; ["apple", "cherry"]
 
-print(type(list_example))
+#print(type(list_example))
 
 #split function .split(" ")
-some_text = "a b c d"
-my_list = some_text.split(" ")
-print(my_list)
+#some_text = "a b c d"
+#my_list = some_text.split(" ")
+#print(my_list)
 
-some_text = "a, b, c, d"
-my_list = some_text.split(", ")
-print(my_list)
+#some_text = "a, b, c, d"
+#my_list = some_text.split(", ")
+#print(my_list)
 
-numbers = list(map(int, input().split(', ')))
-print(numbers)
+#numbers = list(map(int, input().split(', ')))
+#print(numbers)
 
 
-numbers2 = input().split(', ')
-print(numbers2)
+#numbers2 = input().split(', ')
+#print(numbers2)
+
+
 
 #string.join()
-
+ny_list = ["a", "b", "c", "d"]
+print(" ".join(ny_list))
 
 #.append -> add new element in List
