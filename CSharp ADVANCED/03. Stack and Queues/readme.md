@@ -1,9 +1,10 @@
+
 -------------------------------------------------------------------------
-• Stack (first-in and last-out);
+• Stack (first-in, last-out);
 -------------------------------------------------------------------------
 • Stack Methods (Push, Pop, Peek, ToArray, Contains and Count);
 -------------------------------------------------------------------------
-• Queue (first-in and first-out);
+• Queue (first-in, first-out);
 -------------------------------------------------------------------------
 • Queue Methods (Enqueue, Dequeue, Peek, ToArray, Contains and Count).
 -------------------------------------------------------------------------
