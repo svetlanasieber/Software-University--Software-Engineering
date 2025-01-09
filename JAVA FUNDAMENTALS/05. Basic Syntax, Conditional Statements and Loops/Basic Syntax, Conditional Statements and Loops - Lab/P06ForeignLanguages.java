@@ -7,6 +7,11 @@ public class P06ForeignLanguages {
         Scanner scanner = new Scanner(System.in);
         String country = scanner.nextLine();
 
+        //	"English" -> if the entered country is "USA" or "England"
+        //	"Spanish" -> if the entered country is "Spain" or "Argentina" or "Mexico"
+        //	"unknown" -> if the entered country is any other different from countries listed above
+
+
         switch (country) {
             case "USA":
             case "England":
@@ -17,9 +22,9 @@ public class P06ForeignLanguages {
             case "Mexico":
                 System.out.println("Spanish");
                 break;
-                default:
-                    System.out.println("unknown");
-                    break;
+            default:
+                System.out.println("unknown");
+                break;
 
         }
 
