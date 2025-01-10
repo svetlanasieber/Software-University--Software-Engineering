@@ -1,8 +1,9 @@
-double firstNum = double.Parse(Console.ReadLine());
-double secondNum = double.Parse(Console.ReadLine());
-double thirdNum = double.Parse(Console.ReadLine());
+double firstNumber = double.Parse(Console.ReadLine()!);
+double secondNumber = double.Parse(Console.ReadLine()!);
+double thirdNumber = double.Parse(Console.ReadLine()!);
 
-Console.WriteLine(thirdNum);
-Console.WriteLine(secondNum);
-Console.WriteLine(firstNum);
+Console.WriteLine(thirdNumber);
+Console.WriteLine(secondNumber);
+Console.WriteLine(firstNumber);
+
 
