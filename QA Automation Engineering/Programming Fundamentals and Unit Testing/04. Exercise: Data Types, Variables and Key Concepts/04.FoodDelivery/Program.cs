@@ -1,4 +1,3 @@
-
 int numberOfChickenMenus = int.Parse(Console.ReadLine());
 int numberOfFishMenus = int.Parse(Console.ReadLine());
 int numberOfVegetarianMenus = int.Parse(Console.ReadLine());
