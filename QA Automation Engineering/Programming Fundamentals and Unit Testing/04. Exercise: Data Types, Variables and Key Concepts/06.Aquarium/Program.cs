@@ -1,4 +1,3 @@
-
 int length = int.Parse(Console.ReadLine());
 int width = int.Parse(Console.ReadLine());
 int height = int.Parse(Console.ReadLine());
