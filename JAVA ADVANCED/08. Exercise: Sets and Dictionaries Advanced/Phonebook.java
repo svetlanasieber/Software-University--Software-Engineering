@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class _05_Phonebook {
+public class Phonebook {
 
     public static void main(String[] args) {
 
@@ -13,7 +13,6 @@ public class _05_Phonebook {
         String input = scanner.nextLine();
         while (!input.equals("search")) {
 
-            //George-0049112233
             String name = input.split("-")[0];
             String phoneNumber = input.split("-")[1];
 
