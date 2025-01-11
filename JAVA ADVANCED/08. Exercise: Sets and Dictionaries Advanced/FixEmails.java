@@ -2,7 +2,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class _06_FixEmails {
+public class _FixEmails {
 
     public static void main(String[] args) {
 
@@ -14,7 +14,7 @@ public class _06_FixEmails {
         while (!name.equals("stop")) {
 
             String email = scanner.nextLine();
-            // "us", "uk," or "com"
+        
             if (!email.endsWith("us") && !email.endsWith("uk") && !email.endsWith("com")) {
                 emails.put(name, email);
             }
