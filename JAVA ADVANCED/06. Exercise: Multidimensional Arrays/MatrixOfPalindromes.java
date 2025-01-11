@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class _MatrixOfPalindromes {
+public class MatrixOfPalindromes {
 
     public static void main(String[] args) {
 
