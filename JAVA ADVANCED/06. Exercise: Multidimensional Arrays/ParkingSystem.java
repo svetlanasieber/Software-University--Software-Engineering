@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class _09_ParkingSystem {
+public class ParkingSystem {
 
     public static void main(String[] args) {
 
