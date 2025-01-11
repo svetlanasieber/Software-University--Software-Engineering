@@ -19,21 +19,21 @@ public class FindTheRealQueen {
 
     private static boolean isValidQueen(char[][] board, int row, int col) {
         return
-                // UP
+               
                 traverseDirection(board, row, col, -1, 0)
-                // DOWN
+              
                 &&  traverseDirection(board, row, col, +1, 0)
-                // LEFT
+               
                         && traverseDirection(board, row, col, 0, -1)
-                // RIGHT
+               
                         && traverseDirection(board, row, col, 0, +1)
-                // UP-LEFT
+                
                         && traverseDirection(board, row, col, -1, -1)
-                // UP-RIGHT
+              
                         && traverseDirection(board, row, col, -1, +1)
-                // DOWN-RIGHT
+               
                         && traverseDirection(board, row, col, +1, +1)
-                // DOWN-LEFT
+                
                         && traverseDirection(board, row, col, +1, -1);
     }
 
