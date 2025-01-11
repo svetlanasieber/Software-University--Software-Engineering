@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class _10_LogsAggregator {
+public class LogsAggregator {
 
     public static void main(String[] args) {
 
