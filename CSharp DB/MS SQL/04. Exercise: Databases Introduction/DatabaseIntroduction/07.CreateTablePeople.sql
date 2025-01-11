@@ -1,14 +1,3 @@
-----Using SQL query create table People with columns:
---•	Id – unique number for every person there will be no more than 231-1 people. (Auto incremented)
---•	Name – full name of the person will be no more than 200 Unicode characters. (Not null)
---•	Picture – image with size up to 2 MB. (Allow nulls)
---•	Height –  In meters. Real number precise up to 2 digits after floating point. (Allow nulls)
---•	Weight –  In kilograms. Real number precise up to 2 digits after floating point. (Allow nulls)
---•	Gender – Possible states are m or f. (Not null)
---•	Birthdate – (Not null)
---•	Biography – detailed biography of the person it can contain max allowed Unicode characters. (Allow nulls)
---Make Id primary key. Populate the table with only 5 records. Submit your CREATE and INSERT statements as Run queries & check DB.
-
 
 CREATE DATABASE People
 
