@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class _02_SetsOfElements {
+public class SetsOfElements {
 
     public static void main(String[] args) {
 
@@ -26,10 +26,7 @@ public class _02_SetsOfElements {
             secondSet.add(number);
         }
 
-        // Начин 1:
-        // firstSet.retainAll(secondSet);
 
-        // Начин 2:
         for (int number : firstSet) {
             if (secondSet.contains(number)) {
                 System.out.print(number + " ");
