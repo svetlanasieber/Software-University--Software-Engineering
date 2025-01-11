@@ -23,8 +23,7 @@ public class AcademyGraduation {
 
         }
 
-        // Some tests in judge are failing, however the solution is correct,
-        // the tests precision needs to be improved
+       
         gradesByStudents.forEach((name, grade)
                 -> System.out.printf("%s is graduated with %s%n", name, grade));
 
