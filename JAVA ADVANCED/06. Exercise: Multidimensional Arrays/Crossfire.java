@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class _07_Crossfire {
+public class Crossfire {
 
     public static void main(String[] args) {
 
@@ -34,14 +34,14 @@ public class _07_Crossfire {
 
     private static void destroyArea(List<List<Integer>> field, int targetRow, int targetCol, int radius) {
 
-        // Премахваме хоризонтално
+     
         for (int col = targetCol - radius; col <= targetCol + radius; col++) {
             if (isInside(field, targetRow, col)) {
                 field.get(targetRow).set(col, 0);
             }
         }
 
-        // Премахваме вертиикално
+      
         for (int row = targetRow - radius; row <= targetRow + radius; row++) {
             if (isInside(field, row, targetCol)) {
                 field.get(row).set(targetCol, 0);
