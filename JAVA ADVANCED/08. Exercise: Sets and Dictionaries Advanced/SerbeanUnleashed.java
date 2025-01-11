@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class _12_SerbeanUnleashed {
+public class SerbeanUnleashed {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -11,7 +11,7 @@ public class _12_SerbeanUnleashed {
 
         while (!input.equals("End")) {
 
-            //Lepa Brena @Sunny Beach 25 3500
+           
             if (!input.contains("@") || input.charAt(input.indexOf("@") - 1) != ' ') {
                 input = scanner.nextLine();
                 continue;
@@ -19,7 +19,7 @@ public class _12_SerbeanUnleashed {
 
             String singer = input.substring(0, input.indexOf("@") - 1);
             int firstIndexOfNumber = 0;
-            //@Sunny Beach 25
+          
             for (int i = input.indexOf("@"); i < input.length(); i++) {
                 char currentSymbol = input.charAt(i);
                 if (Character.isDigit(currentSymbol) && input.charAt(i - 1) == ' ') {
@@ -43,7 +43,7 @@ public class _12_SerbeanUnleashed {
             int price = Integer.parseInt(numbersArray[0]);
             int capacity = Integer.parseInt(numbersArray[1]);
 
-            //venue -> {singer -> price}
+       
 
             if (!concerts.containsKey(venue)) {
                 LinkedHashMap<String, Integer> singers = new LinkedHashMap<>();
