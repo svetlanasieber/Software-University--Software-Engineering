@@ -20,19 +20,19 @@ public class WrongMeasurements {
                 if (matrix[r][c] == wrongValue) {
                     int correctValue = 0;
 
-                    // UP
+                
                     if (isInBounds(matrix, r - 1, c) && matrix[r - 1][c] != wrongValue) {
                         correctValue += matrix[r - 1][c];
                     }
-                    // LEFT
+                   
                     if (isInBounds(matrix, r, c - 1) && matrix[r][c - 1] != wrongValue) {
                         correctValue += matrix[r][c - 1];
                     }
-                    // DOWN
+                   
                     if (isInBounds(matrix, r + 1, c) && matrix[r + 1][c] != wrongValue) {
                         correctValue += matrix[r + 1][c];
                     }
-                    // RIGHT
+                   
                     if (isInBounds(matrix, r, c + 1) && matrix[r][c + 1] != wrongValue) {
                         correctValue += matrix[r][c + 1];
                     }
