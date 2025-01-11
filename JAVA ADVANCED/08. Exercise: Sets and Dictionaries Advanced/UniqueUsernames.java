@@ -2,7 +2,7 @@ import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class _01_UniqueUsernames {
+public class UniqueUsernames {
 
     public static void main(String[] args) {
 
