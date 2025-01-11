@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class _08_TheHeiganDance {
+public class TheHeiganDance {
 
     public static void main(String[] args) {
 
