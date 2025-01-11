@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class _09_PopulationCounter {
+public class PopulationCounter {
 
     public static void main(String[] args) {
 
