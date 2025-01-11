@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class _11_LegendaryFarming {
+public class LegendaryFarming {
 
     public static void main(String[] args) {
 
