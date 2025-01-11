@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class _07_HandsOfCards {
+public class HandsOfCards {
 
     public static void main(String[] args) {
 
@@ -11,21 +11,19 @@ public class _07_HandsOfCards {
         String input = scanner.nextLine();
         while (!input.equals("JOKER")) {
 
-            //Peter: 2C, 4H, 9H, AS, QS
+           
             String name = input.split(": ")[0];
-            String[] cards = input.split(": ")[1].split(", "); // ["2C", "4H", "9H", "AS", "QS"]
-
-            // 1. Имам ли информация за тесте с карти за това име
-            // Ако имам:
+            String[] cards = input.split(": ")[1].split(", "); 
+         
             if (playerCards.containsKey(name)) {
-                // -> Вземам досегаяшното тесте с карти и към него добавям тези, които сега е изтеглил
+
                 playerCards.get(name).addAll(List.of(cards));
             }
-            // Ако нямам:
+            
             else {
-                // -> Нов запис за този играч с празно тесте от карти
+            
                 playerCards.put(name, new HashSet<>());
-                // -> Към това празно тест добавям тези, които сега е изтеглил
+              
                 playerCards.get(name).addAll(List.of(cards));
             }
             input = scanner.nextLine();
@@ -46,15 +44,14 @@ public class _07_HandsOfCards {
 
         int sum = 0;
         for (String card : cards) {
-            // PT
-            // value = power * type
+          
             int cardValue;
             if (card.startsWith("10")) {
-                // 10H
+             
                 char cardType = card.charAt(2);
                 cardValue = 10 * getNumberBySymbol(cardType);
             } else {
-                // 3H
+               
                 char cardPower = card.charAt(0);
                 char cardType = card.charAt(1);
                 cardValue = getNumberBySymbol(cardPower) * getNumberBySymbol(cardType);
