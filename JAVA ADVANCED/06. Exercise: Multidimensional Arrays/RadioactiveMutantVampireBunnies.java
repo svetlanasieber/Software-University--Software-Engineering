@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class _10_RadioactiveMutantVampireBunnies {
+public class RadioactiveMutantVampireBunnies {
 
     public static void main(String[] args) {
 
@@ -36,7 +36,7 @@ public class _10_RadioactiveMutantVampireBunnies {
         for (int i = 0; i < commands.length; i++) {
             String cmd = commands[i];
 
-            // move player
+           
             if (cmd.equals("U")) {
                 if (playerRow - 1 < 0) { // wins
                     hasWon = true;
@@ -102,7 +102,7 @@ public class _10_RadioactiveMutantVampireBunnies {
             }
 
 
-            //bunnies multiply
+            
             for (int row = 0; row < matrix.length; row++) {
                 for (int col = 0; col < matrix[row].length; col++) {
                     if (matrix[row][col].equals("B")) {
@@ -115,7 +115,7 @@ public class _10_RadioactiveMutantVampireBunnies {
                                 matrix[row - 1][col] = "Bn";
                             }
                         }
-                        //DOWN
+                       
                         if (row + 1 < matrix.length) {
                             if (matrix[row + 1][col].equals("P")) {
                                 isDead = true;
@@ -124,7 +124,7 @@ public class _10_RadioactiveMutantVampireBunnies {
                                 matrix[row + 1][col] = "Bn";
                             }
                         }
-                        //LEFT
+                       
                         if (col - 1 >= 0) {
                             if (matrix[row][col - 1].equals("P")) {
                                 isDead = true;
@@ -133,7 +133,7 @@ public class _10_RadioactiveMutantVampireBunnies {
                                 matrix[row][col - 1] = "Bn";
                             }
                         }
-                        //RIGHT
+                       
                         if (col + 1 < matrix[row].length) {
                             if (matrix[row][col + 1].equals("P")) {
                                 isDead = true;
