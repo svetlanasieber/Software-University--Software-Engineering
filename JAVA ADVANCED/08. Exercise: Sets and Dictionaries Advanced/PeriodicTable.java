@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class _03_PeriodicTable {
+public class PeriodicTable {
 
     public static void main(String[] args) {
 
@@ -11,9 +11,8 @@ public class _03_PeriodicTable {
         Set<String> chemicalElements = new TreeSet<>();
 
         for (int i = 0; i < n; i++) {
-            //"Mo O Ce"
             String compound = scanner.nextLine();
-            // ["Mo", "O", "Ce"]
+          
             String[] elements = compound.split(" ");
             chemicalElements.addAll(List.of(elements));
         }
