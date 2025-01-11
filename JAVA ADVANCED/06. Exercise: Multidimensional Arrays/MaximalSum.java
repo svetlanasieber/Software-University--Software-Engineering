@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class _04_MaximalSum {
+public class MaximalSum {
 
     public static void main(String[] args) {
 
