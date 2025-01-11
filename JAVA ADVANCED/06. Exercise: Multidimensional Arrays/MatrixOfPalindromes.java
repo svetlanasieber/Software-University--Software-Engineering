@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class _02_MatrixOfPalindromes {
+public class _MatrixOfPalindromes {
 
     public static void main(String[] args) {
 
@@ -11,10 +11,10 @@ public class _02_MatrixOfPalindromes {
 
         String[][] matrix = new String[rows][cols];
 
-        // 1. Метод, който попълва матрицата с палиндроми
+       
         fillMatrix(matrix);
 
-        // 2. Метод, който отпечатва матрицата
+       
         printMatrix(matrix);
     }
 
@@ -25,8 +25,7 @@ public class _02_MatrixOfPalindromes {
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
 
-                // 1ва и последна буква = 97 + ред
-                // средна буква = 97 + ред + колоната
+            
                 char firstLetter = (char) (asciiValueA + row);
                 char middleLetter = (char) (asciiValueA + row + col);
                 char lastLetter = (char) (asciiValueA + row);
