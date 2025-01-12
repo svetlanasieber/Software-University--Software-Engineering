@@ -1,24 +1,23 @@
-import java.util.Arrays;
-import java.util.List;
+package FunctionalProgramming;
+
 import java.util.Scanner;
 import java.util.function.Consumer;
 
 public class ConsumerPrint {
-
     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-
-        List<String> names = Arrays.stream(scanner.nextLine().split("\\s+")).toList();
-
-     
-        Consumer<String> consumer = name -> System.out.println(name);
-
-
       
-        names.forEach(consumer);
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine(); 
+        String[] names = input.split("\\s+"); 
 
+
+        Consumer<String[]> printArray = array -> {
+            for (String name : array) {
+                System.out.println(name);
+            }
+        };
        
-//        names.forEach(name -> System.out.println(name));
+        printArray.accept(names);
+
     }
 }
