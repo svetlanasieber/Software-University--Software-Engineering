@@ -12,14 +12,14 @@ public class Ages {
             System.out.println("baby");
         }
 
-        if (ages >= 3 && ages <= 13) {
+        else if (ages >= 3 && ages <= 13) {
             System.out.println("child");
         }
 
-        if (ages >= 14 && ages <= 19) {
+        else if (ages >= 14 && ages <= 19) {
             System.out.println("teenager");
         }
-        if (ages >= 20 && ages <= 65) {
+        else if (ages >= 20 && ages <= 65) {
             System.out.println("adult");
         }
         else if (ages >= 66) {
