@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class _09_ListOfPredicates {
+public class ListOfPredicates {
 
     public static void main(String[] args) {
 
@@ -18,7 +18,7 @@ public class _09_ListOfPredicates {
 
         List<Predicate<Integer>> predicates = new ArrayList<>();
         for (Integer divisor : divisors) {
-            // num -> num % divisor == 0
+        
             Predicate<Integer> predicate = num -> num % divisor == 0;
             predicates.add(predicate);
         }
