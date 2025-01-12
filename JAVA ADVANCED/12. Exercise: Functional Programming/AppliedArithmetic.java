@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class _04_AppliedArithmetic {
+public class AppliedArithmetic {
 
     public static void main(String[] args) {
 
