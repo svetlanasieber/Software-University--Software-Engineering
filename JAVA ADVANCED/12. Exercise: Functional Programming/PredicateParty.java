@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class _10_PredicateParty {
+public class PredicateParty {
 
     public static void main(String[] args) {
 
