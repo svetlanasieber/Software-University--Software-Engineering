@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class _11_ThePartyReservationFilterModule {
+public class ThePartyReservationFilterModule {
 
     public static void main(String[] args) {
 
