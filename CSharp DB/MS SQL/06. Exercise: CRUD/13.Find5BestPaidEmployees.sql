@@ -1,2 +1,2 @@
-SELECT [FirstName], [LastName] FROM Employees
-	WHERE [DepartmentID] != 4
+SELECT TOP(5) [FirstName], [LastName] FROM Employees
+	ORDER BY [Salary] DESC
