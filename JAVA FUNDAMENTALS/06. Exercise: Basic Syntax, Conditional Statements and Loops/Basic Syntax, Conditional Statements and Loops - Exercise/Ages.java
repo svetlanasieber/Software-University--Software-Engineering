@@ -6,7 +6,6 @@ public class Ages {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-
         int ages = Integer.parseInt(scanner.nextLine());
 
         if (ages >= 0 && ages <= 2) {
@@ -23,7 +22,7 @@ public class Ages {
         if (ages >= 20 && ages <= 65) {
             System.out.println("adult");
         }
-        if (ages >= 66) {
+        else if (ages >= 66) {
             System.out.println("elder");
         }
     }
