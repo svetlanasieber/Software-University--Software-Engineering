@@ -1,1 +1,2 @@
-SELECT [FirstName], [MiddleName], [LastName] FROM Employees
+SELECT  [FirstName], [LastName], [Salary] 
+	FROM [Employees
