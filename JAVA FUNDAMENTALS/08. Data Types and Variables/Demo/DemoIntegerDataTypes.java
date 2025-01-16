@@ -8,13 +8,13 @@ public class DemoIntegerDataTypes {
 
         //Integer Data Types
         //1. byte
-        byte number = 34;
+        byte number = Byte.parseByte(scanner.nextLine());
         //2. short
-        short price = 2354;
+        short price = Short.parseShort(scanner.nextLine());
         //3. int
-        int count = 3458763;
+        int count = Integer.parseInt(scanner.nextLine());
         //4. long
-        long population = 462746823;
+        long population = Long.parseLong(scanner.nextLine());
 
         //Max / Min Values
         System.out.println(Byte.MIN_VALUE);
