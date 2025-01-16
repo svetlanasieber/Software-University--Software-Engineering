@@ -1,30 +1,32 @@
-int number = int.Parse(Console.ReadLine());
+using System.Threading.Channels;
 
-switch (number)
+int dayOfWeek = int.Parse(Console.ReadLine());
+
+switch (dayOfWeek)
 {
     case 1:
         Console.WriteLine("Monday");
-        break; 
+        break;
     case 2:
         Console.WriteLine("Tuesday");
-        break; 
+        break;
     case 3:
         Console.WriteLine("Wednesday");
-        break; 
+        break;
     case 4:
         Console.WriteLine("Thursday");
-        break; 
+        break;
     case 5:
         Console.WriteLine("Friday");
-        break; 
+        break;
     case 6:
         Console.WriteLine("Saturday");
-        break; 
+        break;
     case 7:
         Console.WriteLine("Sunday");
-        break; 
+        break;
     default:
-      
         Console.WriteLine("Error");
-        break; 
+        
+        break;
 }
