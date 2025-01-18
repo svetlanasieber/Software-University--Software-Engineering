@@ -11,7 +11,6 @@ switch (dayOfWeek)
     case "Wednesday":
     case "Thursday":
     case "Friday":
- 
         output = "Working day";
         break;
     case "Saturday":
