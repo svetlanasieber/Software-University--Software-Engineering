@@ -1,4 +1,4 @@
-package _09_CatLady;
+package CatLady;
 
 public class Cymric extends Cat {
 
