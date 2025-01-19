@@ -1,4 +1,4 @@
-package _01_OpinionPoll;
+package OpinionPoll;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -24,7 +24,7 @@ public class Main {
         peopleList.sort(Comparator.comparing(person -> person.getName()));
 
         for (Person person : peopleList) {
-            //обект под формата на текст
+
             System.out.println(person.toString());
         }
     }
