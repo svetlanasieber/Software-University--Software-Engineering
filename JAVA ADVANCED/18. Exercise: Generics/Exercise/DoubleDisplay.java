@@ -1,6 +1,6 @@
-public class Display<E> {
+public class DoubleDisplay {
 
-    public void display(E first, E second, E third) {
+    public void display(double first, double second, double third) {
         System.out.print(first + " ");
         System.out.print(second + " ");
         System.out.print(third + " ");
