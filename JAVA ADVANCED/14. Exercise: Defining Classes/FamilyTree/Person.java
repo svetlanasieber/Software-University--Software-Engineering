@@ -1,4 +1,4 @@
-package _08_FamilyTree;
+package FamilyTree;
 
 import java.util.ArrayList;
 import java.util.List;
