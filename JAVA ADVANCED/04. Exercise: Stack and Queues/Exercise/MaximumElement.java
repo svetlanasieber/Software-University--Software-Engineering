@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class _03_MaximumElement {
+public class MaximumElement {
 
     public static void main(String[] args) {
 
@@ -14,19 +14,10 @@ public class _03_MaximumElement {
 
         for (int count = 1; count <= n; count++) {
 
-            //[1, X]
-            //[2]
-            //[3]
+   
             int[] input = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-            // НАЧИН 1:
-//            switch (input[0]) {
-//                case 1 -> stack.push(input[1]);
-//                case 2 -> stack.pop();
-//                case 3 -> System.out.println(Collections.max(stack));
-//            }
 
-            // НАЧИН 2:
             switch (input[0]) {
                 case 1:
                     stack.push(input[1]);
