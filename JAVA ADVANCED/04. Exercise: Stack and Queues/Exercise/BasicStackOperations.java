@@ -3,13 +3,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class _02_BasicStackOperations {
+public class BasicStackOperations {
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        //n-5 s-2 x-13
+     
         int[] input = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
         int n = input[0];
