@@ -2,7 +2,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class _FixEmails {
+public class FixEmails {
 
     public static void main(String[] args) {
 
