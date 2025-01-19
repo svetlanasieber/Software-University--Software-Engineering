@@ -1,4 +1,4 @@
-package _09_CatLady;
+package 09_CatLady;
 
 public class StreetExtraordinaire extends Cat {
 
