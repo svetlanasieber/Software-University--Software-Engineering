@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class _06_RecursiveFibonacci {
+public class RecursiveFibonacci {
 
     private static long[] fibonacciMemory;
 
@@ -18,7 +18,7 @@ public class _06_RecursiveFibonacci {
 
     private static long getFibonacci(int n) {
 
-        // Дъно
+      
         if (n <= 1) {
             return 1;
         } else {
