@@ -1,4 +1,4 @@
-package _05_CarSalesman;
+package CarSalesman;
 
 public class Engine {
 
@@ -19,10 +19,7 @@ public class Engine {
     }
 
     public String toString() {
-        //{EngineModel}:
-        //Power: {EnginePower}
-        //Displacement: {EngineDisplacement}
-        //Efficiency: {EngineEfficiency}
+
         StringBuilder sb = new StringBuilder();
         sb.append(this.model).append(":").append(System.lineSeparator());
         sb.append("Power: ").append(this.power).append(System.lineSeparator());
