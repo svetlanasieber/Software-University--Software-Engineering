@@ -1,4 +1,4 @@
-package _03_SpeedRacing;
+package SpeedRacing;
 
 public class Car {
 
@@ -29,7 +29,7 @@ public class Car {
         }
     }
 
-    // Този метод показва по какъв начин ще изглежда обект отт този клас във формата на Текст
+  
     public String toString() {
         //"{Model} {fuelAmount} {distanceTraveled}"
         return String.format("%s %.2f %d", this.model, this.fuel, this.distanceTraveled);
