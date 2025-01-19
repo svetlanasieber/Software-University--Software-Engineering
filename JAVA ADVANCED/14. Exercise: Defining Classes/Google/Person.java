@@ -1,4 +1,4 @@
-package _07_Google;
+package Google;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,18 +46,7 @@ public class Person {
     @Override
     public String toString() {
 
-        //GeorgeJohnson
-        //Company:
-        //JeleInc Jelior 777.77
-        //Car:
-        //AudiA4 180
-        //Pokemon:
-        //Onyx Rock
-        //Charizard Fire
-        //Parents:
-        //SaraJohnson 13/03/1933
-        //Children:
-        //SamJohnson 01/01/2001
+
 
         StringBuilder sb = new StringBuilder();
         sb.append(this.name).append(System.lineSeparator());
