@@ -29,9 +29,8 @@ public class Car {
         }
     }
 
-  
     public String toString() {
-        //"{Model} {fuelAmount} {distanceTraveled}"
+     
         return String.format("%s %.2f %d", this.model, this.fuel, this.distanceTraveled);
     }
 }
