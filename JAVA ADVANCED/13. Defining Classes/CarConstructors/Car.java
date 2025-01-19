@@ -1,5 +1,3 @@
-package _06_DefiningClasses._01_Lab._02_CarConstructors;
-
 public class Car {
     private String brand;
     private String model;
