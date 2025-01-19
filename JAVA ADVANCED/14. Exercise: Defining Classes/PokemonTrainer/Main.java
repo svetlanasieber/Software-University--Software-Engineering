@@ -1,4 +1,4 @@
-package _06_PokemonTrainer;
+package PokemonTrainer;
 
 import java.util.*;
 
@@ -14,7 +14,7 @@ public class Main {
         while (!input.equals("Tournament")) {
 
             String[] data = input.split(" ");
-            //Peter Pikachu Electricity 10
+       
             String trainerName = data[0];
             String pokemonName = data[1];
             String pokemonElement = data[2];
