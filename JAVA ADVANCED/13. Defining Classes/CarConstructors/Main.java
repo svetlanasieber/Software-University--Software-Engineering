@@ -1,5 +1,3 @@
-package _06_DefiningClasses._01_Lab._02_CarConstructors;
-
 import java.util.Scanner;
 
 public class Main {
