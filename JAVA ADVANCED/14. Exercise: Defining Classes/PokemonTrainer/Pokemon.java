@@ -1,4 +1,4 @@
-package _06_PokemonTrainer;
+package PokemonTrainer;
 
 public class Pokemon {
 
