@@ -1,5 +1,3 @@
-package _06_DefiningClasses._01_Lab._03_BankAccount;
-
 public class BankAccount {
     private static double interestRate = 0.02;
     private static int idCounter = 1;
