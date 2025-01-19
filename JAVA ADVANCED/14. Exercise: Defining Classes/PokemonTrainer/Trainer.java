@@ -1,4 +1,4 @@
-package _06_PokemonTrainer;
+package PokemonTrainer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +48,6 @@ public class Trainer {
     }
 
     public String toString() {
-        //"{TrainerName} {Badges} {NumberOfPokemon}"
         return String.format("%s %d %d", this.name, this.badges, this.pokemons.size());
     }
 }
