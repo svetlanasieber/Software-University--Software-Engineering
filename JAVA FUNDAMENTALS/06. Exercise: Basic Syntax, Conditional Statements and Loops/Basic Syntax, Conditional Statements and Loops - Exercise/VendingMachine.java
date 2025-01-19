@@ -6,77 +6,74 @@ public class VendingMachine {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        double balance = Double.parseDouble(scanner.nextLine());
-        String command = scanner.nextLine();
-        while (!command.equals("Start")) {
-            double coin = Double.parseDouble(command);
+        double sumCoins = 0;
+
+        String input = scanner.nextLine();
+        while (!input.equals("Start")) {
+
+            double coin = Double.parseDouble(input);
+
             if (coin == 0.1 || coin == 0.2 || coin == 0.5 || coin == 1 || coin == 2) {
-                balance += coin;
+
             } else {
-                System.out.printf("Cannot accept %.1f%n", coin);
+                System.out.printf("Cannot accept %.2f\n", coin);
             }
-            command = scanner.nextLine();
+
+            input = scanner.nextLine();
         }
 
-       
-        final double NUTS_PRICE = 2.0;
-        final double WATER_PRICE = 0.7;
-        final double CRISPS_PRICE = 1.5;
-        final double SODA_PRICE = 0.8;
-        final double COKE_PRICE = 1.0;
+        String product = scanner.nextLine();
+        while (!product.equals("End")) {
 
-       
-        command = scanner.nextLine();
-        while (!command.equals("End")) {
-            switch (command) {
-                case "Nuts" -> {
-                    if (balance >= NUTS_PRICE) {
-                        balance -= NUTS_PRICE;
-                        System.out.println("Purchased Nuts");
+            switch (product) {
+                case "Nuts":
+                    if (sumCoins >= 2.00) {
+                        System.out.println("Purchased " + product);
+                        sumCoins -= 2.00;
                     } else {
                         System.out.println("Sorry, not enough money");
                     }
-                }
-                case "Water" -> {
-                    if (balance >= WATER_PRICE) {
-                        balance -= WATER_PRICE;
-                        System.out.println("Purchased Water");
+                    break;
+                case "Water":
+                    if (sumCoins >= 0.70) {
+                        System.out.println("Purchased " + product);
+                        sumCoins -= 0.70;
                     } else {
                         System.out.println("Sorry, not enough money");
                     }
-                }
-                case "Crisps" -> {
-                    if (balance >= CRISPS_PRICE) {
-                        balance -= CRISPS_PRICE;
-                        System.out.println("Purchased Crisps");
+                    break;
+                case "Crisps":
+                    if (sumCoins >= 1.50) {
+                        System.out.println("Purchased " + product);
+                        sumCoins -= 1.50;
                     } else {
                         System.out.println("Sorry, not enough money");
                     }
-                }
-                case "Soda" -> {
-                    if (balance >= SODA_PRICE) {
-                        balance -= SODA_PRICE;
-                        System.out.println("Purchased Soda");
+                    break;
+                case "Soda":
+                    if (sumCoins >= 0.80) {
+                        System.out.println("Purchased " + product);
+                        sumCoins -= 0.80;
                     } else {
                         System.out.println("Sorry, not enough money");
                     }
-                }
-                case "Coke" -> {
-                    if (balance >= COKE_PRICE) {
-                        balance -= COKE_PRICE;
-                        System.out.println("Purchased Coke");
+                    break;
+                case "Coke":
+                    if (sumCoins >= 1.00) {
+                        System.out.println("Purchased " + product);
+                        sumCoins -= 1.00;
                     } else {
                         System.out.println("Sorry, not enough money");
                     }
-                }
-                default -> System.out.println("Invalid product");
+                    break;
+                default:
+                    System.out.println("Invalid product");
+                    break;
             }
-            command = scanner.nextLine();
+            product = scanner.nextLine();
         }
 
-        System.out.printf("Change: %.2f%n", balance);
-        scanner.close();
-
-
+        System.out.printf("Change: %.2f", sumCoins);
     }
 }
+
