@@ -3,7 +3,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class _10_Robotics {
+public class Robotics {
 
     public static void main(String[] args) {
 
