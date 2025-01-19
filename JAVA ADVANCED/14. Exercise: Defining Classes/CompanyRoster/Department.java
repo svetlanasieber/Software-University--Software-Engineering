@@ -1,15 +1,15 @@
-package _02_CompanyRoster;
+package CompanyRoster;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Department {
 
-    // 1. Fields
+
     private String name;
     private List<Employee> employees;
 
-    // 2. Constructor
+    
     public Department(String name) {
         this.name = name;
         this.employees = new ArrayList<>();
@@ -37,11 +37,6 @@ public class Department {
 
     public String toString() {
 
-        //Highest Average Salary: {department}
-        //{name1} {salary1} {email1} {age1}
-        //{name2} {salary2} {email2} {age2}
-        //…
-        //{namen} {salaryn} {emailn} {agen}
         StringBuilder sb = new StringBuilder();
         sb.append("Highest Average Salary: ").append(this.name).append(System.lineSeparator());
         for (Employee employee : this.employees) {
