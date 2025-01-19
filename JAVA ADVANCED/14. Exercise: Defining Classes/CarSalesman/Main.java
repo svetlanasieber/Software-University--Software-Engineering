@@ -1,4 +1,4 @@
-package _05_CarSalesman;
+package CarSalesman;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,7 @@ public class Main {
         int n = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < n; i++) {
             String engineInfo = scanner.nextLine();
-            String[] engineDate = engineInfo.split(" ");
-            //V4-33 140 28 B
+            String[] engineDate = engineInfo.split(" ");  
             String model = engineDate[0];
             String power = engineDate[1];
             String displacement = "n/a";
@@ -26,8 +25,6 @@ public class Main {
                 displacement = engineDate[2];
                 efficiency = engineDate[3];
             } else if (engineDate.length == 3) {
-                //V4-33 140 28
-                //V4-33 140 E
                 if (Character.isDigit(engineDate[2].charAt(0))) {
                     displacement = engineDate[2];
                 } else {
@@ -41,7 +38,7 @@ public class Main {
         int m = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < m; i++) {
 
-            //{Model} {Engine} {Weight} {Color}
+           
             String carInfo = scanner.nextLine();
             String[] carData = carInfo.split(" ");
             String carModel = carData[0];
