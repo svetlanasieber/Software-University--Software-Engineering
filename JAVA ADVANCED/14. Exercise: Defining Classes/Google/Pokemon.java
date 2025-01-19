@@ -1,4 +1,4 @@
-package _07_Google;
+package Google;
 
 public class Pokemon {
 
