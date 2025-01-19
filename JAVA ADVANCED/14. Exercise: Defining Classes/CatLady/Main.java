@@ -1,4 +1,4 @@
-package _09_CatLady;
+package CatLady;
 
 import java.util.*;
 
