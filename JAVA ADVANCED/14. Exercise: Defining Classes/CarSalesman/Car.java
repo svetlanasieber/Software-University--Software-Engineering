@@ -1,4 +1,4 @@
-package _05_CarSalesman;
+package CarSalesman;
 
 public class Car {
 
@@ -16,13 +16,6 @@ public class Car {
 
     public String toString() {
 
-        //{CarModel}:
-        //{EngineModel}:
-        //Power: {EnginePower}
-        //Displacement: {EngineDisplacement}
-        //Efficiency: {EngineEfficiency}
-        //Weight: {CarWeight}
-        //Color: {CarColor}
         StringBuilder sb = new StringBuilder();
         sb.append(this.model).append(":").append(System.lineSeparator());
         sb.append(this.engine.toString()).append(System.lineSeparator());
