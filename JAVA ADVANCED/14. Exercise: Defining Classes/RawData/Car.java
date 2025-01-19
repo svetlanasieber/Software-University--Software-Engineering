@@ -1,4 +1,4 @@
-package _04_RawData;
+package RawData;
 
 import java.util.List;
 
