@@ -1,4 +1,4 @@
-package _02_CompanyRoster;
+package CompanyRoster;
 
 import java.util.*;
 
@@ -13,8 +13,7 @@ public class Main {
         int n = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < n; i++) {
             String employeeInfo = scanner.nextLine();
-            String[] employeeData = employeeInfo.split("\\s+");
-            //Peter 120.00 Dev Development peter@abv.bg 28
+            String[] employeeData = employeeInfo.split("\\s+");  
             String name = employeeData[0];
             double salary = Double.parseDouble(employeeData[1]);
             String position = employeeData[2];
@@ -25,8 +24,6 @@ public class Main {
                 email = employeeData[4];
                 age = Integer.parseInt(employeeData[5]);
             } else if (employeeData.length == 5) {
-                //Tina 333.33 Manager Marketing 33
-                //Sam 840.20 ProjectLeader Development sam@sam.com
                 if (employeeData[4].contains("@")) {
                     email = employeeData[4];
                 } else {
