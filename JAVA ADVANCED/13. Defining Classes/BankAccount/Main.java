@@ -1,5 +1,3 @@
-package _06_DefiningClasses._01_Lab._03_BankAccount;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
