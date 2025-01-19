@@ -1,4 +1,4 @@
-package _03_SpeedRacing;
+package SpeedRacing;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class Main {
 
         int n = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < n; i++) {
-            //AudiA4 23 0.3
+       
             String carInfo = scanner.nextLine();
             String[] carData = carInfo.split(" ");
             String model = carData[0];
@@ -26,7 +26,7 @@ public class Main {
 
         String input = scanner.nextLine();
         while (!input.equals("End")) {
-            //Drive AudiA4 5
+        
             String model = input.split(" ")[1];
             int kmToDrive = Integer.parseInt(input.split(" ")[2]);
             Car car = getCarByModel(cars, model);
@@ -35,7 +35,7 @@ public class Main {
         }
 
         for (Car car : cars) {
-            // Автоматиично ще се извика метода .toString()
+           
             System.out.println(car);
         }
     }
