@@ -23,12 +23,12 @@ public class Main {
 
             int[] jediCoordinates = Arrays.stream(command.split(" ")).mapToInt(Integer::parseInt).toArray();
             int[] evilCoordinates = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-            // Кординати на лошият човек
+         
             int evilRow = evilCoordinates[0];
             int evilCol = evilCoordinates[1];
             moveEvilPlayer(evilRow, evilCol, matrix);
             
-            // Кординати да джедая
+          
             int jediRow = jediCoordinates[0];
             int jediCol = jediCoordinates[1];
             totalStars = moveJediPlayerAndCollectStars(jediRow, jediCol, matrix, totalStars);
