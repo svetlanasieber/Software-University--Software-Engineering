@@ -1,5 +1,3 @@
-package cards3;
-
 public enum CardRank {
 
     ACE(14),
