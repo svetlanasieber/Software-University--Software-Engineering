@@ -9,7 +9,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        //GREEN RED YELLOW
+ 
         Light[] lights = Arrays.stream(scanner.nextLine().split("\\s+"))
                 .map(light -> Light.valueOf(light))
                 .toArray(Light[]::new);
@@ -17,9 +17,9 @@ public class Main {
         int numberOfUpdates = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < numberOfUpdates; i++) {
-            // Update the lights
+          
             updateLights(lights);
-            // Print the light
+           
             printLights(lights);
         }
     }
@@ -34,17 +34,7 @@ public class Main {
 
     private static void updateLights(Light[] lights) {
 
-        //red -> green -> yellow -> red
-        // Light light -> променливата е копие на реална стойност в тази структура от данни
-        // ако се опитаме да променим това копие, то НЯМА да се промени самата стойност в структурата от данни
-//        for (Light light : lights) {
-//            switch (light){
-//                case RED -> light = Light.GREEN;
-//                case GREEN -> light = Light.YELLOW;
-//                case YELLOW -> light = Light.RED;
-//            }
-//            System.out.println();
-//        }
+
 
         for (int index = 0; index < lights.length; index++) {
             switch (lights[index]) {
