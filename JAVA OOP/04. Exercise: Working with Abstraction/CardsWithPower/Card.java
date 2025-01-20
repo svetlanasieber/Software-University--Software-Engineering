@@ -1,15 +1,19 @@
-package cards3;
+package CardWithPower;
 
 public class Card {
 
-    // силата на картата = силата на боята + силата на ранка
-    private int power;
+    private CardSuits cardSuit;
+    private CardRanks cardRank;
 
-    public Card(int power) {
-        this.power = power;
+
+    public Card(CardSuits cardSuit, CardRanks cardRank) {
+
+        this.cardSuit = cardSuit;
+        this.cardRank = cardRank;
     }
 
-    public int getPower() {
-        return this.power;
+    public int calculatePower() {
+        return this.cardSuit.getValue() + this.cardRank.getValue();
     }
+
 }
