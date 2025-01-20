@@ -1,10 +1,10 @@
 package CardWithPower;
 
 public enum CardSuits {
-    CLUBS(0), //пика
-    DIAMONDS(13), //каро
-    HEARTS(26), //купа
-    SPADES(39);//спатия
+    CLUBS(0), 
+    DIAMONDS(13), 
+    HEARTS(26), 
+    SPADES(39);
 
     private int value;
 
