@@ -1,4 +1,4 @@
-# Software Development Engineering in Test (SDET) - Software Engineering & QA Automation Engineering
+# Software Development Engineering in Test (SDET): Software Engineering & QA Automation Engineering
 # Software University (softuni.bg)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
