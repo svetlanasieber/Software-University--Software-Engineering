@@ -1,4 +1,4 @@
-# Software Engineering Path - Software University (softuni.bg)
+# Software Development Engineer in Test (SDET) - Software University (softuni.bg)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
