@@ -1,19 +1,24 @@
-using System.Linq.Expressions;
-using System.Runtime.ExceptionServices;
+using System;
+using System.Linq;
 
-int[] array1 = Console.ReadLine()
-                      .Split(' ')
-                      .Select(int.Parse)
-                      .ToArray();
-
-
-int[] array2 = Console.ReadLine()
-                      .Split(' ')
-                      .Select(int.Parse)
-                      .ToArray();
-
-foreach (int element in array1)
+class Program
 {
-    if (array2.Contains(element))
-        Console.Write(element + " ");
+    static void Main()
+    {
+        
+        int[] firstArray = Console.ReadLine()
+                                  .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                                  .Select(int.Parse)
+                                  .ToArray();
+
+       
+        int[] secondArray = Console.ReadLine()
+                                   .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                                   .Select(int.Parse)
+                                   .ToArray();
+
+       
+        int[] commonElements = firstArray.Intersect(secondArray).ToArray();
+        Console.WriteLine(string.Join(" ", commonElements));
+    }
 }
