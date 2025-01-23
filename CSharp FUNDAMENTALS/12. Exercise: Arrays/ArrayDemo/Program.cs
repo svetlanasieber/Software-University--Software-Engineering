@@ -13,11 +13,20 @@
 
  Console.WriteLine("--------------------------------------");
  //Reverse reading
- for (int i = numbers.Length; i >= 0; i--)
+ // Type 1
+ //for (int i = numbers.Length - 1; i >= 0; i--)
+ //{
+ //    int currNum = numbers[i];
+ //    Console.WriteLine($"Index {i} -> {currNum}");
+ //}
+ 
+ //2. Type 2
+ for (int i = 0; i < numbers.Length; i++)
  {
-     int currNum = numbers[i];
-     Console.WriteLine($"Index {i} -> {currNum}");
+     int currNum = numbers[numbers.Length - i - 1];
+     Console.WriteLine($"Index {numbers.Length -i - 1} -> {currNum}");
  }
+ 
  Console.WriteLine("--------------------------------------");
  
  //Benefit -> Less code, easy to use, no indexes
