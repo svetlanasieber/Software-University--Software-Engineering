@@ -24,7 +24,7 @@
  for (int i = 0; i < numbers.Length; i++)
  {
      int currNum = numbers[numbers.Length - i - 1];
-     Console.WriteLine($"Index {numbers.Length -i - 1} -> {currNum}");
+     Console.WriteLine($"Index {numbers.Length - i - 1} -> {currNum}");
  }
  
  Console.WriteLine("--------------------------------------");
