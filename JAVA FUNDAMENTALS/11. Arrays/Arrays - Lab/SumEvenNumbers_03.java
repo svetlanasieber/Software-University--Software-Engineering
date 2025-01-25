@@ -1,4 +1,4 @@
-package Others_Tasks;
+package Lab11_Arrays;
 
 import java.util.Arrays;
 import java.util.Scanner;
