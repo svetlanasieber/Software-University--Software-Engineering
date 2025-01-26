@@ -19,4 +19,3 @@ public class PrintNumReverse_02 {
         }
     }
 }
-
