@@ -10,9 +10,6 @@ public class ReverseArrayOfStrings_04 {
 
         for (int position = texts.length - 1; position >= 0; position--) {
             System.out.print(texts[position] + " ");
-
-
         }
     }
 }
-
