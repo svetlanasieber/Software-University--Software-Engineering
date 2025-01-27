@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/nav-side-bar.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/home-common.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+  <title>Home</title>
+</head>
+<body>
+<nav>
+
+</nav>
+<main>
+  <div class="nav-bar" th:insert="~{fragments/common/navigation-bar :: navigation-bar ('dashboard')}"></div>
+  <div class="home-section">
+    <div class="single-section-box home-profile-information">
+      <div class="profile-header">
+        <img th:src="${#strings.isEmpty(user.profilePicture) ? 'https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-07-512.png' : user.profilePicture}"
+            alt="Profile Picture" class="profile-avatar">
+        <h2 class="profile-name"
+            th:text="${#strings.isEmpty(user.firstName)} ? ${user.username} : ${user.firstName} + ' ' + ${user.lastName}"></h2>
+        <div class="profile-status-role-container">
+          <p th:text="${user.active} ? ACTIVE : INACTIVE"
+             th:classappend="${user.active} ? 'active-profile' : 'inactive-profile'">ACTIVE</p>
+        </div>
+        <div class="details-section">
+          <div class="details-section-container">
+            <strong>User id: </strong>
+            <p th:text="${user.id}">[user id]</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-info">
+        <div class="details-section-container">
+          <strong>Username: </strong>
+          <p th:text="${user.username}">Your username here</p>
+        </div>
+        <div class="details-section-container">
+          <strong>Email: </strong>
+          <p th:text="${#strings.isEmpty(user.email)} ? 'Edit profile and add email' : ${user.email}">Email address</p>
+        </div>
+        <div class="details-section-container">
+          <strong>Joined: </strong>
+          <p th:text="${#temporals.format(user.createdOn, 'dd MMM yyyy HH:mm')}">Profile created on date</p>
+        </div>
+        <div class="details-section-container">
+          <strong>Country: </strong>
+          <p th:text="${#strings.capitalize(#strings.toLowerCase(user.country))}">Your country</p>
+        </div>
+      </div>
+      <a th:href="@{/users/profile}" class="profile-actions-button">
+        <p>Edit Profile</p>
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M16 4h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="single-section-box home-standard-wallet">
+      <div class="default-label-box">
+        <p>Standard Wallet</p>
+        <p th:text="${user.wallets[0].status}"
+           th:classappend="${user.wallets[0].status == T(app.wallet.model.WalletStatus).ACTIVE} ? 'active-wallet-status' : 'inactive-wallet-status'">STATUS</p>
+      </div>
+      <div class="wallet-balance">
+        <p class="balance" th:text="${#numbers.formatDecimal(user.wallets[0].balance, 1, 'COMMA', 2, 'POINT') + ' ' + user.wallets[0].currency}"></p>
+        <p class="available-balance-text">Available Balance</p>
+      </div>
+
+      <a class="profile-actions-button" th:href="@{/wallets}" th:classappend="${clickedButton == 'dashboard'} ? 'active' : ''">
+        <p>Open Wallets</p>
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd"
+                d="M12 14a3 3 0 0 1 3-3h4a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-4a3 3 0 0 1-3-3Zm3-1a1 1 0 1 0 0 2h4v-2h-4Z"
+                clip-rule="evenodd"/>
+          <path fill-rule="evenodd"
+                d="M12.293 3.293a1 1 0 0 1 1.414 0L16.414 6h-2.828l-1.293-1.293a1 1 0 0 1 0-1.414ZM12.414 6 9.707 3.293a1 1 0 0 0-1.414 0L5.586 6h6.828ZM4.586 7l-.056.055A2 2 0 0 0 3 9v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2h-4a5 5 0 0 1 0-10h4a2 2 0 0 0-1.53-1.945L17.414 7H4.586Z"
+                clip-rule="evenodd"/>
+        </svg>
+      </a>
+
+      <div class="details-section">
+        <div class="details-section-container">
+          <strong>Wallet id: </strong>
+          <p th:text="${user.wallets[0].id}">Wallet id</p>
+        </div>
+        <div class="details-section-container">
+          <strong>Last transaction on: </strong>
+          <p th:text="${#temporals.format(user.wallets[0].updatedOn, 'dd MMM yyyy HH:mm')}">Wallet is created on</p>
+        </div>
+      </div>
+    </div>
+    <div class="single-section-box home-subscription">
+      <div class="default-label-box">
+        <p th:text="${#strings.toUpperCase(user.subscriptions.get(0).type + ' SUBSCRIPTION')}">[Mock subscription text]</p>
+      </div>
+      <table class="styled-table">
+        <thead>
+        <tr>
+          <th>Status</th>
+          <th>Period</th>
+          <th>Price</th>
+          <th>Renewal</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th:block th:switch="${user.subscriptions.get(0).status.toString()}">
+            <td th:case="'ACTIVE'"><span class="status active" th:text="'ACTIVE'"></span></td>
+            <td th:case="'COMPLETED'"><span class="status completed" th:text="'COMPLETED'"></span></td>
+            <td th:case="'TERMINATED'"><span class="status terminated" th:text="'TERMINATED'"></span></td>
+          </th:block>
+          <td th:text="${#strings.capitalize(#strings.toLowerCase(user.subscriptions.get(0).period))}">YEARLY</td>
+          <td th:text="${#numbers.formatDecimal(user.subscriptions.get(0).price, 1, 'COMMA', 2, 'POINT') + ' ' + user.wallets[0].currency}">0.00 USD</td>
+          <td th:text="${user.subscriptions.get(0).renewalAllowed ? 'Automatic' : 'Manual'}">Automatic</td>
+        </tr>
+        </tbody>
+      </table>
+      <a class="profile-actions-button" th:href="@{/subscriptions}">
+        <p>Change</p>
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd"
+                d="M20.337 3.664c.213.212.354.486.404.782.294 1.711.657 5.195-.906 6.76-1.77 1.768-8.485 5.517-10.611 6.683a.987.987 0 0 1-1.176-.173l-.882-.88-.877-.884a.988.988 0 0 1-.173-1.177c1.165-2.126 4.913-8.841 6.682-10.611 1.562-1.563 5.046-1.198 6.757-.904.296.05.57.191.782.404ZM5.407 7.576l4-.341-2.69 4.48-2.857-.334a.996.996 0 0 1-.565-1.694l2.112-2.111Zm11.357 7.02-.34 4-2.111 2.113a.996.996 0 0 1-1.69-.565l-.422-2.807 4.563-2.74Zm.84-6.21a1.99 1.99 0 1 1-3.98 0 1.99 1.99 0 0 1 3.98 0Z"
+                clip-rule="evenodd"/>
+        </svg>
+      </a>
+      <div class="details-section">
+        <div class="details-section-container">
+          <strong>Subscription id: </strong>
+          <p th:text="${user.subscriptions.get(0).id}">subscription id</p>
+        </div>
+        <div class="details-section-container">
+          <strong>Subscribe until: </strong>
+          <p th:text="${#temporals.format(user.subscriptions.get(0).completedOn, 'dd MMM yyyy HH:mm')}">date that subscription will be completed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="footer" th:insert="~{fragments/common/footer :: footer}"></div>
+</body>
+</html>

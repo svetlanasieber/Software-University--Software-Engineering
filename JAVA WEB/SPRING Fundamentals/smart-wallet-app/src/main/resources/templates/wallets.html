@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/nav-side-bar.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/home-common.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/wallets.css}">
+  <title>Wallets</title>
+  <style>
+  </style>
+</head>
+<body>
+<nav>
+
+</nav>
+<main>
+  <div class="nav-bar" th:insert="~{fragments/common/navigation-bar :: navigation-bar ('wallets')}"></div>
+  <div class="home-section">
+    <th:block th:each="wallet : ${user.wallets}">
+      <div class="wallet-block">
+        <div class="default-label-box">
+          <p>Standard Wallet</p>
+          <p th:text="${wallet.status}"
+             th:classappend="${wallet.status == T(app.wallet.model.WalletStatus).ACTIVE} ? 'active-wallet-status' : 'inactive-wallet-status'">
+            [wallet status]</p>
+        </div>
+
+        <div class="wallet-balance">
+          <p class="balance"
+             th:text="${#numbers.formatDecimal(wallet.balance, 1, 'COMMA', 2, 'POINT') + ' ' + wallet.currency}"></p>
+          <p class="available-balance-text">Available Balance</p>
+        </div>
+
+        <div class="wallet-actions">
+          <form th:action="@{'/wallets/' + ${wallet.id} + '/balance?top-up-amount=20.00'}" th:method="PUT">
+            <button type="submit" class="profile-actions-button">
+              <p>20.00</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up"
+                   viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+              </svg>
+            </button>
+          </form>
+          <form th:action="@{'/wallets/' + ${wallet.id}}" th:method="PUT">
+            <button type="submit" class="profile-actions-button">
+              <p>Switch</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-toggle-on"
+                   viewBox="0 0 16 16">
+                <path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <div class="details-section">
+          <div class="details-section-container">
+            <strong>Id: </strong>
+            <p th:text="${wallet.id}">Wallet id</p>
+          </div>
+          <div class="details-section-container">
+            <strong>Created on: </strong>
+            <p th:text="${#temporals.format(wallet.createdOn, 'dd MMM yyyy HH:mm')}">Wallet is created on</p>
+          </div>
+        </div>
+
+        <div class="wallet-activity">
+          <th:block th:each="transaction : ${lastFourTransactions[wallet.id]}">
+            <div class="activity-entry">
+              <svg th:if="${transaction.type.name == 'DEPOSIT'}" xmlns="http://www.w3.org/2000/svg" width="18"
+                   height="18" fill="currentColor" class="bi bi-arrow-up amount-in"
+                   viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+              </svg>
+              <svg th:unless="${transaction.type.name == 'DEPOSIT'}" xmlns="http://www.w3.org/2000/svg" width="18"
+                   height="18" fill="currentColor"
+                   class="bi bi-arrow-down amount-out" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+              </svg>
+              <div class="activity-entry-description-and-date">
+                <p th:text="${transaction.description}" class="activity-entry-description">[some description]</p>
+                <p th:text="${#temporals.format(transaction.createdOn, 'dd MMM yyyy HH:mm')}"
+                   class="activity-entry-date">[transaction created on]</p>
+              </div>
+              <p th:classappend="${transaction.type.name == 'DEPOSIT' ? 'amount-in' : 'amount-out'}"
+                 th:text="${transaction.type.name == 'DEPOSIT' ? '+' : '-'} + ${#numbers.formatDecimal(transaction.amount, 1, 'COMMA', 2, 'POINT')}"
+                 class="activity-entry-amount">[transaction - amount]</p>
+            </div>
+          </th:block>
+        </div>
+      </div>
+    </th:block>
+
+    <th:block th:if="${(user.subscriptions.get(0).type.name == 'PREMIUM' && user.wallets.size < 2) || (user.subscriptions.get(0).type.name == 'ULTIMATE' && user.wallets.size < 3)}" >
+      <form class="wallet-block new-wallet" th:action="@{/wallets}" method="post">
+        <button type="submit"></button>
+      </form>
+    </th:block>
+  </div>
+</main>
+<div class="footer" th:insert="~{fragments/common/footer :: footer}"></div>
+</body>
+</html>

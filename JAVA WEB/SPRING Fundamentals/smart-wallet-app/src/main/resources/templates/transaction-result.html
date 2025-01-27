@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nav-side-bar.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home-common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/profile-menu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/upgrade-result-menu.css}">
+    <title>Transaction Result</title>
+</head>
+<body>
+<nav>
+
+</nav>
+<main>
+    <div class="nav-bar" th:insert="~{fragments/common/navigation-bar :: navigation-bar ('transfers')}"></div>
+    <div class="home-section">
+        <div class="single-section-box payment-result-container">
+
+            <div th:if="${#strings.isEmpty(transactionResult.failureReason)}" class="payment-box success">
+                <div class="payment-header">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2>Your transfer was successfully processed</h2>
+                    <p>The receiver's first standard wallet was topped up by the amount you sent.</p>
+                </div>
+                <div class="payment-details">
+                    <div class="details">
+                        <span class="item">Product:</span>
+                        <span class="value"
+                              th:text="${transactionResult.description}">[mock description]</span>
+                    </div>
+                    <div class="details">
+                        <span class="item">Amount:</span>
+                        <span class="value"
+                              th:text="${transactionResult.amount + ' ' + transactionResult.currency}">[mock amount]</span>
+                    </div>
+                </div>
+            </div>
+
+            <div th:if="${!#strings.isEmpty(transactionResult.failureReason)}" class="payment-box failure">
+                <div class="payment-header">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2>Transfer Failed</h2>
+                    <p>Unfortunately, your payment could not be processed. Please try again or contact support if the
+                        issue persists.</p>
+                </div>
+                <div class="payment-details">
+                    <div class="details">
+                        <span class="item">Product:</span>
+                        <span class="value"
+                              th:text="${transactionResult.description}">[mock description]</span>
+                    </div>
+                    <div class="details">
+                        <span class="item">Reason:</span>
+                        <span class="value" th:text="${transactionResult.failureReason}">[failure reason]</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <div class="details-section-container">
+                    <strong>Transaction id: </strong>
+                    <p th:text="${transactionResult.id}">[transaction id]</p>
+                </div>
+            </div>
+
+            <a th:href="@{/home}" class="profile-actions-button">
+                <p>Go back</p>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 7H14C17.3137 7 20 9.68629 20 13C20 16.3137 17.3137 19 14 19H4M4 7L8 3M4 7L8 11"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</main>
+<div class="footer" th:insert="~{fragments/common/footer :: footer}"></div>
+</body>
+</html>

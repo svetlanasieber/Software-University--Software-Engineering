@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nav-side-bar.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home-common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/profile-menu.css}">
+    <title>Edit Profile</title>
+</head>
+<body>
+<nav>
+
+</nav>
+<main>
+    <div class="nav-bar" th:insert="~{fragments/common/navigation-bar :: navigation-bar ('dashboard')}"></div>
+    <div class="home-section">
+        <div class="single-section-box profile-menu">
+
+            <div class="profile-header">
+                <img th:src="${#strings.isEmpty(user.profilePicture) ? 'https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-07-512.png' : user.profilePicture}"
+                     alt="Profile Picture" class="profile-avatar">
+                <h2 class="profile-name"
+                    th:text="${#strings.isEmpty(user.firstName)} ? ${user.username} : ${user.firstName} + ' ' + ${user.lastName}"></h2>
+            </div>
+
+            <div class="details-section">
+                <div class="details-section-container">
+                    <strong>User id: </strong>
+                    <p th:text="${user.id}">[user id]</p>
+                </div>
+                <div class="details-section-container">
+                    <strong>Last profile update: </strong>
+                    <p th:text="${#temporals.format(user.updatedOn, 'dd MMM yyyy HH:mm')}">[user updated on]</p>
+                </div>
+            </div>
+
+            <form class="form"
+                  th:action="@{/users/profile}"
+                  th:method="put"
+                  th:object="${userEditRequest}">
+                <label for="firstName">First Name</label>
+                <input type="text"
+                       id="firstName"
+                       th:field="*{firstName}"
+                       th:placeholder="${#strings.isEmpty(user.firstName)} ? 'Enter your first name' : ${user.firstName}">
+                <p class="alert-warning" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+
+                <label for="lastName">Last Name</label>
+                <input type="text"
+                       id="lastName"
+                       th:placeholder="${#strings.isEmpty(user.lastName)} ? 'Enter your last name' : ${user.lastName}"
+                       th:field="*{lastName}">
+                <p class="alert-warning" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+
+                <label for="email">Email</label>
+                <input type="text"
+                       id="email"
+                       th:placeholder="${#strings.isEmpty(user.email)} ? 'Enter your email' : ${user.email}"
+                       th:field="*{email}">
+                <p class="alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+
+                <label for="profilePicture">Profile Picture URL</label>
+                <input type="text"
+                       id="profilePicture"
+                       th:placeholder="${#strings.isEmpty(user.profilePicture)} ? 'Enter valid url for an image' : ${user.profilePicture}"
+                       th:field="*{profilePicture}">
+                <p class="alert-warning" th:if="${#fields.hasErrors('profilePicture')}" th:errors="*{profilePicture}"></p>
+
+                <button class="profile-actions-button">
+                    <p>Save</p>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+<div class="footer" th:insert="~{fragments/common/footer :: footer}"></div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/nav-side-bar.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/home-common.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/reports.css}">
+  <title>Home</title>
+  <style>
+  </style>
+</head>
+<body>
+<nav>
+
+</nav>
+<main>
+  <div class="nav-bar" th:insert="~{fragments/common/navigation-bar :: navigation-bar ('reports')}"></div>
+  <div class="home-section" th:object="${systemReports}">
+    <div class="report-block first-report-block">
+      <div class="default-label-box">
+        <p>User Reports</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Total Users:</p>
+        <p th:text="*{totalCountUsers}">[number]</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Active Users:</p>
+        <p th:text="*{totalCountActiveUsers}">[number]</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Inactive Users:</p>
+        <p th:text="*{totalCountInactiveUsers}">[number]</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Admins:</p>
+        <p th:text="*{totalCountAdmins}">[number]</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Non-Admins:</p>
+        <p th:text="*{totalCountNonAdmins}">[number]</p>
+      </div>
+      <div class="details-section-container">
+        <strong>Data fetched on: </strong>
+        <p th:text="${#temporals.format(#temporals.createNow(), 'dd MMM yyyy HH:mm')}">[now]</p>
+      </div>
+    </div>
+    <div class="report-block">
+      <div class="default-label-box">
+        <p>Wallet Reports</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Total Wallets:</p>
+        <p th:text="*{totalCountWallets}">[number]</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Total Wallet Amount:</p>
+        <p th:text="*{#numbers.formatDecimal(totalWalletsAmount, 1, 'COMMA', 2, 'POINT')}">[number]</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Users with 1 Wallet:</p>
+        <p th:text="*{#numbers.formatDecimal(userPercentageOwningOneWallet, 1, 'COMMA', 2, 'POINT') + '%'}">45%</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Users with 2 Wallets:</p>
+        <p th:text="*{#numbers.formatDecimal(userPercentageOwningTwoWallets, 1, 'COMMA', 2, 'POINT') + '%'}">30%</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Users with 3 Wallets:</p>
+        <p th:text="*{#numbers.formatDecimal(userPercentageOwningThreeWallets, 1, 'COMMA', 2, 'POINT') + '%'}">25%</p>
+      </div>
+      <div class="details-section-container">
+        <strong>Data fetched on: </strong>
+        <p th:text="${#temporals.format(#temporals.createNow(), 'dd MMM yyyy HH:mm')}">[now]</p>
+      </div>
+    </div>
+    <div class="report-block">
+      <div class="default-label-box">
+        <p>Transaction Reports</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Total Transactions:</p>
+        <p th:text="*{totalCountTransactions}">5,600</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Total Transaction Amount:</p>
+        <p th:text="*{#numbers.formatDecimal(totalAmountTransactions, 1, 'COMMA', 2, 'POINT')}">2,500,000.00</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Total Withdrawals:</p>
+        <p th:text="*{totalCountWithdrawals}">1,200</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Total Deposits:</p>
+        <p th:text="*{totalCountDeposits}">4,400</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Succeeded Transactions:</p>
+        <p th:text="*{totalCountSucceededTransactions}">5,300</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Failed Transactions:</p>
+        <p th:text="*{totalCountFailedTransactions}">300</p>
+      </div>
+      <div class="details-section-container">
+        <strong>Data fetched on: </strong>
+        <p th:text="${#temporals.format(#temporals.createNow(), 'dd MMM yyyy HH:mm')}">[now]</p>
+      </div>
+    </div>
+    <div class="report-block last-report-block">
+      <div class="default-label-box">
+        <p>Subscription Reports</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Default Subscriptions:</p>
+        <p th:text="*{totalCountDefaultSubscriptions}">400</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Premium Subscriptions:</p>
+        <p th:text="*{totalCountPremiumSubscriptions}">600</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Ultimate Subscriptions:</p>
+        <p th:text="*{totalCountUltimateSubscriptions}">200</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Monthly Subscriptions:</p>
+        <p th:text="*{totalCountMonthlySubscriptions}">700</p>
+      </div>
+      <div class="report-information-entry">
+        <p>Yearly Subscriptions:</p>
+        <p th:text="*{totalCountYearlySubscriptions}">500</p>
+      </div>
+      <div class="details-section-container">
+        <strong>Data fetched on: </strong>
+        <p th:text="${#temporals.format(#temporals.createNow(), 'dd MMM yyyy HH:mm')}">[now]</p>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="footer" th:insert="~{fragments/common/footer :: footer}"></div>
+</body>
+</html>

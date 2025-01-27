@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nav-side-bar.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home-common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/subscription-history.css}">
+    <title>Transactions</title>
+</head>
+<body>
+<nav>
+
+</nav>
+<main>
+    <div class="nav-bar" th:insert="~{fragments/common/navigation-bar :: navigation-bar ('subscription-history')}"></div>
+
+    <div class="home-section">
+        <div class="single-section-box subscriptions-container">
+            <table class="styled-table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Period</th>
+                    <th>Price</th>
+                    <th>Effective from</th>
+                    <th>Effective to</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="subscription : ${historyList}">
+                    <td th:text="${subscription.id}">
+                        [id]
+                    </td>
+                    <td>
+                        <p th:text="${#strings.capitalize(#strings.toUpperCase(subscription.type))}"></p>
+                    </td>
+                    <td>
+                        <p th:if="${subscription.status.name == 'ACTIVE'}" class="status active" th:text="${#strings.capitalize(#strings.toUpperCase(subscription.status.name))}"></p>
+                        <p th:if="${subscription.status.name == 'COMPLETED'}" class="status completed" th:text="${#strings.capitalize(#strings.toUpperCase(subscription.status.name))}"></p>
+                        <p th:if="${subscription.status.name == 'TERMINATED'}" class="status terminated" th:text="${#strings.capitalize(#strings.toUpperCase(subscription.status.name))}"></p>
+                    </td>
+                    <td th:text="${subscription.period.name}">[period]</td>
+                    <td th:text="${#numbers.formatDecimal(subscription.price, 1, 'COMMA', 2, 'POINT')}">[price]</td>
+                    <td th:text="${#temporals.format(subscription.start, 'dd MMM yyyy')}">[date]</td>
+                    <td th:text="${#temporals.format(subscription.end, 'dd MMM yyyy')}">[date]</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<div class="footer" th:insert="~{fragments/common/footer :: footer}"></div>
+</body>
+</html>

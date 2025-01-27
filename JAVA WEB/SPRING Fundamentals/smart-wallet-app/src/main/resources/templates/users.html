@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nav-side-bar.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home-common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/subscription-history.css}">
+    <title>Transactions</title>
+</head>
+<body>
+<nav>
+
+</nav>
+<main>
+    <div class="nav-bar" th:insert="~{fragments/common/navigation-bar :: navigation-bar ('users')}"></div>
+    <div class="home-section">
+        <div class="single-section-box subscriptions-container">
+            <table class="styled-table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Country</th>
+                    <th>Status</th>
+                    <th>Created on</th>
+                    <th>Switch status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="singleUser : ${users}">
+                    <td th:text="${singleUser.id}">[id]</td>
+                    <td th:text="${singleUser.username}">[username]</td>
+                    <td th:text="${#strings.isEmpty(singleUser.email) ? 'no email' : singleUser.email}">[email]</td>
+                    <td th:text="${#strings.capitalize(#strings.toLowerCase(singleUser.role))}">[role]</td>
+                    <td th:text="${#strings.capitalize(#strings.toLowerCase(singleUser.country))}">[country]</td>
+                    <td>
+                        <p th:if="${singleUser.isActive}" class="status active" th:text="Active"></p>
+                        <p th:if="${!singleUser.isActive}" class="status terminated" th:text="Inactive"></p>
+                    </td>
+                    <td th:text="${#temporals.format(singleUser.createdOn, 'dd MMM yyyy HH:mm')}">[date]</td>
+                    <td>
+                      <form th:action="@{'/users/' + ${singleUser.id} + '/status'}" th:method="PUT">
+                            <button class="profile-actions-button">
+                                <p>Switch</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-toggle-on"
+                                     viewBox="0 0 16 16">
+                                    <path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<div class="footer" th:insert="~{fragments/common/footer :: footer}"></div>
+</body>
+</html>
