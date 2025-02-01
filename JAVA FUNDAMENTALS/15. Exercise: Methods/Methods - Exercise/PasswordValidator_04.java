@@ -1,5 +1,3 @@
-package methods;
-
 import java.util.Scanner;
 
 public class PasswordValidator_04 {
@@ -7,16 +5,13 @@ public class PasswordValidator_04 {
         Scanner scanner = new Scanner(System.in);
         String password = scanner.nextLine();
 
-        //1. проверим дали дължината на паролата е валидна
         boolean isValidLength = isValidLength(password);
-        //isValidLength = true -> валидна парола
-        //isValidLength = false -> невалидна парола
+
         if (!isValidLength) {
-            //паролата не е валидна
+  
             System.out.println("Password must be between 6 and 10 characters");
         }
 
-        //2. проверим дали съдържанието е валидно
         boolean isValidContent = isValidContent(password);
         //isValidContent = true -> валидно съдържание
         //isValidContent = false -> невалидно съдържание
