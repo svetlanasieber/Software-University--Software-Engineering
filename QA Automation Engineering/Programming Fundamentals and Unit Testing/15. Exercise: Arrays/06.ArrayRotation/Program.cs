@@ -1,26 +1,29 @@
-int[] numbersArray = Console.ReadLine()
-						  .Split(" ")
-						  .Select(int.Parse)
-						  .ToArray();
+int n = int.Parse(Console.ReadLine());
 
-int rotations = int.Parse(Console.ReadLine());
+int[] firstArray = new int[n];
+int[] secondArray = new int[n];
 
-if (rotations > numbersArray.Length)
-	rotations = rotations % numbersArray.Length;
-
-if (rotations != numbersArray.Length)
+for (int i = 0; i < n; i++)
 {
-	for (int i = 0; i < rotations; i++)
-	{
-		int firstElement = numbersArray[0];
+    int[] rowData = Console.ReadLine()
+        .Split()
+        .Select(int.Parse)
+        .ToArray();
 
-		for (int j = 1; j < numbersArray.Length; j++)
-		{
-			numbersArray[j - 1] = numbersArray[j];
-		}
+    int firstNumber = rowData[0];
+    int secondNumber = rowData[1];
 
-		numbersArray[numbersArray.Length - 1] = firstElement;
-	}
+    if (i % 2 == 0)
+    {
+        firstArray[i] = firstNumber;
+        secondArray[i] = secondNumber;
+    }
+    else
+    {
+        firstArray[i] = secondNumber;
+        secondArray[i] = firstNumber;
+    }
 }
 
-Console.WriteLine(string.Join(" ", numbersArray));
+Console.WriteLine(string.Join(" ", firstArray));
+Console.WriteLine(string.Join(" ", secondArray));
