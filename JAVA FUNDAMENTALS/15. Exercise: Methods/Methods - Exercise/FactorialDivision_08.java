@@ -11,7 +11,6 @@ public class FactorialDivision_08 {
   
         long factorialSecondNumber = calculateFactorial(secondNumber);
 
-  
         double result = factorialFirstNumber * 1.0 / factorialSecondNumber;
 
         System.out.printf("%.2f", result);
@@ -19,7 +18,7 @@ public class FactorialDivision_08 {
 
     public static long calculateFactorial (int number) {
 
-        long fact = 1; //стойността на факториел
+        long fact = 1
         for (int i = 1; i <= number; i++) {
             fact = fact * i;
         }
