@@ -18,7 +18,6 @@ public class TopIntegers_05 {
                 break;
             }
 
-           
             int currentNumber = numbers[position];
        
             boolean isTop = true;
