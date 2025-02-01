@@ -1,4 +1,4 @@
-package Exercise12_Arrays;
+package Arrays_Exercise;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -7,37 +7,39 @@ public class TopIntegers_05 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+      int [] numbers = Arrays.stream(scanner.nextLine()
+                       .split(" "))
+                       .mapToInt(Integer::parseInt).toArray();
 
-        int[] array = Arrays
-                .stream(scanner.nextLine().split(" "))
-                .mapToInt(Integer::parseInt)
-                .toArray();
+        for (int position = 0; position <= numbers.length - 1; position++) {
 
-        for (int position = 0; position <= array.length - 1; position++) {
-
-         
-            if (position == array.length - 1) {
-                System.out.println(array[position]);
+            //винаги последното число е топ -> отпечатваме го
+            if (position == numbers.length - 1) {
+                //последното число
+                System.out.print(numbers[position]);
                 break;
             }
 
-       
-            int currentNum = array[position];
+            //останалите числа
+            int currentNumber = numbers[position];
+            //проверка дали е топ число
+            boolean isTop = true;
+            //isTop = true -> числото ми е топ
+            //isTop = false -> числото ми не е топ
 
-            boolean isTopInteger = true;
-            for (int nextPosition = position + 1; nextPosition <= array.length - 1; nextPosition++) {
-
-             
-                int nextNumber = array[nextPosition];
-
-                if (nextNumber >= currentNum) {
-                    isTopInteger = false;
+            //обхождаме всички позиции след моята
+            for (int nextPosition = position + 1; nextPosition <= numbers.length - 1; nextPosition++) {
+                int nextNumber = numbers[nextPosition]; //числа, след моето
+                if (currentNumber <= nextNumber) {
+                    //не е топ
+                    isTop = false;
                     break;
                 }
             }
-          
-            if (isTopInteger) {
-                System.out.print(currentNum + " ");
+
+            //знам дали числото е топ или не
+            if (isTop) {
+                System.out.print(currentNumber + " ");
             }
         }
 
