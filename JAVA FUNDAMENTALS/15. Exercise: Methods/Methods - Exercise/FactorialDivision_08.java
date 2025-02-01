@@ -1,3 +1,4 @@
+package Methods_Exercise;
 import java.util.Scanner;
 
 public class FactorialDivision_08 {
@@ -8,7 +9,7 @@ public class FactorialDivision_08 {
         int secondNumber = Integer.parseInt(scanner.nextLine());
 
         long factorialFirstNumber = calculateFactorial(firstNumber);
-  
+
         long factorialSecondNumber = calculateFactorial(secondNumber);
 
         double result = factorialFirstNumber * 1.0 / factorialSecondNumber;
@@ -18,7 +19,8 @@ public class FactorialDivision_08 {
 
     public static long calculateFactorial (int number) {
 
-        long fact = 1
+
+        long fact = 1;
         for (int i = 1; i <= number; i++) {
             fact = fact * i;
         }
