@@ -23,7 +23,7 @@ public class WalletOwnerValidator implements ConstraintValidator<WalletOwner, Tr
     @Override
     public boolean isValid(TransferRequest transferRequest, ConstraintValidatorContext context) {
 
-        // Вземаме потребителя за текущата сесия
+
         User user = userService.getById(UUID.fromString("0a9b6944-9702-424e-b7c7-c8e82a1b5f3f"));
         UUID fromWalletId = transferRequest.getFromWalletId();
 
