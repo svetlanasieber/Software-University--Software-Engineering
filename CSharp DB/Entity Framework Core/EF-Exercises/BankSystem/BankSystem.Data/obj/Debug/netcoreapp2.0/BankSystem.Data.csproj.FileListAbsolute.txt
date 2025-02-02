@@ -1,0 +1,11 @@
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\bin\Debug\netcoreapp2.0\BankSystem.Data.deps.json
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\bin\Debug\netcoreapp2.0\BankSystem.Data.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\obj\Debug\netcoreapp2.0\BankSystem.Data.csprojResolveAssemblyReference.cache
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\obj\Debug\netcoreapp2.0\BankSystem.Data.csproj.CoreCompileInputs.cache
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\obj\Debug\netcoreapp2.0\BankSystem.Data.AssemblyInfoInputs.cache
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\obj\Debug\netcoreapp2.0\BankSystem.Data.AssemblyInfo.cs
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\bin\Debug\netcoreapp2.0\BankSystem.Data.pdb
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\bin\Debug\netcoreapp2.0\BankSystem.Models.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\bin\Debug\netcoreapp2.0\BankSystem.Models.pdb
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\obj\Debug\netcoreapp2.0\BankSystem.Data.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\BankSystem\BankSystem.Data\obj\Debug\netcoreapp2.0\BankSystem.Data.pdb
