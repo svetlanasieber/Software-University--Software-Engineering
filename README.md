@@ -1,4 +1,4 @@
-# Software Engineering & QA Automation Engineering
+# Software Engineering
 # Software University (softuni.bg)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
