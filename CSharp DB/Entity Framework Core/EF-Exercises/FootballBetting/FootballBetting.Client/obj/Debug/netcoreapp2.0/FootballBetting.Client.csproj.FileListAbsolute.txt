@@ -1,0 +1,15 @@
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\bin\Debug\netcoreapp2.0\FootballBetting.Client.deps.json
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\bin\Debug\netcoreapp2.0\FootballBetting.Client.runtimeconfig.json
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\bin\Debug\netcoreapp2.0\FootballBetting.Client.runtimeconfig.dev.json
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\bin\Debug\netcoreapp2.0\FootballBetting.Client.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\bin\Debug\netcoreapp2.0\FootballBetting.Client.pdb
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\bin\Debug\netcoreapp2.0\FootballBetting.Data.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\bin\Debug\netcoreapp2.0\FootballBetting.DomainClasses.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\bin\Debug\netcoreapp2.0\FootballBetting.Data.pdb
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\bin\Debug\netcoreapp2.0\FootballBetting.DomainClasses.pdb
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\obj\Debug\netcoreapp2.0\FootballBetting.Client.csprojResolveAssemblyReference.cache
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\obj\Debug\netcoreapp2.0\FootballBetting.Client.csproj.CoreCompileInputs.cache
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\obj\Debug\netcoreapp2.0\FootballBetting.Client.AssemblyInfoInputs.cache
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\obj\Debug\netcoreapp2.0\FootballBetting.Client.AssemblyInfo.cs
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\obj\Debug\netcoreapp2.0\FootballBetting.Client.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Client\obj\Debug\netcoreapp2.0\FootballBetting.Client.pdb

@@ -1,0 +1,11 @@
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\obj\Debug\netcoreapp2.0\FootballBetting.Data.csprojResolveAssemblyReference.cache
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\obj\Debug\netcoreapp2.0\FootballBetting.Data.csproj.CoreCompileInputs.cache
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\obj\Debug\netcoreapp2.0\FootballBetting.Data.AssemblyInfoInputs.cache
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\obj\Debug\netcoreapp2.0\FootballBetting.Data.AssemblyInfo.cs
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\bin\Debug\netcoreapp2.0\FootballBetting.Data.deps.json
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\bin\Debug\netcoreapp2.0\FootballBetting.Data.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\bin\Debug\netcoreapp2.0\FootballBetting.Data.pdb
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\bin\Debug\netcoreapp2.0\FootballBetting.DomainClasses.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\bin\Debug\netcoreapp2.0\FootballBetting.DomainClasses.pdb
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\obj\Debug\netcoreapp2.0\FootballBetting.Data.dll
+C:\Users\Iliya\Documents\Visual Studio 2017\Projects\FootballBetting\FootballBetting.Data\obj\Debug\netcoreapp2.0\FootballBetting.Data.pdb
