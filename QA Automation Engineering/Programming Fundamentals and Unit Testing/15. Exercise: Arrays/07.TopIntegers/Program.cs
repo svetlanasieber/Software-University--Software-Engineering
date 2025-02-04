@@ -6,7 +6,6 @@ for (int i = 0; i < inputArr.Length; i++)
     numbers[i] = int.Parse(inputArr[i]);
 }
 
-
 for (int i = 0; i < numbers.Length; i++)
 {
     bool isTop = true;
@@ -21,7 +20,6 @@ for (int i = 0; i < numbers.Length; i++)
 
     if (isTop)
     {
-       
         Console.Write($"{numbers[i]} ");
     }
 }
