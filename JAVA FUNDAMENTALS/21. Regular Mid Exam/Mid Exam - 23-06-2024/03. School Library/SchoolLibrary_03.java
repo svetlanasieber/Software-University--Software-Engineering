@@ -25,7 +25,6 @@ public class SchoolLibrary_03 {
                 if (books.contains(firstBook) && books.contains(secondBook)) {
                     int firstBookIndex = books.indexOf(firstBook);
                     int secondBookIndex = books.indexOf(secondBook);
-                    // Swap books
                     books.set(firstBookIndex, secondBook);
                     books.set(secondBookIndex, firstBook);
                 }
