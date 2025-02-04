@@ -30,7 +30,6 @@ public class GuineaPig_01 {
 
       
             if (day % 3 == 0) {
-                //нужно покривало = 1/3 от теглото на свинчето
                 double needCover = pigWeightInGrams / 3; 
                 coverInGrams -= needCover;
             }
