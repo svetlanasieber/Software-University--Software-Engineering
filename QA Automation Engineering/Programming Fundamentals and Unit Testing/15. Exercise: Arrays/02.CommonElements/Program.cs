@@ -1,14 +1,18 @@
-int[] firstArray = Console.ReadLine()
-    .Split(' ')
-    .Select(int.Parse)
-    .ToArray();
+string input = Console.ReadLine();
 
+string[] firsArr = input.Split();
 
-int[] secondArray = Console.ReadLine()
-    .Split(' ')
-    .Select(int.Parse)
-    .ToArray();
+input = Console.ReadLine();
+string[] secondArr = input.Split();
 
-
-int[] commonElements = firstArray.Intersect(secondArray).ToArray();
-Console.WriteLine(string.Join(" ", commonElements));
+for (int j = 0; j < secondArr.Length; j++)
+{
+    for (int i = 0; i < firsArr.Length; i++)
+    {
+        if (firsArr[i] == secondArr[j])
+        {
+            Console.Write($"{firsArr[i]} ");
+            break;
+        }
+    }
+}
