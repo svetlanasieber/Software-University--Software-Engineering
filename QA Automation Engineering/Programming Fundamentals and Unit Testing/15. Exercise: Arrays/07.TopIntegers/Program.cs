@@ -1,32 +1,27 @@
-int[] numbersArray = Console.ReadLine()
-    .Split(" ")
-    .Select(int.Parse)
-    .ToArray();
+string[] inputArr = Console.ReadLine().Split();
+int[] numbers = new int[inputArr.Length];
 
-
-for (int i = 0; i < numbersArray.Length - 1; i++)  
+for (int i = 0; i < inputArr.Length; i++)
 {
+    numbers[i] = int.Parse(inputArr[i]);
+}
 
-    bool isGreater = true;
 
-    int currentElement = numbersArray[i]; 
-
-    for (int j = i + 1; j < numbersArray.Length; j++)
+for (int i = 0; i < numbers.Length; i++)
+{
+    bool isTop = true;
+    for (int j = i + 1; j < numbers.Length; j++)
     {
-    
-        int nextRightElement = numbersArray[j]; 
-
-        if (nextRightElement >= currentElement)
+        if (numbers[i] <= numbers[j])
         {
-            isGreater = false;
+            isTop = false;
             break;
         }
     }
 
-    if (isGreater)
+    if (isTop)
     {
-        Console.Write(currentElement + " ");
+       
+        Console.Write($"{numbers[i]} ");
     }
 }
-
-Console.Write(numbersArray[numbersArray.Length - 1]);
