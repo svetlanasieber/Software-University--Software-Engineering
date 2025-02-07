@@ -1,0 +1,11 @@
+{
+  "name": "Concert XYZ - Seat B14",
+  "description": "Exclusive NFT ticket for Concert XYZ on 2024-05-15.",
+  "image": "https://example.com/tickets/seatB14.png",
+  "attributes": [
+    { "trait_type": "Event", "value": "Concert XYZ" },
+    { "trait_type": "Date", "value": "2024-05-15" },
+    { "trait_type": "Seat", "value": "B14" },
+    { "trait_type": "Section", "value": "B" }
+  ]
+}
