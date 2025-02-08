@@ -1,0 +1,5 @@
+UPDATE Contacts
+SET Website = LOWER('www.' + REPLACE(a.Name, ' ', '') + '.com')
+FROM Contacts c
+INNER JOIN Authors a ON c.Id = a.ContactId
+WHERE c.Website IS NULL;
