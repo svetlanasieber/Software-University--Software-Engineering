@@ -8,7 +8,7 @@ public class Division_02 {
 
         int number = Integer.parseInt(scanner.nextLine());
 
-        // проверерявам дали числото се дели на : 10, 7, 6, 3, 2
+
         if (number % 10 == 0) {
             System.out.println("The number is divisible by 10");
         } else if (number % 7 == 0) {
