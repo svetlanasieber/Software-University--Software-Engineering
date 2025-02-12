@@ -11,16 +11,14 @@ public class AppendArrays_07 {
         Scanner scanner = new Scanner(System.in);
 
         String input = scanner.nextLine();
-        //input = "1 2 3 |4 5 6 |  7  8".split("|") -> ["1 2 3 ", "4 5 6 ", "  7  8"]
 
         List<String> texts = Arrays.stream(input.split("\\|")).collect(Collectors.toList());
-        //texts = {"1 2 3 ", "4 5 6 ", "  7  8"}
+
         Collections.reverse(texts);
-        //texts = {"  7  8", "4 5 6 ", "1 2 3 "}
+
 
         for (String text : texts) {
-            //text = "  7  8".trim() -> "7  8".replaceAll("\\s+", " ") -> "7 8"
-            // \\s+ -> един или повече интервали
+
             if (text.equals("") || text.equals(" ")) {
                 continue;
             }
