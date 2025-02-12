@@ -13,8 +13,6 @@ public class Train_01 {
         List<Integer> wagons = Arrays.stream(scanner.nextLine().split(" "))
                 .map(Integer::parseInt).collect(Collectors.toList());
 
-
-
         int maxCapacity = Integer.parseInt(scanner.nextLine()); 
 
         String command = scanner.nextLine();
