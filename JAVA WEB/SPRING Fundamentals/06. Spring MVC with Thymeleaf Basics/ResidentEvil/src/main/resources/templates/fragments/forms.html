@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<form method="post" th:object="${virusBindingModel}" th:fragment="add-form">
+    <div class="form-group" th:classappend="${#fields.hasErrors('name')} ? 'has-danger'">
+        <label class="form-control-label" for="nameId">Name</label>
+        <input type="text" class="form-control" id="nameId" aria-describedby="nameHelp" th:field="*{name}"/>
+        <div id="nameHelp" class="form-control-feedback" th:each="error : ${#fields.errors('name')}" th:text="${error}">Error Message</div>
+    </div>
+
+    <div class="form-group" th:classappend="${#fields.hasErrors('description')} ? 'has-danger'" >
+        <label class="form-control-label" for="desc">Description</label>
+        <textarea type="text" class="form-control" id="desc" aria-describedby="descHelp" th:field="*{description}"/>
+        <div id="descHelp" class="form-control-feedback" th:each="error : ${#fields.errors('description')}" th:text="${error}">Error Message</div>
+    </div>
+
+    <div class="form-group">
+        <label for="sideEff">Side Effect</label>
+        <input type="text" class="form-control" id="sideEff" aria-describedby="sideEffHelp" th:field="*{sideEffects}"/>
+        <small id="sideEffHelp" class="form-text text-muted">Error Message</small>
+    </div>
+
+    <div class="form-group">
+        <label for="crEff">Creator</label>
+        <input type="text" class="form-control" id="crEff" aria-describedby="crHelp" th:field="*{creator}"/>
+        <small id="crHelp" class="form-text text-muted">Error Message</small>
+    </div>
+
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" th:field="*{deadly}"/>
+            Is Deadly?
+        </label>
+    </div>
+
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" th:field="*{curable}"/>
+            Is Curable?
+        </label>
+    </div>
+
+    <fieldset class="form-group" th:classappend="${#fields.hasErrors('mutation')} ?'has-danger'">
+        <legend>Choose Mutation</legend>
+        <div class="form-check" th:each="mutation : ${mutations}">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" checked="true" th:value="${mutation}" th:text="| ${mutation}|" th:field="*{mutation}" />
+            </label>
+        </div>
+
+        <div class="form-check disabled">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="true" />
+                Save Humanity
+            </label>
+        </div>
+        <div id="mutHelp" class="form-control-feedback" th:each="error : ${#fields.errors('mutation')}" th:text="${error}">Error Message</div>
+    </fieldset>
+
+    <div class="form-group">
+        <label for="turnover">Turnover Rate</label>
+        <input type="number" class="form-control" id="turnover" aria-describedby="turnoverHelp" th:field="*{turnoverRate}"/>
+        <small id="turnoverHelp" class="form-text text-muted">Error Message</small>
+    </div>
+
+    <div class="form-group">
+        <label for="hrs">Hours Until Turn</label>
+        <input type="number" class="form-control" id="hrs" aria-describedby="hrsHelp" th:field="*{hoursToTurn}"/>
+        <small id="hrsHelp" class="form-text text-muted">Error Message</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleSelect1">Magnitude</label>
+        <select class="form-control" id="exampleSelect1" th:field="*{magnitude}">
+            <option th:each="magnitude : ${magnitudes}" th:value="${magnitude}" th:text="${#strings.capitalize(#strings.toLowerCase(magnitude))}">1</option>
+        </select>
+    </div>
+
+    <div class="form-group" th:classappend="${#fields.hasErrors('releasedOn')} ?'has-danger'">
+        <label for="rdtm">Release Date</label>
+        <input type="date" class="form-control" id="rdtm" aria-describedby="rdtmHelp" th:field="*{releasedOn}"/>
+        <div id="relHelp" class="form-control-feedback" th:each="error : ${#fields.errors('releasedOn')}" th:text="${error}">Error Message</div>
+    </div>
+
+    <div class="form-group" th:classappend="${#fields.hasErrors('capitals')} ?'has-danger'">
+        <label for="capitalHelp">Affected Capitals</label>
+        <select multiple="true" class="form-control" id="exampleSelect2" th:field="*{capitals}">
+            <option th:each="capital : ${capitalList}" th:value="${capital}" th:text="${capital}">1</option>
+        </select>
+        <div id="capitalHelp" class="form-control-feedback" th:each="error : ${#fields.errors('capitals')}" th:text="${error}">Error Message</div>
+    </div>
+
+    <button type="submit" class="btn btn-default">Attack</button>
+    <ul>
+        <li th:each="error : ${#fields.errors('*')}" th:text="${error}"></li>
+    </ul>
+</form>
+
+</body>
+</html>
