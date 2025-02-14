@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+    <span>SingleDate:</span>
+    <div th:text="${#dates.format(myDate,'yyyy-MMM-dd')}"></div>
+
+    <span>DayName:</span>
+    <div th:text="${#dates.dayOfWeekName(myDate)}"></div>
+
+    <span>Multiple Days:</span>
+    <div th:text="${#dates.listDay(myDates)}"></div>
+
+    <span>String is NULL:</span>
+    <div th:text="${#strings.isEmpty(myString)}"></div>
+
+    <span>Substring</span>
+    <div th:text="${#strings.substring(whiskey,0,4)}"></div>
+
+    <span>JoinedElements</span>
+    <div th:text="${#strings.listJoin(whiskeys,'-')}"></div>
+
+    <span>Capitalized</span>
+    <div th:text="${#strings.capitalize(firstName)}"></div>
+
+    <span>RoundedNumber</span>
+    <div th:text="${#numbers.formatDecimal(number, 1, 2)}"></div>
+
+    <span>Sequence</span>
+    <div th:each="number: ${#numbers.sequence(0, 2)}">
+        <div th:text="${number}"></div>
+    </div>
+
+    <span>AggregateFunction</span>
+    <div th:text="${#aggregates.sum(numbers)}"></div>
+
+</body>
+</html>
