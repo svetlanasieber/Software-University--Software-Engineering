@@ -25,7 +25,6 @@ public class ComputerStore_01 {
 
             priceWithoutTaxes += currentPrice;
 
-          
             taxes += currentPrice * 0.20;
 
             command = scanner.nextLine();
@@ -47,11 +46,7 @@ public class ComputerStore_01 {
             System.out.println("Invalid order!");
         }else {
             System.out.println(finalText);
-            /*System.out.println("Congratulations you've just bought a new computer!");
-            System.out.printf("Price without taxes: %.2f$%n", priceWithoutTaxes);
-            System.out.printf("Taxes: %.2f$%n", taxes);
-            System.out.println("-----------");
-            System.out.printf("Total price: %.2f$", totalSum);*/
+
 
         }
 
