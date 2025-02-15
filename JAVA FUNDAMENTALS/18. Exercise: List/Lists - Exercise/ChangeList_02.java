@@ -13,7 +13,6 @@ public class ChangeList_02 {
         List<Integer> numbers = Arrays.stream(scanner.nextLine().split(" "))
                 .map(Integer::parseInt).collect(Collectors.toList());
 
-
         String command = scanner.nextLine();
         while (!command.equals("end")) {
             if (command.contains("Delete")) {
@@ -25,7 +24,6 @@ public class ChangeList_02 {
                 int numberForInsertion = Integer.parseInt(command.split(" ")[1]); 
                 int position = Integer.parseInt(command.split(" ")[2]); 
                 numbers.add(position, numberForInsertion);
-      
             }
 
             command = scanner.nextLine();
