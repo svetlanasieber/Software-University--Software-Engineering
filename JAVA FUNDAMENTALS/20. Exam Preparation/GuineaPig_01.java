@@ -33,8 +33,6 @@ public class GuineaPig_01 {
                 double needCover = pigWeightInGrams / 3; 
                 coverInGrams -= needCover;
             }
-
-
      
             if (foodInGrams <= 0 || hayInGrams <= 0 || coverInGrams <= 0) {
                 System.out.println("Merry must go to the pet store!");
@@ -42,7 +40,6 @@ public class GuineaPig_01 {
                
             }
         }
-
 
         System.out.printf("Everything is fine! Puppy is happy! Food: %.2f, Hay: %.2f, Cover: %.2f.",
                                             foodInGrams / 1000, hayInGrams / 1000, coverInGrams / 1000);
