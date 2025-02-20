@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity 0.8.28;
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.27;
 
 struct Card {
     uint256 id;
@@ -7,35 +7,34 @@ struct Card {
     string name;
 }
 
-library CollectionLab {
+library CollectionLib {
     function exists(
         Card[] memory cards,
         uint256 id
-    ) internal pure returns (bool) {
-        uint256 cardsLenght = cards.length;
-        assert(cardsLenght < 1000);
-        for (uint256 i = 0; i < cardsLenght; i++) {
+    ) internal pure returns (bool doesExists) {
+        uint256 cardsLength = cards.length;
+        assert(cardsLength < 1000);
+
+        for (uint256 i = 0; i < cardsLength; i++) {
             if (cards[i].id == id) {
                 return true;
             }
         }
-        return false;
     }
 }
 
 contract CollectibleCardLibrary {
-    mapping(address => Card[]) collections;
+    using CollectionLib for Card[];
 
-    using CollectionLab for Card[];
+    mapping(address => Card[]) public collections;
 
     error AlreadyExists();
 
     function addCard(uint256 id, uint256 power, string calldata name) external {
-        Card memory newCard = Card({id: id, power: power, name: name});
         if (collections[msg.sender].exists(id)) {
             revert AlreadyExists();
         }
 
-        collections[msg.sender].push(newCard);
+        collections[msg.sender].push(Card({id: id, power: power, name: name}));
     }
 }
