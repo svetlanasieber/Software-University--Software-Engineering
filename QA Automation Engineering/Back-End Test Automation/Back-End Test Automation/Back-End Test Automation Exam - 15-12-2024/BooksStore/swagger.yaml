@@ -1,0 +1,652 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: http://localhost:5000/api/
+info:
+  version: "1.0.0"
+  title: EShop
+  description: SoftUni project
+paths:
+  /user/register:
+    post:
+      tags:
+        - Auth
+      summary: Register a new user
+      description: API to register new users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                $ref: '#/components/schemas/User(Register)'
+      responses:
+        '200':
+          description: Created - User successfully registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User(RegisterDetails)'
+        '500':
+          description: Bad Request - Invalid request body or user already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User Already Exists
+  /user/login:
+    post:
+      tags:
+        - Auth
+      summary: Login user
+      description: API to authenticate and login users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User(Login)'
+      responses:
+        '200':
+          description: OK - User successfully authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User(LoginDetails)'
+        '500':
+          description: Bad Request - Invalid request body or user already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Invalid Credentials
+  /user/logout:
+    get:
+      summary: Logout User
+      description: API for logging out users and clearing refresh token from cookies
+      tags:
+        - Auth
+      responses:
+        '204':
+          description: No Content - Successfully logged out
+        '500':
+          description: Internal Server Error - No refresh token found in cookies
+  /category:
+    get:
+      summary: Retrieve all categories
+      description: This API manages book categories within the application.
+      tags:
+        - Category
+      responses:
+        '200':
+          description: A list of all categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category(Details)'
+        '500':
+          description: Internal Server Error - Something went wrong
+    post:
+      summary: Create a new category
+      description: This API manages book categories within the application.
+      tags:
+        - Category
+      security:
+        - bearerAuth: [] 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category(Create,Update)'
+      responses:
+        '200':
+          description: Category created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category(Details)'
+        '500':
+          description: Internal Server Error - Something went wrong
+  /category/{categoryId}:
+    get:
+      summary: Get a category by ID
+      description: This API manages book categories within the application.
+      tags:
+        - Category
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the category to get.
+      responses:
+        '200':
+          description: Category found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category(Details)'
+        '500':
+          description: Internal Server Error - This id is not valid or not Found
+    put:
+      summary: Update a category by ID
+      description: This API manages book categories within the application.
+      tags:
+        - Category
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the category to update.
+      security:
+        - bearerAuth: [] 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category(Create,Update)'
+              example:
+                title: "Updated Title"
+      responses:
+        '200':
+          description: Updated category
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category(Details)'
+        '500':
+          description: Internal Server Error - This id is not valid or not Found
+    delete:
+      summary: Delete a category by ID
+      description: This API manages book categories within the application.
+      tags:
+        - Category
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the category to delete.
+      security:
+        - bearerAuth: []    
+      responses:
+        '200':
+          description: Deleted category
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category(Details)'
+        '500':
+          description: Internal Server Error - This id is not valid or not Found
+  /book:
+    get:
+      summary: Get all books
+      description: Retrieve a list of all books, with optional query parameters for filtering, sorting, and pagination.
+      tags:
+        - Book
+      responses:
+        '200':
+          description: A list of books
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book(Details)'
+        '500':
+          description: Internal Server Error
+    post:
+      summary: Create a new book
+      description: Create a new book with the provided details. Requires authentication.
+      tags:
+        - Book
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book(Create,Update)'
+      responses:
+        '200':
+          description: The created book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book(Details)'
+        '500':
+          description: Internal Server Error - There is no token attached to header
+  /book/{id}:
+    get:
+      summary: Get a book by ID
+      description: Retrieve a book by its ID.
+      tags:
+        - Book
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The book ID
+      responses:
+        '200':
+          description: The book details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book(Details)'
+        '500':
+          description: Internal Server Error
+    put:
+      summary: Update a book by ID
+      description: Update a book with the provided details by its ID. Requires authentication.
+      tags:
+        - Book
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The book ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book(Create,Update)'
+      responses:
+        '200':
+          description: The updated book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book(Details)'
+        '500':
+          description: Internal Server Error - This id is not valid or not Found
+    delete:
+      summary: Delete a book by ID
+      description: Delete a book by its ID. Requires authentication.
+      tags:
+        - Book
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The book ID
+      responses:
+        '200':
+          description: The deleted book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book(Details)'
+        '500':
+          description: Internal Server Error - This id is not valid or not Found
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Category(Create,Update):
+      type: object
+      required:
+        - title
+      properties:
+        title:
+          type: string
+          description: The title of the book category
+          unique: true
+          index: true
+          required: true
+          example: Electronics
+      example:
+        title: "Electronics"
+    Category(Details):
+      type: object
+      required:
+        - title
+      properties:
+        _id:
+          type: string
+          description: Automatically generated. The unique identifier for the book category
+          example: 6716b5e535521560572f28cc
+        title:
+          type: string
+          description: The title of the book category
+          unique: true
+          index: true
+          required: true
+          example: Science Fiction
+        createdAt:
+          type: string
+          format: date-time
+          description: Automatically generated. The date and time when the category was created
+          example: "2024-10-21T20:13:25.395Z"
+        updatedAt:
+          type: string
+          format: date-time
+          description: Automatically generated. The date and time when the category was last updated
+          example: "2024-10-21T20:13:25.395Z"
+      example:
+        _id: "6716b5e535521560572f28cc"
+        title: "Science Fiction"
+        createdAt: "2024-10-21T20:13:25.395Z"
+        updatedAt: "2024-10-21T20:13:25.395Z"
+    Book(Create,Update):
+      type: object
+      required:
+        - title
+        - author
+        - description
+        - price
+        - category
+        - pages
+      properties:
+        title:
+          type: string
+          description: The title of the book
+          required: true
+          example: Book Title
+        author:
+          type: string
+          description: The author of the book
+          required: true
+          example: Author
+        description:
+          type: string
+          description: A brief description of the book
+          required: true
+          example: Some Description
+        price:
+          type: number
+          description: The price of the book
+          required: true
+          example: 22.22
+        category:
+          type: string
+          description: Reference to the category's _id
+          required: true
+          example: 123abc
+        pages:
+          type: number
+          description: The number of pages in the book
+          required: true
+          example: 100
+        tags:
+          type: string
+          description: Tags for the book
+          example: "classic"
+        ratings:
+          type: array
+          items:
+            type: object
+            properties:
+              star:
+                type: number
+                description: The star rating
+                example: 5
+              comment:
+                type: string
+                description: The comment for the rating
+                example: "Great read"
+              postedby:
+                type: string
+                description: Reference to the _id of the User who posted this rating.
+                example: 123abc
+        totalrating:
+          type: string
+          description: The total rating
+          default: "0"
+          example: "2"
+      example:
+        title: "Book Title"
+        author: "Author"
+        description: "Some Description"
+        price: 22.22
+        category: "123abc"
+        pages: 100
+        tags: "classic"
+        ratings:           
+          - star: 5
+            comment: "Excellent book!"
+            postedby: "123abc"
+        totalrating: "0"
+    Book(Details):
+      type: object
+      required:
+        - title
+        - author
+        - description
+        - price
+        - category
+        - pages
+      properties:
+        _id:
+          type: string
+          description: Automatically generated. The unique identifier for the book category
+        title:
+          type: string
+          description: The title of the book
+          required: true
+        author:
+          type: string
+          description: The author of the book
+          required: true
+        description:
+          type: string
+          description: A brief description of the book
+          required: true
+        price:
+          type: number
+          description: The price of the book
+          required: true
+        category:
+          $ref: '#/components/schemas/Category(Details)'
+        pages:
+          type: number
+          description: The number of pages in the book
+          required: true
+        tags:
+          type: string
+          description: Tags for the book
+        ratings:
+          type: array
+          items:
+            type: object
+            properties:
+              star:
+                type: number
+                description: The star rating
+              comment:
+                type: string
+                description: The comment for the rating
+              postedby:
+                type: string
+                description: Reference to the _id of the User who posted this rating.
+        totalrating:
+          type: string
+          description: The total rating
+          default: "0"
+        createdAt:
+          type: string
+          format: date-time
+          description: Automatically generated. The date and time when the category was created
+        updatedAt:
+          type: string
+          format: date-time
+          description: Automatically generated. The date and time when the category was last updated
+      example:
+        _id: "6716b5e535521560572f28cc"
+        title: "Book Title"
+        author: "Author"
+        description: "Some Description"
+        price: 22.22
+        category: 
+          _id: "6716b5e535521560572f28cd"
+          title: "Classic Literature"
+          createdAt: "2024-10-21T20:13:25.395Z"
+          updatedAt: "2024-10-21T20:13:25.395Z"
+        pages: 100
+        tags: "classic"
+        ratings:           
+          - star: 5
+            comment: "Excellent book!"
+            postedby: "6716b5e535521560572f28ce"
+        totalrating: "0"
+        createdAt: "2024-10-21T20:13:25.395Z"
+        updatedAt: "2024-10-21T20:13:25.395Z"
+    User(Register):
+      type: object
+      required:
+        - firstname
+        - lastname
+        - email
+        - password
+      properties:
+        firstname:
+          type: string
+          description: The first name of the user
+          required: true
+        lastname:
+          type: string
+          description: The last name of the user
+          required: true
+        email:
+          type: string
+          description: The email address of the user
+          unique: true
+          required: true
+        password:
+          type: string
+          description: The password of the user
+          required: true
+      example:
+        firstname: "John"
+        lastname: "Doe"
+        email: "john.doe@example.com"
+        password: "password123"
+    User(Login):
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          description: The email address of the user
+          unique: true
+          required: true
+        password:
+          type: string
+          description: The password of the user
+          required: true
+      example:
+        email: "john.doe@example.com"
+        password: "password123"
+    User(RegisterDetails):
+      type: object
+      required:
+        - firstname
+        - lastname
+        - email
+      properties:
+        _id:
+          type: string
+          description: Automatically generated. The unique identifier for the book category
+          example: 6716b5e535521560572f28cc
+        firstname:
+          type: string
+          description: The first name of the user
+          required: true
+          example: John
+        lastname:
+          type: string
+          description: The last name of the user
+          required: true
+          example: Doe
+        email:
+          type: string
+          description: The email address of the user
+          unique: true
+          required: true
+          example: john.doe@example.com
+        createdAt:
+          type: string
+          format: date-time
+          description: Automatically generated. The date and time when the object was created
+          example: "2024-10-21T20:13:25.395Z"
+        updatedAt:
+          type: string
+          format: date-time
+          description: Automatically generated. The date and time when the object was last updated
+          example: "2024-10-21T20:13:25.395Z"
+      example:
+        _id: "6716b5e535521560572f28cc"
+        firstname: "John"
+        lastname: "Doe"
+        email: "john.doe@example.com"
+        createdAt: "2024-10-21T20:13:25.395Z"
+        updatedAt: "2024-10-21T20:13:25.395Z"
+    User(LoginDetails):
+      type: object
+      required:
+        - firstname
+        - lastname
+        - email
+        - password
+      properties:
+        _id:
+          type: string
+          description: Automatically generated. The unique identifier for the book category
+          example: 6716b5e535521560572f28cc
+        firstname:
+          type: string
+          description: The first name of the user
+          required: true
+          example: John
+        lastname:
+          type: string
+          description: The last name of the user
+          required: true
+          example: Doe
+        email:
+          type: string
+          description: The email address of the user
+          unique: true
+          required: true
+          example: john.doe@example.com
+        token:
+          type: string
+          description: The JWT token for the authenticated user
+          example: "eyJhbGciOiJIUzI1NiIsIn..."
+      example:
+        _id: "6716b5e535521560572f28cc"
+        firstname: "John"
+        lastname: "Doe"
+        email: "john.doe@example.com"
+        token: "eyJhbGciOiJIUzI1NiIsIn..."
