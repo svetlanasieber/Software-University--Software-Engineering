@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <title>Home</title>
+</head>
+<body>
+<main>
+    <div class="home-container">
+
+        <!-- THIS IS FIRST SECTION WITH PROFILE DETAILS -->
+        <div class="profile-section">
+            <div class="home-section">
+                <div class="single-section-box home-profile-information">
+                    <div class="profile-header">
+                        <img th:src="${#strings.isEmpty(user.profilePicture) ? 'https://cdn0.iconfinder.com/data/icons/cryptocurrency-137/128/1_profile_user_avatar_account_person-132-256.png' : user.profilePicture}"
+                             alt="Profile Picture" class="profile-img">
+                        <h2 th:text="${user.username}" class="profile-name">Asen</h2>
+                        <div class="details-section">
+                            <div class="details-section-container">
+                                <strong>User id: </strong>
+                                <p th:text="${user.id}">dfabb65e-a640-49e5-8e36-8c82c8ab515f</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="details-section-container">
+                            <strong>Username: </strong>
+                            <p th:text="${user.username}">testUser</p>
+                        </div>
+                        <div class="details-section-container">
+                            <strong>Email: </strong>
+                            <p th:text="${#strings.isEmpty(user.email) ? 'Edit your profile and add email' : user.email}">Edit profile and add email</p>
+                        </div>
+<!--                         <a href="/" class="profile-actions-button"> -->
+                        <a th:href="@{'/users/' + ${user.id} + '/profile'}" class="profile-actions-button">
+                            <button>Edit Profile</button>
+                        </a>
+                        <a th:href="@{/stories/new}" class="profile-actions-button">
+                            <button>Add Story</button>
+                        </a>
+                        <a th:href="@{/logout}" class="profile-actions-button">
+                            <button>Logout</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THIS IS SECOND SECTION WITH USER STORIES -->
+        <div class="my-stories-section">
+            <div class="home-section">
+                <h3 class="my-stories">My Stories</h3>
+                <ul>
+                    <!--  ONE <li> element is ONE Story -->
+                    <li  th:each="story : ${allStories}" th:if="${story.addedBy.id == user.id}">
+                        <div class="my-stories-first-row">
+                            <div class="story-info">
+                                <p>Kind: <span th:text="${story.kind}">FOURTH</span></p>
+                                <p>Title: <span th:text="${story.title}">New Hampshire Night</span></p>
+                            </div>
+                            <div class="buttons">
+<!--                                 <form action="/" method=""> -->
+                                <form th:action="@{'/stories/' + ${story.id}}" th:method="DELETE">
+                                    <button>Remove</button>
+                                </form>
+
+<!--                                 <form action="/" method=""> -->
+                                <form th:action="@{'/stories/' + ${story.id} + '/visibility'}" th:method="POST">
+                                    <button>Share</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="second-info">
+                            <section>Description: <span th:text="${story.description}">They both exited their vehicle and took turns with their binoculars
+                                looking at the object, which was clearly visible and traveling across the face of the
+                                moon. Betty’s sister had claimed to have seen a flying saucer before.</span>
+                            </section>
+                        </div>
+                    </li>
+                    <!--  Populate the next <li> element based on the list of stories user has -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- THIS IS THIRD SECTION WITH COMMON STORY BOARD -->
+        <div class="my-stories-section">
+            <div class="home-section">
+                <h3 class="my-stories">Common Story Board</h3>
+                <ul>
+                    <!--  ONE <li> element is ONE Story from the common stories-->
+                    <li th:each="story : ${allStories}" th:if="${story.isVisible() == true}">
+                        <div class="story-board">
+                            <div class="single-story">
+                                <h5>Title: <span th:text="${story.title}">New Hampshire Night</span></h5>
+                                <h5>Added by: <span th:text="${story.addedBy.username}">Peter</span> on <span th:text="${story.date}">2025-01-16</span></h5>
+                            </div>
+                            <p>
+                                <a th:href="@{'/stories/' + ${story.id}}"><button>Read</button></a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</main>
+<footer th:replace="~{fragments/commons::footer}"></footer>
+</body>
+</html>

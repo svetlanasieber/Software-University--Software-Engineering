@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}">
+</head>
+<body>
+<main>
+    <div class="welcome">
+
+        <h1 th:text="${story.getTitle()}">New Hampshire Night</h1>
+        <hr class="my-3 bg-white w-100"/>
+
+        <p th:text="${story.getDescription()}" class="h4" style="color: #c9cacb;  text-align: center;">
+            They both exited their vehicle and took turns with their binoculars looking at the object, which was clearly visible and traveling across the face of the moon. Betty’s sister had claimed to have seen a flying saucer before, so Betty was confident that this was what she was observing. Barney, however, was not convinced. He thought it was a commercial airliner until it rapidly changed direction and moved toward them. He realized there was no possible way it could be an airplane.
+            They got back in their car and drove off slowly, following the object as it slowly descended and flew over the surrounding area. Betty claimed that the craft was longer than 60 feet and seemed to be rotating.</p>
+        <hr class="my-3 bg-white w-100"/>
+
+        <div class="read-details">
+            <p>Story by: <span th:text="${story.getAddedBy().getUsername()}">testUser</span></p>
+            <p>
+                <a class="primary-text" th:href="@{/home}">
+                    <button>Back</button>
+                </a>
+            </p>
+            <p>Published on: <span th:text="${story.date}">2025-01-25</span></p>
+        </div>
+    </div>
+
+</main>
+<footer th:replace="~{fragments/commons::footer}"></footer>
+</body>
+</html>

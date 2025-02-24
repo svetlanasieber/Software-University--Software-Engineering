@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}">
+    <title>Edit Profile</title>
+</head>
+<body>
+<main>
+    <section class="section full-height">
+
+        <form class="welcome login" th:action="@{'/users/' + ${user.id} + '/profile'}" th:method="PUT" th:object="${userEditRequest}">
+
+            <h3>Edit Profile</h3>
+
+            <div class="form-group">
+                <div class="label-holder text-white d-flex justify-content-center">
+                    <label for="firstName" class="h3 mb-2">First Name</label>
+                </div>
+                <input type="text" id="firstName" placeholder="Asen" name="firstName" th:field="*{firstName}">
+                <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-warning">Error Text Here</p>
+            </div>
+
+            <div class="form-group">
+                <div class="label-holder text-white d-flex justify-content-center">
+                    <label for="lastName" class="h3 mb-2">Last Name</label>
+                </div>
+                <input type="text" id="lastName" placeholder="Enter your last name" name="lastName" th:field="*{lastName}">
+                <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="text-warning">Error Text Here</p>
+            </div>
+
+            <div class="form-group">
+                <div class="label-holder text-white d-flex justify-content-center">
+                    <label for="email" class="h3 mb-2">Email</label>
+                </div>
+                <input type="text" id="email" placeholder="Enter your email" name="email" th:field="*{email}">
+                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-warning">Error Text Here</p>
+            </div>
+
+            <div class="form-group">
+                <div class="label-holder text-white d-flex justify-content-center">
+                    <label for="profilePicture" class="h3 mb-2">Profile Picture URL</label>
+                </div>
+                <input type="text" id="profilePicture" placeholder="Enter valid url for an image" name="profilePicture" th:field="*{profilePicture}">
+                <p th:if="${#fields.hasErrors('profilePicture')}" th:errors="*{profilePicture}" class="text-warning">Error Text Here</p>
+            </div>
+
+            <button class="profile-actions-button">Save</button>
+        </form>
+
+    </section>
+</main>
+<footer th:replace="~{fragments/commons::footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}">
+    <title>Login</title>
+</head>
+<body>
+<header th:replace="~{fragments/commons::nav}"></header>
+<main>
+    <section class="section full-height">
+
+        <form class="welcome login" th:action="@{/login}" th:method="POST" th:object="${loginRequest}">
+
+            <h3>Login</h3>
+
+            <div class="form-group">
+                <div class="label-holder text-white d-flex justify-content-center">
+                    <label for="username" class="h3 mb-2">Username</label>
+                </div>
+                <input type="text" placeholder="Username" id="username" name="username" th:field="*{username}">
+                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="text-warning">Error Text Here</p>
+            </div>
+
+            <div class="form-group">
+                <div class="label-holder text-white d-flex justify-content-center">
+                    <label for="password" class="h3 mb-2">Password</label>
+                </div>
+                <input type="password" placeholder="Password" id="password" name="password" th:field="*{password}">
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-warning">Error Text Here</p>
+            </div>
+
+            <button type="submit">Log In</button>
+            <p class="form-already">Don't have an account? <a th:href="@{/register}">Register now</a>!</p>
+        </form>
+
+    </section>
+</main>
+<footer th:replace="~{fragments/commons::footer}"></footer>
+</body>
+</html>
