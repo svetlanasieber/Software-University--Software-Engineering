@@ -8,7 +8,7 @@ import java.util.TreeMap;
 public class CountRealNumbers_01 {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
 
         TreeMap<Double, Integer> numbersCount = new TreeMap<>();
 
@@ -16,15 +16,15 @@ public class CountRealNumbers_01 {
                 .mapToDouble(Double::parseDouble).toArray();
 
         for (double num : nums) {
-            if (numbersCount.containsKey(num)){
-                numbersCount.put(num,numbersCount.get(num)+1);
-            }else {
+            if (numbersCount.containsKey(num)) {
+                numbersCount.put(num, numbersCount.get(num) + 1);
+            } else {
                 numbersCount.put(num, 1);
             }
         }
 
         for (Map.Entry<Double, Integer> kvp : numbersCount.entrySet()) {
-            System.out.printf("%.0f -> %d%n", kvp.getKey(),kvp.getValue());
+            System.out.printf("%.0f -> %d%n", kvp.getKey(), kvp.getValue());
         }
     }
 }
