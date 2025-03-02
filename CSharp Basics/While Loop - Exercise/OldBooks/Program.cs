@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OldLibrary
+namespace OldBooks
 {
     class Program
     {
