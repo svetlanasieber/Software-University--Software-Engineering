@@ -15,11 +15,11 @@ public class SoftUniExamResults_10 {
         while (!input.equals("exam finished")) {
 
             if (input.contains("banned")) {
-                //Katy-banned
+              
                 String username = input.split("-")[0];
                 userAndPoints.remove(username);
             } else {
-                //Peter-Java-84
+              
                 String username = input.split("-")[0];
                 String language = input.split("-")[1];
                 int points = Integer.parseInt(input.split("-")[2]);
