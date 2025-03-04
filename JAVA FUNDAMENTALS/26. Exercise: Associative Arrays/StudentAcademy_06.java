@@ -28,14 +28,10 @@ public class StudentAcademy_06 {
             String studentName = entry.getKey();
             List<Double> grades = entry.getValue();
 
-            // Option 1
+         
             double sum = grades.stream().mapToDouble(Double::doubleValue).sum();
 
-            // Option 2
-//            double sum = 0;
-//            for (Double grade : grades) {
-//                sum  += grade;
-//            }
+
             double averageGrade = sum / grades.size();
             if (averageGrade >= 4.50){
                 System.out.printf("%s -> %.2f\n", studentName, averageGrade);
