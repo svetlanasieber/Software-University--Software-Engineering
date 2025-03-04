@@ -13,14 +13,8 @@ public class MultiplyBigNumber_05 {
         BigInteger number1 = new BigInteger(firstNumber);
         BigInteger number2 = new BigInteger(secondNumber);
 
-        // Умножение
+      
         System.out.println(number1.multiply(number2));
 
-//        // Събиране
-//        System.out.println(number1.add(number2));
-//        // Изваждане
-//        System.out.println(number1.subtract(number2));
-//        // Деление
-//        System.out.println(number1.divide(number2));
     }
 }
