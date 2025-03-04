@@ -14,7 +14,6 @@ public class MatchFullName_01 {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
 
-        //matcher.find() -> true/false Ако намери следващо съвпадение
         while (matcher.find()){
             System.out.print(matcher.group() + " ");
         }
