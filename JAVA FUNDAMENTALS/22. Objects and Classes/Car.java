@@ -2,15 +2,14 @@ package ObjectAndClasses;
 
 public class Car {
 
-    //Характеристики
+
     private String brand;
     private int hp;
     private String color;
 
-    //Конструктор
+
     public Car (String brand, int hp, String color){
 
-        //първоначално се създава един празен обект
 
         this.brand = brand;
         this.hp = hp;
@@ -18,7 +17,6 @@ public class Car {
 
     }
 
-    //getters and setters -> методи, които осигуряват достъп до нашите полета
     public String getBrand() {
         return brand;
     }
