@@ -15,13 +15,11 @@ public class MatchDates_03 {
         Matcher matcher = pattern.matcher(text);
 
         while (matcher.find()) {
-            String wholeMatch = matcher.group(); //"13/Jul/1928"
-            String day = matcher.group("day"); //"13"
-            String month = matcher.group("month"); //"Jul"
-            String year = matcher.group("year"); //"1928"
-//            String day = matcher.group(1);
-//            String month = matcher.group(3);
-//            String year = matcher.group(4);
+            String wholeMatch = matcher.group(); 
+            String day = matcher.group("day"); 
+            String month = matcher.group("month"); 
+            String year = matcher.group("year"); 
+
             System.out.printf("Day: %s, Month: %s, Year: %s\n", day, month, year);
         }
     }
