@@ -19,12 +19,11 @@ public class ValidUsernames_01 {
 
     private static boolean isUsernameValid(String username) {
 
-        //Has a length of between 3 and 16 characters.
         if (username.length() < 3 || username.length() > 16) {
             return false;
         }
 
-        //It contains only letters, numbers, hyphens, and underscores.
+ 
         for (char symbol : username.toCharArray()) {
             if (!Character.isLetterOrDigit(symbol) && symbol != '-' && symbol  != '_') {
                 return false;
