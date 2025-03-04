@@ -20,19 +20,19 @@ public class LettersChangeNumbers_08 {
 
     private static double calculateCodeResult(String code) {
 
-        //"A12b"
+
         char letterBefore = code.charAt(0);
         double number = Double.parseDouble(code.substring(1, code.length() - 1));
         char letterAfter = code.charAt(code.length() - 1);
 
-        // 1. Letter Before Manipulation
+
         if (Character.isUpperCase(letterBefore)) {
             number /= letterBefore - 64;
         } else {
             number *= letterBefore - 96;
         }
 
-        // 2. Letter After Manipulation
+
         if (Character.isUpperCase(letterAfter)) {
             number -= letterAfter - 64;
         } else {
