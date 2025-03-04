@@ -11,7 +11,7 @@ public class CaesarCipher_04 {
         StringBuilder encryptedText = new StringBuilder();
 
         for (char symbol : text.toCharArray()) {
-            // 'A' -> 'D'
+         
             char encryptedSymbol = (char) (symbol + 3);
             encryptedText.append(encryptedSymbol);
         }
