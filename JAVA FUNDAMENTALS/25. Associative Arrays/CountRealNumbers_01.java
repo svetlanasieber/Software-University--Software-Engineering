@@ -1,30 +1,44 @@
-package Maps_AssocArr_Lab;
+package maps;
 
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class CountRealNumbers_01 {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
-        TreeMap<Double, Integer> numbersCount = new TreeMap<>();
+        double [] numbers = Arrays.stream(scanner.nextLine().split(" "))
+                                    .mapToDouble(Double::parseDouble).toArray();
+        //numbers = [8, 2, 2, 8, 2]
 
-        double[] nums = Arrays.stream(scanner.nextLine().split(" "))
-                .mapToDouble(Double::parseDouble).toArray();
+        //запис / двойка (pair): число -> бр. срещанията
+        Map<Double, Integer> numbersCountMap = new TreeMap<>();
 
-        for (double num : nums) {
-            if (numbersCount.containsKey(num)) {
-                numbersCount.put(num, numbersCount.get(num) + 1);
-            } else {
-                numbersCount.put(num, 1);
+        for (double number : numbers) {
+            //1. не сме го срещали до момента -> нямаме го записано
+            if (!numbersCountMap.containsKey(number)) {
+                //първото срещане на числото
+                numbersCountMap.put(number, 1);
+            }
+            //2. вече да сме го срещали -> има го записано
+            else {
+                int currentCount = numbersCountMap.get(number);//текущия брой на срещанията
+                numbersCountMap.put(number, currentCount + 1);
             }
         }
 
-        for (Map.Entry<Double, Integer> kvp : numbersCount.entrySet()) {
-            System.out.printf("%.0f -> %d%n", kvp.getKey(), kvp.getValue());
+        //принтиране на записите в map
+        //numbersCountMap:
+        //2 -> 3
+        //8 -> 2
+        //запис: key(число) -> value(бр. срещанията)
+
+        for (Map.Entry<Double, Integer> pair : numbersCountMap.entrySet()) {
+            //всеки един запис е съхранен в pair
+            //pair: key (число)   value (бр. срещания)
+            System.out.printf("%.0f -> %d%n", pair.getKey(), pair.getValue());
         }
+
+
+
     }
 }
