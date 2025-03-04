@@ -10,7 +10,7 @@ public class TextFilter_04 {
         String text = scanner.nextLine();
 
         for (String forbiddenWord : forbiddenWords) {
-            //"mask" -> "****"
+         
             String replaceWord = "*".repeat(forbiddenWord.length());
             text = text.replace(forbiddenWord, replaceWord);
         }
