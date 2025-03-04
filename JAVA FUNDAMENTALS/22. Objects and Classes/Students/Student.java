@@ -2,7 +2,6 @@ package ObjectAndClasses.Students;
 
 public class Student {
 
-    //first name, last name, age, and hometown.
 
     private  String firstName;
     private  String lastName;
