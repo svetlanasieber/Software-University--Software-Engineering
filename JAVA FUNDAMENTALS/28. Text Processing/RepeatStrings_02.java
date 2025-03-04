@@ -9,10 +9,8 @@ public class RepeatStrings_02 {
         String [] texts = scanner.nextLine().split(" ");
 
         for (String text : texts) {
-            int length = text.length(); //дължина на текста = брой символи в текст
-            /*for (int count = 1; count <= length; count++) {
-                System.out.print(text);
-            }*/
+            int length = text.length(); 
+       
             System.out.println(text.repeat(length));
         }
     }
