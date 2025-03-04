@@ -14,7 +14,6 @@ public class Orders_03 {
         String input = scanner.nextLine();
         while (!input.equals("buy")) {
 
-            //Beer 2.20 100
             String productName = input.split(" ")[0];
             double price = Double.parseDouble(input.split(" ")[1]);
             int quantity = Integer.parseInt(input.split(" ")[2]);
