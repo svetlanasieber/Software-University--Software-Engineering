@@ -17,12 +17,11 @@ public class Forcebook_09 {
                 String teamName = input.split(" \\| ")[0];
                 String playerName = input.split(" \\| ")[1];
 
-                // 1. Ако няма такъв отбор, създаваме нов с празен списък с играчи.
                 if (!teams.containsKey(teamName)) {
                     teams.put(teamName, new ArrayList<>());
                 }
 
-                // 2. Проверяваме този играч дали фигурира в друг отбор.
+
                 boolean isThisPlayerPartOfAnotherTeam = false;
                 for (List<String> team : teams.values()) {
                     if (team.contains(playerName)) {
@@ -31,7 +30,7 @@ public class Forcebook_09 {
                     }
                 }
 
-                // 3. Ако този играч не фигурира в друг отбор го прибавяме към този отбор.
+   
                 if (!isThisPlayerPartOfAnotherTeam) {
                     teams.get(teamName).add(playerName);
                 }
@@ -40,12 +39,11 @@ public class Forcebook_09 {
                 String playerName = input.split(" -> ")[0];
                 String teamName = input.split(" -> ")[1];
 
-                //1. Премахваме играча от текущия отбор.
                 for (List<String> team : teams.values()) {
                     team.remove(playerName);
                 }
 
-                //2. Проверяваме дали отбора, в който трябва да отиде играча съществува.
+ 
                 if (teams.containsKey(teamName)) {
                     teams.get(teamName).add(playerName);
                 } else {
