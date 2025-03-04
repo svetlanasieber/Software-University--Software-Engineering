@@ -14,20 +14,14 @@ public class Main {
 
         for (int i = 1; i <= n ; i++) {
 
-            //прочитаме от конзолата input, който запазваме в масив -> "favourite_DownTown_3:14" -> ["favourite", "DownTown", "3:14"]
             String[] data = scanner.nextLine().split("_");
 
-            //прочитаме си елементите от масива
             String typeList = data[0];
             String name = data[1];
             String time = data[2];
 
-            //създаваме празен обект от класа Song
-            Song currentSong = new Song();//typeList, name, time
+            Song currentSong = new Song();
 
-            //задаваме стойности на полетата от обекта спрямо прочетения инпут
-
-            //ако нямаме конструктор
             currentSong.setTypeList(typeList);
             currentSong.setName(name);
             currentSong.setTime(time);
