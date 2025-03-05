@@ -27,16 +27,6 @@ public class LaunchPad {
 
     public boolean removeSpacecraft(String name) {
 
-        // Начин 1:
-//        for (Spacecraft spacecraft : spacecrafts) {
-//            if (spacecraft.getName().equals(name)) {
-//                spacecrafts.remove(spacecraft);
-//                return true;
-//            }
-//        }
-//        return false;
-
-        // Начин 2:
         return spacecrafts.removeIf(spacecraft -> spacecraft.getName().equals(name));
     }
 
@@ -48,15 +38,7 @@ public class LaunchPad {
 
     public Spacecraft getSpacecraft(String name) {
 
-        // Начин 1:
-//        for (Spacecraft spacecraft : spacecrafts) {
-//            if (spacecraft.getName().equals(name)) {
-//                return spacecraft;
-//            }
-//        }
-//        return null;
 
-        // Начин 2:
         return spacecrafts.stream().filter(spacecraft -> spacecraft.getName().equals(name)).findFirst().orElse(null);
     }
 
@@ -66,16 +48,6 @@ public class LaunchPad {
 
     public List<Spacecraft> getSpacecraftsByMissionType(String missionType) {
 
-        // Начин 1:
-//        List<Spacecraft> spacecraftsByMissionType = new ArrayList<>();
-//        for (Spacecraft spacecraft : spacecrafts) {
-//            if (spacecraft.getMissionType().equals(missionType)) {
-//                spacecraftsByMissionType.add(spacecraft);
-//            }
-//        }
-//        return spacecraftsByMissionType;
-
-        // Начин 2:
         List<Spacecraft> spacecraftsByMissionType = spacecrafts.stream().filter(spacecraft -> spacecraft.getMissionType().equals(missionType)).toList();
         if (spacecraftsByMissionType.isEmpty()) {
             System.out.println("There are no spacecrafts to respond this criteria.");
