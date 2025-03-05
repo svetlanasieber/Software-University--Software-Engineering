@@ -13,32 +13,31 @@ public class CustomList<T extends Comparable<T>> implements Iterable<T> {
         elements = new ArrayList<>();
     }
 
-    //void add(T element)
+ 
     public void add(T element) {
         this.elements.add(element);
     }
 
-    //T remove(int index)
+  
     public T remove(int index) {
         return this.elements.remove(index);
     }
 
-    //boolean contains(T element)
+   
     public boolean contains(T element) {
         return this.elements.contains(element);
     }
 
-    //void swap(int index, int index)
+
     public void swap(int index1, int index2) {
         Collections.swap(this.elements, index1, index2);
     }
 
-    //int countGreaterThan(T element)
+
     public int countGreaterValues(T elementToCompare) {
         int count = 0;
         for (T element : this.elements) {
-            // Сравняваме дали стойността от списъка е по-голяма от стойността, с която сравнявам
-            // първото > второто = 1 или повече
+
             int comparingResult = element.compareTo(elementToCompare);
             if (comparingResult > 0) {
                 count++;
@@ -47,12 +46,12 @@ public class CustomList<T extends Comparable<T>> implements Iterable<T> {
         return count;
     }
 
-    //T getMax()
+
     public T getMax() {
         return Collections.max(this.elements);
     }
 
-    //T getMin()
+
     public T getMin() {
         return Collections.min(this.elements);
     }
