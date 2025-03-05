@@ -36,8 +36,7 @@ public class CustomList<T extends Comparable<T>> {
     public int countGreaterValues(T elementToCompare) {
         int count = 0;
         for (T element : this.elements) {
-            // Сравняваме дали стойността от списъка е по-голяма от стойността, с която сравнявам
-            // първото > второто = 1 или повече
+
             int comparingResult = element.compareTo(elementToCompare);
             if (comparingResult > 0) {
                 count++;
