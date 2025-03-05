@@ -12,7 +12,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        //1, 2, 3, 4, 5, 6, 7, 8
+
         List<Integer> numbers = Arrays.stream(scanner.nextLine().split(", "))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
