@@ -15,7 +15,7 @@ public class Main {
         String input = scanner.nextLine();
         while (!input.equals("END")) {
 
-            //"{name} {age} {town}"
+          
             String name = input.split(" ")[0];
             int age = Integer.parseInt(input.split(" ")[1]);
             String town = input.split(" ")[2];
