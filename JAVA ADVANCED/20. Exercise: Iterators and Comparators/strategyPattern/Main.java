@@ -15,7 +15,7 @@ public class Main {
         int n = Integer.parseInt(scanner.nextLine());
         for (int row = 0; row < n; row++) {
 
-            // {name} {age}
+           }
             String input = scanner.nextLine();
 
             String name = input.split(" ")[0];
