@@ -17,8 +17,7 @@ public class Box<T extends Comparable<T>> {
 
     public void swap(int index1, int index2) {
 
-        // Размени местата на елементите от този списък на тези два индекса
-        // Collections.swap(this.values, index1, index2);
+
 
         T firstValue = values.get(index1);
         T secondValue = values.get(index2);
@@ -31,8 +30,7 @@ public class Box<T extends Comparable<T>> {
 
         int count = 0;
         for (T value : this.values) {
-            // Сравняваме дали стойността от списъка е по-голяма от стойността, с която сравнявам
-            // първото > второто = 1 или повече
+
             int comparingResult = value.compareTo(valueToCompare);
             if (comparingResult > 0) {
                 count++;
