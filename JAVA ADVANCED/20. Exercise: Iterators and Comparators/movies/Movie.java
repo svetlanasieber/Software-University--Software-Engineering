@@ -29,7 +29,7 @@ public class Movie implements Comparable<Movie> {
         return String.format("Title: %s\nCost: %.0f million $\nRating: %.1f/10", title, budget, rating);
     }
 
-    // Описваме начина по който се сравняват два филма
+   
     @Override
     public int compareTo(Movie otherMover) {
 
