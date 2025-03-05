@@ -19,10 +19,6 @@ public class Main_08 {
         Display<Integer> integerDisplay = new Display<>();
         integerDisplay.display(5, 10, 15);
 
-        // Default Comparator Implementation за числа: Подрежда числата в нарастващ ред
-        // първото > второто = 1
-        // първото < второто = -1
-        // първото == второто = 0
         System.out.println("Ivan".compareTo("Ivan"));
     }
 }
