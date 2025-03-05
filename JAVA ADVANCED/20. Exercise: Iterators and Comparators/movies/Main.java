@@ -18,7 +18,7 @@ public class Main {
         movies.add(movie2);
         movies.add(movie3);
 
-        // Подреди филмите по бюджет (от филм с най-малък бюджет към филм с най-голям бюджет)
+       
         Collections.sort(movies, new MovieRatingComparator().reversed());
 
         movies.forEach(System.out::println);
