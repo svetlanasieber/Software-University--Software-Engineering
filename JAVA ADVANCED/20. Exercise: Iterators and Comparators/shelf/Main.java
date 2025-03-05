@@ -5,11 +5,8 @@ public class Main {
     public static void main(String[] args) {
 
    
-        printName("Vik", "Ivan", "Tosho", "Gosho");
-        printName("Vik");
-
-        
-
+        printName("Lana", "Peter", "Bili", "Bubu");
+        printName("Lana");
     }
 
 
