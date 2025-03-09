@@ -1,5 +1,5 @@
-# Software Engineering
-# Software University (softuni.bg)
+# Software University (softuni.bg) - SDET - Software Development Engineer in Test
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
