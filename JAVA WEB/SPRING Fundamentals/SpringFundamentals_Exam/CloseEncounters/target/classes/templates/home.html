@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <title>Home</title>
+</head>
+<body>
+<main>
+    <div class="home-container">
+
+        <!-- THIS IS FIRST SECTION WITH PROFILE DETAILS -->
+        <div class="profile-section">
+            <div class="home-section">
+                <div class="single-section-box home-profile-information">
+                    <div class="profile-header">
+                        <img th:if="${user.profilePicture != null}" th:src="${user.profilePicture}"
+                             alt="Profile Picture" class="profile-img">
+                        <img th:if="${user.profilePicture == null}" src="https://cdn0.iconfinder.com/data/icons/cryptocurrency-137/128/1_profile_user_avatar_account_person-132-256.png"
+                             alt="Profile Picture" class="profile-img">
+                        <h2 class="profile-name" th:text="${user.firstName != null ? user.firstName : 'User'}">User</h2>
+                        <div class="details-section">
+                            <div class="details-section-container">
+                                <strong>User id: </strong>
+                                <p th:text="${user.id}">User ID</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="details-section-container">
+                            <strong>Username: </strong>
+                            <p th:text="${user.username}">Username</p>
+                        </div>
+                        <div class="details-section-container">
+                            <strong>Email: </strong>
+                            <p th:text="${user.email != null ? user.email : 'Edit profile and add email'}">Email</p>
+                        </div>
+                        <a th:href="@{/users/{userId}/profile(userId=${user.id})}" class="profile-actions-button">
+                            <button>Edit Profile</button>
+                        </a>
+                        <a th:href="@{/stories/new}" class="profile-actions-button">
+                            <button>Add Story</button>
+                        </a>
+                        <a th:href="@{/logout}" class="profile-actions-button">
+                            <button>Logout</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THIS IS SECOND SECTION WITH USER STORIES -->
+        <div class="my-stories-section">
+            <div class="home-section">
+                <h3 class="my-stories">My Stories</h3>
+                <ul>
+                    <!--  ONE <li> element is ONE Story -->
+                    <li th:each="story : ${userStories}">
+                        <div class="my-stories-first-row">
+                            <div class="story-info">
+                                <p>Kind: <span th:text="${story.kind}">Kind</span></p>
+                                <p>Title: <span th:text="${story.title}">Title</span></p>
+                            </div>
+                            <div class="buttons">
+                                <form th:action="@{/stories/{storyId}(storyId=${story.id})}" th:method="POST">
+                                    <button>Remove</button>
+                                </form>
+                                <form th:action="@{/stories/{storyId}/visibility(storyId=${story.id})}" th:method="POST">
+                                    <button>Share</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="second-info">
+                            <section>Description: <span th:text="${story.description}">Description</span>
+                            </section>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- THIS IS THIRD SECTION WITH COMMON STORY BOARD -->
+        <div class="my-stories-section">
+            <div class="home-section">
+                <h3 class="my-stories">Common Story Board</h3>
+                <ul>
+                    <!--  ONE <li> element is ONE Story from the common stories-->
+                    <li th:each="story : ${visibleStories}">
+                        <div class="story-board">
+                            <div class="single-story">
+                                <h5>Title: <span th:text="${story.title}">Title</span></h5>
+                                <h5>Added by: <span th:text="${story.addedBy.username}">Username</span> on <span th:text="${#temporals.format(story.addedOn, 'yyyy-MM-dd')}">Date</span></h5>
+                            </div>
+                            <p>
+                                <a th:href="@{/stories/{storyId}(storyId=${story.id})}"><button>Read</button></a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</main>
+<footer th:replace="~{fragments/commons::footer}"></footer>
+</body>
+</html>

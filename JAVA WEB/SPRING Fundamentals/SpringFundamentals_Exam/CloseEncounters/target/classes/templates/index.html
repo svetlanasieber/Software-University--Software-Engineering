@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}">
+</head>
+<body>
+<header th:replace="~{fragments/commons::nav}"></header>
+<main>
+    <div style="margin-top: 6em">
+        <div class="encounters-section">
+        <h1 style="text-align: center; font-family: inherit">Close Encounters</h1>
+            <p class="intro-text">
+                Close encounters with aliens and abductions are common themes in ufology, blending anecdotal experiences,
+                folklore, and modern popular culture. "Close encounters" categorize sightings and experiences with UFOs or
+                extraterrestrial beings. These were formalized by astronomer J. Allen Hynek:
+            </p>
+
+            <ul class="encounters-list">
+                <li><strong>CE-1 (Close Encounters of the First Kind):</strong> Sighting of a UFO within 500 feet, showing detail but without physical interaction.</li>
+                <li><strong>CE-2 (Second Kind):</strong> A UFO leaves physical evidence, such as imprints on the ground, crop circles, or radiation.</li>
+                <li><strong>CE-3 (Third Kind):</strong> Encounter with animated beings, often described as extraterrestrial.</li>
+                <li><strong>Extended Categories:</strong> Later interpretations added "CE-4" (abduction by aliens).</li>
+            </ul>
+            <p style="text-align: center">This app is for enthusiasts who want to share their stories.
+            </p>
+        </div>
+    </div>
+</main>
+<footer th:replace="~{fragments/commons::footer}"></footer>
+</body>
+</html>
