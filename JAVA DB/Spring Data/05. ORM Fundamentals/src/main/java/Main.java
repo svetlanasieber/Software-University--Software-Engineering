@@ -10,18 +10,14 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) throws SQLException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, InstantiationException {
-        Connector.createConnection("root", "1234", "soft_uni");
+        Connector.createConnection("", "", "");
 
         Connection connection = Connector.getConnection();
 
         EntityManager<User> userEntityManager = new EntityManager<>(connection);
-       /* User user = new User("First", 28, LocalDate.now());
-        userEntityManager.persist(user);
-
-        */
+   
         EntityManager<Student> studentEntityManager = new EntityManager<>(connection);
-        /*Student student = new Student("name");
-        studentEntityManager.persist(student);*/
+
 
         User first = userEntityManager.findFirst(User.class);
 
