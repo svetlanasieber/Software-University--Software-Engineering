@@ -20,7 +20,7 @@ public class Main {
         User user2 = new User("user2", "pass2", 22, LocalDate.now());
         user2.setId(2);
 
-//        em.persist(user2);
+
 
         User firstUser = em.findFirst(User.class);
 
