@@ -21,22 +21,4 @@ public class MyConnector {
     }
 }
 
-//
-//class Singleton {
-//    private static Object instance;
-//
-//    private Singleton() {}
-//
-//    public static Object getInstance() {
-//        if (instance == null) {
-//            init();
-//        }
-//
-//        return instance;
-//    }
-//
-//    private static void init() {
-////        ...
-////        instance = ....
-//    }
-//}
+
