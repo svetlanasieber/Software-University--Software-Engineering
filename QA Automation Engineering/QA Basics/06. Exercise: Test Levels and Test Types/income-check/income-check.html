@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="sec-1" class="section">
+
+        <form class="main" onsubmit="execute(event)">
+                         <img src="./images/money.png" alt="" class="money">
+            <h1 class="title">Income</h1>
+          <h1 class="subtitle">Check</h1>
+
+            <div class="content">
+                <label for="income">Income:</label>
+                <input id="income" type="number" required step="0.01" required placeholder="Enter your income">
+            </div>
+
+            <button type="submit" class="btn">CHECK INCOME</button>
+
+            <div class="result-box">
+                <h3 id="result"></h3>
+            </div>
+        </form>
+</body>
+
+<script src="./calculate.js"></script>
+
+<script>
+    function execute(event) {
+        event.preventDefault();
+        // Read input data
+        let income = Number(document.getElementById("income").value);
+
+        // Execute the solution code
+        let executionResult = calculate(income);
+
+        // Visualize the output
+        document.getElementById("result").style.display = "block";
+        if (executionResult) {
+            document.getElementById("result").innerHTML = executionResult;
+        }
+    }
+</script>
+
+</html>

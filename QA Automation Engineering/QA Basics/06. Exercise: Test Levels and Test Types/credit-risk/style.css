@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin-right: 700px;
+  overflow: hidden;
+  background: url("./images/BG.jpg");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.section {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 20px;
+  background: white;
+  padding: 30px 30px 20px 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+label {
+  color: #03030363;
+}
+
+
+input {
+  width: 63%;
+  border-width: 2px;
+  border-color: black;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px 10px;
+  font-size: 20px;
+  color: #050505;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 7px;
+}
+
+
+.title {
+  color: #050505;
+  font-size: 45px;
+  -webkit-text-stroke: 1px #030303;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  
+}.subtitle {
+  color: #050505;
+  font-size: 45px;
+  -webkit-text-stroke: 1px #030303;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  margin-top: 16px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border: 2px solid black;
+  border-radius: 7px;
+  width: 69%;
+}
+
+.btn:hover {
+  background-color: #e6adbb;
+}
+
+.result-box {
+  height: 70px;
+  width: max-content;
+  color: #080808;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+#result {
+  margin: 0;
+}
+
+.line {
+  width: 100%;
+  position: relative;
+  top: -16px;
+  color: #050505;
+}
+
+::placeholder {
+  color: rgba(5, 5, 5, 0.409);
+  font-size: 16px;
+}
+
+.money {
+  width: 36px;
+  background: #f7454570;
+  border-radius: 50%;
+  padding: 5px 6px 7px 6px;
+}

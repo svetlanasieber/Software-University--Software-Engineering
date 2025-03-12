@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Risk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="sec-1" class="section">
+
+        <form class="main" onsubmit="execute(event)">
+                         <img src="./images/money.png" alt="" class="money">
+            <h1 class="title">Cred<span style="color: red">!</span>t</h1>
+          <h1 class="subtitle">R<span style="color: red">!</span>sk</h1>
+
+            <div class="content">
+                <input id="age" type="number" required step="0.1" required placeholder="Enter your age">
+            </div>
+
+            <div class="result-box">
+                <h3 id="ageResult"></h3>
+            </div>
+
+              <div class="content">
+                <input id="income" type="number" required step="0.01" required placeholder="Enter your income">
+            </div>
+
+             <div class="result-box">
+                <h3 id="incomeResult"></h3>
+            </div>
+
+            <button type="submit" class="btn">CHECK CREDIT RISK</button>
+
+            <div class="result-box">
+                <h3 id="result"></h3>
+            </div>
+        </form>
+</body>
+
+<script src="./script.js"></script>
+
+<script>
+    function execute(event) {
+        event.preventDefault();
+        // Read input data
+        let age = Number(document.getElementById("age").value);
+      
+        let income = Number(document.getElementById("income").value);
+        // Execute the solution code
+        let executionResult = calculate(age, income);
+
+        // Visualize the output
+        document.getElementById("result").style.display = "block";
+
+      let ageResult = "";
+        if (age) {
+        ageResult = calculateAge(age);
+            document.getElementById("ageResult").innerHTML = ageResult;
+        }
+
+      let incomeResult = "";
+        if (income) {
+           incomeResult = calculateIncome(income);
+            document.getElementById("incomeResult").innerHTML = incomeResult;
+        }
+
+      
+        if (executionResult && ageResult != "error"&& incomeResult != "error") {
+            document.getElementById("result").innerHTML = (executionResult * 100).toFixed(0) + "%";
+        } else {
+          document.getElementById("result").innerHTML = "error";
+        }
+      
+    }
+</script>
+
+</html>
