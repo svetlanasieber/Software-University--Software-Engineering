@@ -1,4 +1,4 @@
-package RegEx;
+package Regular_Expression_Exercise;
 
 import java.util.ArrayList;
 import java.util.List;
