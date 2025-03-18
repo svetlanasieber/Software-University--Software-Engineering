@@ -1,5 +1,5 @@
 package app.user.model;
 
 public enum Country {
-    BULGARIA, GERMANY, FRANCE
+    Switzerland, GERMANY, FRANCE
 }
