@@ -14,18 +14,18 @@ public class DtoMapperUTest {
     @Test
     void givenHappyPath_whenMappingUserToUserEditRequest(){
 
-        // Given
+        
         User user = User.builder()
-                .firstName("Vik")
-                .lastName("Aleksandrov")
-                .email("vik123@abv.bg")
+                .firstName("Svetlana")
+                .lastName("Sieber")
+                .email("sieber.test@gmail.com")
                 .profilePicture("www.image.com")
                 .build();
 
-        // When
+       
         UserEditRequest resultDto = DtoMapper.mapUserToUserEditRequest(user);
 
-        // Then
+        
         assertEquals(user.getFirstName(), resultDto.getFirstName());
         assertEquals(user.getLastName(), resultDto.getLastName());
         assertEquals(user.getEmail(), resultDto.getEmail());
