@@ -53,9 +53,7 @@ public class UserService implements UserDetailsService {
         this.notificationService = notificationService;
     }
 
-    // Register
-    // Test 1: When user exist with this username -> exception is thrown
-    // Test 2: Happy path
+
     @CacheEvict(value = "users", allEntries = true)
     @Transactional
     public User register(RegisterRequest registerRequest) {
@@ -81,8 +79,7 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
-    // Test Case: When there is no user in the database (repository returns Optional.empty()) - then expect an exception
-    // of type DomainException is thrown
+
     @CacheEvict(value = "users", allEntries = true)
     public void editUserDetails(UUID userId, UserEditRequest userEditRequest) {
 
@@ -115,8 +112,7 @@ public class UserService implements UserDetailsService {
                 .build();
     }
 
-    // В началото се изпълнява веднъж този метод и резултата се пази в кеш
-    // Всяко следващо извикване на този метод ще се чете резултата от кеша и няма да се извиква четенето от базата
+
     @Cacheable("users")
     public List<User> getAllUsers() {
 
@@ -137,21 +133,12 @@ public class UserService implements UserDetailsService {
 
         User user = getById(userId);
 
-        // НАЧИН 1:
-//        if (user.isActive()){
-//            user.setActive(false);
-//        } else {
-//            user.setActive(true);
-//        }
 
-        // false -> true
-        // true -> false
         user.setActive(!user.isActive());
         userRepository.save(user);
     }
 
-    // If user is ADMIN -> USER
-    // If user is USER -> ADMIN
+
     @CacheEvict(value = "users", allEntries = true)
     public void switchRole(UUID userId) {
 
@@ -166,10 +153,6 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
     }
 
-    // Всеки пък, когато потребител се логва, Spring Security ще извиква този метод
-    // за да вземе детайлите на потребителя с този username
-    // Test 1: When user exist - then return new AuthenticationMetadata
-    // Test 2: When User does not exist - then throws exception
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
