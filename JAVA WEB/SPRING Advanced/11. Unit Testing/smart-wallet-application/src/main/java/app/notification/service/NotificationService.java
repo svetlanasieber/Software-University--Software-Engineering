@@ -38,7 +38,7 @@ public class NotificationService {
                 .notificationEnabled(isEmailEnabled)
                 .build();
 
-        // Invoke Feign client and execute HTTP Post Request.
+       
         try {
             ResponseEntity<Void> httpResponse = notificationClient.upsertNotificationPreference(notificationPreference);
             if (!httpResponse.getStatusCode().is2xxSuccessful()) {
