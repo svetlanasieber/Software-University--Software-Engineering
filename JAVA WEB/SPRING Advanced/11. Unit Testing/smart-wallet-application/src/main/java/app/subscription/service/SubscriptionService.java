@@ -70,7 +70,7 @@ public class SubscriptionService {
 
         Subscription currentSubscription = optionalSubscription.get();
 
-        // Purchase of Monthly Premium subscription
+    
         SubscriptionPeriod subscriptionPeriod = upgradeRequest.getSubscriptionPeriod();
         String period = subscriptionPeriod.name().substring(0, 1).toUpperCase() + subscriptionPeriod.name().substring(1);
         String type = subscriptionType.name().substring(0, 1).toUpperCase() + subscriptionType.name().substring(1);
