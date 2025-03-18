@@ -138,9 +138,9 @@ public class UserServiceUTest {
 
        
         RegisterRequest registerRequest = RegisterRequest.builder()
-                .username("Vik123")
-                .password("123123")
-                .country(Country.BULGARIA)
+                .username("Svetlana")
+                .password("testtest123")
+                .country(Country.Switzerland)
                 .build();
         when(userRepository.findByUsername(any())).thenReturn(Optional.of(new User()));
 
@@ -158,9 +158,9 @@ public class UserServiceUTest {
 
       
         RegisterRequest registerRequest = RegisterRequest.builder()
-                .username("Vik123")
-                .password("123123")
-                .country(Country.BULGARIA)
+                .username("svetlana")
+                .password("testtest123")
+                .country(Country.SWITZERLAND)
                 .build();
         User user = User.builder()
                 .id(UUID.randomUUID())
@@ -195,7 +195,7 @@ public class UserServiceUTest {
     @Test
     void givenExistingUser_whenLoadUserByUsername_thenReturnCorrectAuthenticationMetadata() {
 
-        // Given
+      
         String username = "svetlana";
         User user = User.builder()
                 .id(UUID.randomUUID())
@@ -315,7 +315,7 @@ public class UserServiceUTest {
        
         userService.switchRole(userId);
 
-        /
+       
         assertThat(user.getRole()).isEqualTo(UserRole.ADMIN);
     }
 }
