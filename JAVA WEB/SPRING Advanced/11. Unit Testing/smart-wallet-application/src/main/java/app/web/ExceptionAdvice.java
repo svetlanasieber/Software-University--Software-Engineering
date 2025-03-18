@@ -20,20 +20,9 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 @ControllerAdvice
 public class ExceptionAdvice {
 
-    // 1. (First) POST HTTP Request -> /register -> redirect:/register
-    // 2. (Second) GET HTTP Request -> /register -> register.html view
-
-    // ВАЖНО: При редирект не връщаме @ResponseStatus(...)!!!
-    // 1
     @ExceptionHandler(UsernameAlreadyExistException.class)
     public String handleUsernameAlreadyExist(HttpServletRequest request, RedirectAttributes redirectAttributes, UsernameAlreadyExistException exception) {
 
-        // Option 1
-        //Autowire HttpServletRequest request
-        //String username = request.getParameter("username");
-        //String message = "%s is already in use!".formatted(username);
-
-        // Option 2
         String message = exception.getMessage();
 
         redirectAttributes.addFlashAttribute("usernameAlreadyExistMessage", message);
@@ -43,12 +32,6 @@ public class ExceptionAdvice {
     @ExceptionHandler(NotificationServiceFeignCallException.class)
     public String handleNotificationFeignCallException(RedirectAttributes redirectAttributes, NotificationServiceFeignCallException exception) {
 
-        // Option 1
-        //Autowire HttpServletRequest request
-        //String username = request.getParameter("username");
-        //String message = "%s is already in use!".formatted(username);
-
-        // Option 2
         String message = exception.getMessage();
 
         redirectAttributes.addFlashAttribute("clearHistoryErrorMessage", message);
@@ -57,8 +40,8 @@ public class ExceptionAdvice {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler({
-            AccessDeniedException.class, // Когато се опотва да достъпи ендпойнт, до който не му е позволено/нямам достъп
-            NoResourceFoundException.class, // Когато се опитва да достъпи невалиден ендпойнт
+            AccessDeniedException.class, 
+            NoResourceFoundException.class, 
             MethodArgumentTypeMismatchException.class,
             MissingRequestValueException.class
     })
