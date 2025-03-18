@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-// ТОЗИ КЛАС ПАЗИ ДАННИТЕ НА ЛОГНАТИЯ ПОТРЕБИТЕЛ
+
 @Data
 @Getter
 @AllArgsConstructor
@@ -24,15 +24,9 @@ public class AuthenticationMetadata implements UserDetails {
     private UserRole role;
     private boolean isActive;
 
-    // Този метод се използва от Spring Security за да се разбере какви roles/authorities потребителя има
-    // Authority - permission или роля
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
-        // hasRole("ADMIN") -> "ROLE_ADMIN"
-        // hasAuthority("ADMIN") -> "ADMIN"
-
-        // Permission: CAN_EDIT_USER_PROFILES
 
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + role.name());
 
