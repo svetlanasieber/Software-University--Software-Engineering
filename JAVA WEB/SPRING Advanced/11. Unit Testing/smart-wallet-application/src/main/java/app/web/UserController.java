@@ -28,10 +28,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    // hasAnyRole - проверяваме за една от следните роли
-    // hasRole - проверяваме за една конкретна роля
-    // hasAuthority - проверяваме за един permission
-    // hasAnyAuthority - проверяваме за един от следните permissions
+
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ModelAndView getAllUsers(@AuthenticationPrincipal AuthenticationMetadata authenticationMetadata) {
@@ -45,7 +42,7 @@ public class UserController {
         return modelAndView;
     }
 
-    // Endpoint:  '/users/{placeholder}/profile'- unique (just single in my app)
+   
     @GetMapping("/{id}/profile")
     public ModelAndView getProfileMenu(@PathVariable UUID id) {
 
