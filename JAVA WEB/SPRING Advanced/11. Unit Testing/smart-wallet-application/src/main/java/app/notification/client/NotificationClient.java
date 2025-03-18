@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-// url - основен ednpoint
+
 @FeignClient(name = "notification-svc", url = "${notification-svc.base-url}")
 public interface NotificationClient {
 
