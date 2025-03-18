@@ -36,11 +36,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-// 1. Create the test class
-// 2. Annotate the class with @ExtendWith(MockitoExtension.class)
-// 3. Get the class you want to test
-// 4. Get all dependencies of that class and annotate them with @Mock
-// 5. Inject all those dependencies to the class we test with annotation @InjectMocks
+
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceUTest {
@@ -63,17 +59,17 @@ public class UserServiceUTest {
     @MethodSource("userRolesArguments")
     void whenChangeUserRole_theCorrectRoleIsAssigned(UserRole currentUserRole, UserRole expectedUserRole) {
 
-        // Given
+      
         UUID userId = UUID.randomUUID();
         User user = User.builder()
                 .role(currentUserRole)
                 .build();
         when(userRepository.findById(userId)).thenReturn(Optional.of(user));
 
-        // When
+      
         userService.switchRole(userId);
 
-        // Then
+     
         assertEquals(expectedUserRole, user.getRole());
     }
 
@@ -88,32 +84,32 @@ public class UserServiceUTest {
     @Test
     void givenExistingUsersInDatabase_whenGetAllUsers_thenReturnThemAll() {
 
-        // Give
+   
         List<User> userList = List.of(new User(), new User());
         when(userRepository.findAll()).thenReturn(userList);
 
-        // When
+      
         List<User> users = userService.getAllUsers();
 
-        // Then
+        
         assertThat(users).hasSize(2);
     }
 
-    // Switch status method
+   
     @Test
     void givenUserWithStatusActive_whenSwitchStatus_thenUserStatusBecomeInactive() {
 
-        // Given
+     
         User user = User.builder()
                 .id(UUID.randomUUID())
                 .isActive(true)
                 .build();
         when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
 
-        // When
+       
         userService.switchStatus(user.getId());
 
-        // Then
+      
         assertFalse(user.isActive());
         verify(userRepository, times(1)).save(user);
     }
@@ -121,27 +117,26 @@ public class UserServiceUTest {
     @Test
     void givenUserWithStatusInactive_whenSwitchStatus_thenUserStatusBecomeActive() {
 
-        // Given
+       
         User user = User.builder()
                 .id(UUID.randomUUID())
                 .isActive(false)
                 .build();
         when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
 
-        // When
+       
         userService.switchStatus(user.getId());
 
-        // Then
+        
         assertTrue(user.isActive());
         verify(userRepository, times(1)).save(user);
     }
 
-    // Register
-    // Test 1: When user exist with this username -> exception is thrown
+
     @Test
     void givenExistingUsername_whenRegister_thenExceptionIsThrown() {
 
-        // Given
+       
         RegisterRequest registerRequest = RegisterRequest.builder()
                 .username("Vik123")
                 .password("123123")
@@ -149,7 +144,7 @@ public class UserServiceUTest {
                 .build();
         when(userRepository.findByUsername(any())).thenReturn(Optional.of(new User()));
 
-        // When & Then
+      
         assertThrows(UsernameAlreadyExistException.class, () -> userService.register(registerRequest));
         verify(userRepository, never()).save(any());
         verify(subscriptionService, never()).createDefaultSubscription(any());
@@ -157,11 +152,11 @@ public class UserServiceUTest {
         verify(notificationService, never()).saveNotificationPreference(any(UUID.class), anyBoolean(), anyString());
     }
 
-    // Test 2: Happy path Registration
+   
     @Test
     void givenHappyPath_whenRegister() {
 
-        // Given
+      
         RegisterRequest registerRequest = RegisterRequest.builder()
                 .username("Vik123")
                 .password("123123")
@@ -175,45 +170,44 @@ public class UserServiceUTest {
         when(subscriptionService.createDefaultSubscription(user)).thenReturn(new Subscription());
         when(walletService.initilizeFirstWallet(user)).thenReturn(new Wallet());
 
-        // When
+      
         User registeredUser = userService.register(registerRequest);
 
-        // Then
+      
         assertThat(registeredUser.getSubscriptions()).hasSize(1);
         assertThat(registeredUser.getWallets()).hasSize(1);
         verify(notificationService, times(1)).saveNotificationPreference(user.getId(), false, null);
     }
 
-    // Test 2: When User does not exist - then throws exception
+ 
     @Test
     void givenMissingUserFromDatabase_whenLoadUserByUsername_thenExceptionIsThrown() {
 
-        // Given
-        String username = "Vik123";
+       
+        String username = "svetlana";
         when(userRepository.findByUsername(username)).thenReturn(Optional.empty());
 
-        // When & Then
+        
         assertThrows(DomainException.class, () -> userService.loadUserByUsername(username));
     }
 
-    // Test 1: When user exist - then return new AuthenticationMetadata
+   
     @Test
     void givenExistingUser_whenLoadUserByUsername_thenReturnCorrectAuthenticationMetadata() {
 
         // Given
-        String username = "Vik123";
+        String username = "svetlana";
         User user = User.builder()
                 .id(UUID.randomUUID())
                 .isActive(true)
-                .password("123123")
+                .password("svetla123")
                 .role(UserRole.ADMIN)
                 .build();
         when(userRepository.findByUsername(username)).thenReturn(Optional.of(user));
 
-        // When
         UserDetails authenticationMetadata = userService.loadUserByUsername(username);
 
-        // Then
+       
         assertInstanceOf(AuthenticationMetadata.class, authenticationMetadata);
         AuthenticationMetadata result = (AuthenticationMetadata) authenticationMetadata;
         assertEquals(user.getId(), result.getUserId());
@@ -225,8 +219,7 @@ public class UserServiceUTest {
         assertEquals("ROLE_ADMIN", result.getAuthorities().iterator().next().getAuthority());
     }
 
-    // Test Case: When there is no user in the database (repository returns Optional.empty()) -
-    // then expect an exception of type DomainException is thrown
+ 
     @Test
     void givenMissingUserFromDatabase_whenEditUserDetails_thenExceptionIsThrown() {
 
@@ -237,29 +230,28 @@ public class UserServiceUTest {
         assertThrows(DomainException.class, () -> userService.editUserDetails(userId, dto));
     }
 
-    // Test Case: When database returns user object -> then change their details from the dto with email address
-    // and save notification preference and save the user to the database
+
     @Test
     void givenExistingUser_whenEditTheirProfileWithActualEmail_thenChangeTheirDetailsSaveNotificationPreferenceAndSaveToDatabase() {
 
-        // Given
+       
         UUID userId = UUID.randomUUID();
         UserEditRequest dto = UserEditRequest.builder()
-                .firstName("Viktor")
-                .lastName("Aleksandrov")
-                .email("vik123@abv.bg")
+                .firstName("Svetlana")
+                .lastName("Sieber")
+                .email("sieber.test@gmail.com")
                 .profilePicture("www.image.com")
                 .build();
         User user = User.builder().build();
         when(userRepository.findById(userId)).thenReturn(Optional.of(user));
 
-        // When
+        
         userService.editUserDetails(userId, dto);
 
-        // Then
-        assertEquals("Viktor", user.getFirstName());
-        assertEquals("Aleksandrov", user.getLastName());
-        assertEquals("vik123@abv.bg", user.getEmail());
+        
+        assertEquals("Svetlana", user.getFirstName());
+        assertEquals("Sieber", user.getLastName());
+        assertEquals("sieber.test@gmail.com", user.getEmail());
         assertEquals("www.image.com", user.getProfilePicture());
         verify(notificationService, times(1)).saveNotificationPreference(userId, true, dto.getEmail());
         verify(userRepository, times(1)).save(user);
@@ -268,23 +260,23 @@ public class UserServiceUTest {
     @Test
     void givenExistingUser_whenEditTheirProfileWithEmptyEmail_thenChangeTheirDetailsSaveNotificationPreferenceAndSaveToDatabase() {
 
-        // Given
+       
         UUID userId = UUID.randomUUID();
         UserEditRequest dto = UserEditRequest.builder()
-                .firstName("Viktor")
-                .lastName("Aleksandrov")
+                .firstName("Svetlana")
+                .lastName("Sieber")
                 .email("")
                 .profilePicture("www.image.com")
                 .build();
         User user = User.builder().build();
         when(userRepository.findById(userId)).thenReturn(Optional.of(user));
 
-        // When
+      
         userService.editUserDetails(userId, dto);
 
-        // Then
-        assertEquals("Viktor", user.getFirstName());
-        assertEquals("Aleksandrov", user.getLastName());
+      
+        assertEquals("Svetlana", user.getFirstName());
+        assertEquals("Sieber", user.getLastName());
         assertEquals("", user.getEmail());
         assertEquals("www.image.com", user.getProfilePicture());
         verify(notificationService, times(1)).saveNotificationPreference(userId, false, null);
@@ -294,7 +286,7 @@ public class UserServiceUTest {
     @Test
     void givenUserWithRoleAdmin_whenSwitchRole_thenUserReceivesUserRole() {
 
-        // Given
+      
         UUID userId = UUID.randomUUID();
         User user = User.builder()
                 .id(userId)
@@ -302,17 +294,17 @@ public class UserServiceUTest {
                 .build();
         when(userRepository.findById(userId)).thenReturn(Optional.of(user));
 
-        // When
+      
         userService.switchRole(userId);
 
-        // Then
+       
         assertThat(user.getRole()).isEqualTo(UserRole.USER);
     }
 
     @Test
     void givenUserWithRoleUser_whenSwitchRole_thenUserReceivesAdminRole() {
 
-        // Given
+     
         UUID userId = UUID.randomUUID();
         User user = User.builder()
                 .id(userId)
@@ -320,10 +312,10 @@ public class UserServiceUTest {
                 .build();
         when(userRepository.findById(userId)).thenReturn(Optional.of(user));
 
-        // When
+       
         userService.switchRole(userId);
 
-        // Then
+        /
         assertThat(user.getRole()).isEqualTo(UserRole.ADMIN);
     }
 }
