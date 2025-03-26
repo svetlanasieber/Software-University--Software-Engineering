@@ -1,5 +1,4 @@
-Queue<int> numbers = new(
-    Console.ReadLine()
+Queue<int> numbers = new(Console.ReadLine()
         .Split(' ', StringSplitOptions.RemoveEmptyEntries)
         .Select(int.Parse));
 
