@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-Stack<string> tokens = new(
-    Console.ReadLine()
-    .Split(' ', StringSplitOptions.RemoveEmptyEntries)
-    .Reverse());
+Stack<string> tokens = new(Console.ReadLine()
+        .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+        .Reverse());
 
 int result = int.Parse(tokens.Pop());
 
