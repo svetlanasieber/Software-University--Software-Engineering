@@ -1,35 +1,34 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+List<int> numbers = Console.ReadLine().Split().Select(int.Parse).ToList();
 
-Stack<int> numbers = new(
-    Console.ReadLine()
-    .Split(' ', StringSplitOptions.RemoveEmptyEntries)
-    .Select(int.Parse));
+Stack<int> stack = new Stack<int>(numbers);
 
-string command = null;
+string command = Console.ReadLine().ToLower();
 
 while (command != "end")
 {
-    command = Console.ReadLine().ToLower();
-    string[] tokens = command.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+    string[] splitted = command.Split(' ');
+    int first = int.Parse(splitted[1]);
 
-    if (tokens[0] == "add")
+    if (splitted[0] == "add")
     {
-        numbers.Push(int.Parse(tokens[1]));
-        numbers.Push(int.Parse(tokens[2]));
+        int second = int.Parse(splitted[2]);
+
+        stack.Push(first);
+        stack.Push(second);
     }
-    else if (tokens[0] == "remove")
+    else
     {
-        int count = int.Parse(tokens[1]);
-        if (count <= numbers.Count)
+        if (stack.Count >= first)
         {
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < first; i++)
             {
-                numbers.Pop();
+                stack.Pop();
             }
         }
     }
+
+    command = Console.ReadLine().ToLower();
 }
 
-Console.WriteLine($"Sum: {numbers.Sum()}");
+
+Console.WriteLine($"Sum: {stack.Sum()}");
