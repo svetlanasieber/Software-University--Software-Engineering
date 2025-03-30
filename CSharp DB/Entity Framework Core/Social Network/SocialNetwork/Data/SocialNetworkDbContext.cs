@@ -5,7 +5,7 @@ namespace SocialNetwork.Data
 {
     public class SocialNetworkDbContext : DbContext
     {
-        private const string ConnectionString = @"Server=SIEBERLI\SQLEXPRESS;Database=SocialNetworkDB;Integrated Security=True; TrustServerCertificate=True;";
+        private const string ConnectionString = @"Server=*;Database=SocialNetworkDB;Integrated Security=True; TrustServerCertificate=True;";
 
         public SocialNetworkDbContext()
         {
