@@ -8,9 +8,6 @@ public class Main {
         String user = "";
         String pass = "";
 
-        //jdbc connection string
-        //from demo: Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/soft_uni", props);
-        // String url = String.format("jdbc:mysql://%s:%s/dbName", host, port);
         String url = String.format("jdbc:mysql://%s:%s/", host, port);
 
         Connection connection = DriverManager.getConnection(url, user, pass);
