@@ -12,7 +12,8 @@ public class PreparedMain {
         //from demo: Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/soft_uni", props);
         // String url = String.format("jdbc:mysql://%s:%s/dbName", host, port);
 
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/soft_uni", user, pass);
+        Connection connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/soft_uni", user, pass);
 
         String query = "SELECT * FROM employees WHERE first_name LIKE ?";
 
@@ -28,5 +29,24 @@ public class PreparedMain {
             );
 
         }
+
+        //UnsafeQuery -> SQL Injection
+        //String unsafeQuery = "SELECT * FROM employees WHERE salary > ";
+        //unsafeQuery += "10000"; // Good case
+        //unsafeQuery = "1; SELECT * FROM users"; //Bad case
+        //unsafeQuery = "1 OR 1 = 1"; //Bad case
+        //unsafeQuery += "1; DROP TABLE users;"; //Bad case
+        //SELECT * FROM users WHERE username = %s AND password = %s; //Bad case
+        // username = pesho"; SELECT * FROM users WHERE role = admin //Bad case
+
+        //ResultSet unsafeResult = connection.createStatement().executeQuery(unsafeQuery);
+
+        //while (unsafeResult.next()) {
+        //    System.out.printf("%id -> %s",
+        //            unsafeResult.getInt("employee_id"),
+        //            unsafeResult.getString("first_name")
+        //    );
+        
+        }
     }
-}
+
