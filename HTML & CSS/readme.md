@@ -1,1 +1,2 @@
-![imgonline-com-ua-compressed-AZ7woueWHz](https://github.com/user-attachments/assets/366e0a50-85d4-4489-b127-d3b20f6271b1)
+
+![473633332_1086710233354776_5861039762292097320_n](https://github.com/user-attachments/assets/b7cd0721-92a3-4ead-ac50-54ee1c2bc77b)
