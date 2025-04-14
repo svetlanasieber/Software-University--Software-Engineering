@@ -1,7 +1,4 @@
 # Software University (softuni.bg)
-Software Development Engineer in Test (SDET)
-
-![SDET_Roadmap](https://github.com/user-attachments/assets/4a84cd2f-8740-4c7e-9313-10933bc03358)
 
 
 
