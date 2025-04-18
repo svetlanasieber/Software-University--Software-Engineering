@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}">
+    <title>New Message</title>
+</head>
+<body>
+<header th:replace="~{fragments/commons::nav}"></header>
+<main>
+    <section class="section full-height">
+
+        <form class="welcome login" th:action="@{/messages/new-message}" method="post">
+            <h3>New message</h3>
+            <div class="form-group">
+                <div class="label-holder text-white d-flex justify-content-center">
+                    <label for="receiverId" class="h3 mb-2">Receiver</label>
+                </div>
+                <select id="receiverId" name="receiverId">
+                    <option value="">Select receiver</option>
+                    <option th:each="receiver : ${receivers}" th:value="${receiver.id}" th:text="${receiver.username}">User</option>
+                </select>
+                <p class="text-light" th:if="${receiverError != null}" th:text="${receiverError}">You must select a receiver!</p>
+            </div>
+
+            <div class="form-group">
+                <div class="label-holder text-white d-flex justify-content-center">
+                    <label for="subject" class="h3 mb-2">Subject</label>
+                </div>
+                <input type="text" placeholder="Subject" id="subject" name="subject">
+                <p class="text-light" th:if="${subjectError != null}" th:text="${subjectError}">Subject length must be between 5 and 15 characters!</p>
+            </div>
+            <div class="form-group">
+                <div class="label-holder text-white d-flex justify-content-center">
+                    <label for="content" class="h3 mb-2">Content</label>
+                </div>
+                <textarea placeholder="Content" id="content" name="content"></textarea>
+                <p class="text-light" th:if="${contentError != null}" th:text="${contentError}">Content length must be between 10 and 100 characters!</p>
+            </div>
+
+            <button type="submit">Send</button>
+
+        </form>
+    </section>
+</main>
+<footer th:replace="~{fragments/commons::footer}"></footer>
+</body>
+</html>

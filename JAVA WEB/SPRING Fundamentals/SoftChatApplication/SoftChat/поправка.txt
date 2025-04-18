@@ -1,0 +1,112 @@
+ПОПРАВКИ В КОДА
+
+1. ОСНОВЕН ПРОБЛЕМ - ЛИПСВАЩА ИМЕЙЛ НАСТРОЙКА ПРИ РЕГИСТРАЦИЯ:
+   В app.user.service.UserService.registerUser метода:
+   
+   СЕГАШЕН КОД:
+   User user = User.builder()
+           .username(registerRequest.getUsername())
+           .password(passwordEncoder.encode(registerRequest.getPassword()))
+           .build();
+   
+   ПОПРАВКА:
+   User user = User.builder()
+           .username(registerRequest.getUsername())
+           .password(passwordEncoder.encode(registerRequest.getPassword()))
+           .email(registerRequest.getEmail())  // ДОБАВИ ТОЗИ РЕД!
+           .build();
+
+   ОБЯСНЕНИЕ: В User ентитито имейлът е означен като @NotNull, но не се задава при създаване на
+   потребителя, което води до ConstraintViolationException.
+
+
+2. ВЪЗМОЖНИ ДОПЪЛНИТЕЛНИ ПРОБЛЕМИ:
+
+   а) ПРОВЕРКА ЗА СЪЩЕСТВУВАЩ ИМЕЙЛ:
+      Добави проверка дали имейлът вече съществува:
+      
+      Optional<User> emailExists = userRepository.findByEmail(registerRequest.getEmail());
+      if (emailExists.isPresent()) {
+          throw new RuntimeException("User with this email already exists.");
+      }
+
+   б) ДЕФИНИЦИЯ НА UUID КОЛОНАТА:
+      Ако базата данни все още създава проблеми с UUID, можеш да добавиш специфична дефиниция
+      на колоната в ентитито:
+      
+      @Id
+      @GeneratedValue(strategy = GenerationType.UUID)
+      @Column(columnDefinition = "VARCHAR(36)")
+      private UUID id;
+   
+   в) CASCADE ТИПОВЕ ЗА ВРЪЗКИТЕ:
+      Добави cascade типове към OneToMany връзките за по-добро управление на данните:
+      
+      @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL)
+      private List<Message> sentMessages;
+      
+      @OneToMany(mappedBy = "receiver", cascade = CascadeType.ALL)
+      private List<Message> receivedMessages;
+
+   г) ЗАМЯНА НА NULL ПРОВЕРКИ С OPTIONAL:
+      В loginUser метода, вместо:
+      
+      if (optionalUser.isEmpty() || !passwordEncoder.matches(loginRequest.getPassword(), optionalUser.get().getPassword())) {
+          throw new RuntimeException("Incorrect username or password.");
+      }
+      
+      Можеш да използваш:
+      
+      return optionalUser
+          .filter(user -> passwordEncoder.matches(loginRequest.getPassword(), user.getPassword()))
+          .orElseThrow(() -> new RuntimeException("Incorrect username or password."));
+
+   д) ПРОБЛЕМ С ЛИПСВАЩИ ПОЛЕТА ПРИ РЕДАКТИРАНЕ:
+      В editProfileFields метода, полетата не трябва да се сетват директно, а да се проверява дали
+      са попълнени (не са null или празни):
+      
+      if (editProfileRequest.getFirstName() != null && !editProfileRequest.getFirstName().isEmpty()) {
+          user.setFirstName(editProfileRequest.getFirstName());
+      }
+      // Същото за другите полета
+
+3. ПОДОБРЕНИЯ ЗА СИГУРНОСТ И ПРОИЗВОДИТЕЛНОСТ:
+
+   а) ИЗПОЛЗВАНЕ НА DTO ВАЛИДАЦИЯ В КОНТРОЛЕРИТЕ:
+      Добави @Valid анотации за всички DTO обекти в контролер методите
+   
+   б) ДОБАВЯНЕ НА ИНДЕКСИ КЪМ БАЗАТА ДАННИ:
+      @Table(name = "users", indexes = {
+          @Index(name = "idx_username", columnList = "username"),
+          @Index(name = "idx_email", columnList = "email")
+      })
+
+   в) ОБРАБОТКА НА ГРЕШКИ:
+      Добави глобален @ControllerAdvice за по-добра обработка на изключения
+      
+   г) LAZY LOADING НА КОЛЕКЦИИТЕ:
+      @OneToMany(mappedBy = "sender", fetch = FetchType.LAZY)
+      private List<Message> sentMessages;
+
+   @Transactional
+   public void registerUser(RegisterRequest registerRequest) {
+       // Check for existing username
+       Optional<User> optionalUser = userRepository.findByUsername(registerRequest.getUsername());
+       if (optionalUser.isPresent()) {
+           throw new RuntimeException("User with this username already exist.");
+       }
+       
+       // Add check for existing email
+       Optional<User> userWithSameEmail = userRepository.findByEmail(registerRequest.getEmail());
+       if (userWithSameEmail.isPresent()) {
+           throw new RuntimeException("User with this email already exists.");
+       }
+       
+       User user = User.builder()
+               .username(registerRequest.getUsername())
+               .password(passwordEncoder.encode(registerRequest.getPassword()))
+               .email(registerRequest.getEmail()) // Add the missing email field
+               .build();
+
+       userRepository.save(user);
+   } 

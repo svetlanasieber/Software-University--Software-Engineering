@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <title>Home</title>
+</head>
+<body style="background-image: url(/img/ch.jpg)">
+<main>
+    <div class="home-container">
+
+        <!-- THIS IS THE FIRST SECTION WITH PROFILE DETAILS -->
+        <div class="profile-section">
+            <div class="home-section">
+                <div class="single-section-box home-profile-information">
+                    <div class="profile-header">
+                        <img th:src="${user.profilePicture != null ? user.profilePicture : 'https://cdn0.iconfinder.com/data/icons/cryptocurrency-137/128/1_profile_user_avatar_account_person-132-256.png'}"
+                             alt="Profile Picture" class="profile-img">
+                        <h2 class="profile-name" th:text="${user.firstName != null ? user.firstName : user.username}">Username</h2>
+                        <div class="details-section">
+                            <div class="details-section-container">
+                                <strong>User id: </strong>
+                                <p th:text="${user.id}">User ID</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="details-section-container">
+                            <strong>Username: </strong>
+                            <p th:text="${user.username}">Username</p>
+                        </div>
+                        <div class="details-section-container">
+                            <strong>Email: </strong>
+                            <p th:text="${user.email != null ? user.email : 'Edit profile and add email'}">Email</p>
+                        </div>
+                        <a th:href="@{/users/{id}/profile(id=${user.id})}" class="profile-actions-button">
+                            <button>Edit Profile</button>
+                        </a>
+                        <a th:href="@{/messages/new-message}" class="profile-actions-button">
+                            <button>New Message</button>
+                        </a>
+                        <a th:href="@{/logout}" class="profile-actions-button">
+                            <button>Logout</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THIS IS THE SECOND SECTION WITH USER SENT MESSAGES -->
+        <div class="sent-messages-section">
+            <div class="home-section">
+                <h3 class="messages">Sent Messages</h3>
+                <!--  ONE <li> element is ONE Message -->
+                <ul>
+                    <li th:each="message : ${sentMessages}">
+                        <div class="sent-first-row">
+                            <div class="message-info">
+                                <p><span>To: </span> <span class="label" th:text="${message.receiver.username}">Receiver</span></p>
+                                <p><span>Subject: </span> <span class="label" th:text="${message.subject}">Subject</span></p>
+                                <p><span>Sent on:</span> <span class="label" th:text="${message.sentOn}">Date</span></p>
+                            </div>
+                            <div class="buttons">
+                                <form th:action="@{/messages/{id}(id=${message.id})}" th:method="post">
+                                    <button class="btn-danger btn">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="second-info">
+                            <section th:text="'Content: ' + ${message.content}">Content: Message content...</section>
+                        </div>
+                    </li>
+                </ul>
+                <!--  Populate the next <li> element based on the list of messages user sent-->
+            </div>
+        </div>
+
+        <!-- THIS IS THE THIRD SECTION WITH RECEIVED MESSAGES -->
+        <div class="sent-messages-section">
+            <div class="home-section">
+                <h3 class="messages">Received Messages</h3>
+                <ul class="messages-list">
+                    <li class="message-item" th:each="message : ${receivedMessages}">
+                        <div class="sent-first-row">
+                            <div class="message-info">
+                                <p><span>Send by:</span> <span class="label" th:text="${message.sender.username}">Sender</span></p>
+                                <p><span>Subject:</span> <span class="label" th:text="${message.subject}">Subject</span></p>
+                                <p><span>Received on:</span> <span class="label" th:text="${message.sentOn}">Date</span></p>
+                            </div>
+                            <div class="buttons">
+                                <form th:action="@{/messages/received/{id}(id=${message.id})}" th:method="post">
+                                    <button class="btn-danger btn">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="second-info">
+                            <section>
+                                <p class="label">Content:</p>
+                                <h6 th:text="${message.content}">Message content...</h6>
+                            </section>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<footer th:replace="~{fragments/commons::footer}"></footer>
+</body>
+</html>
