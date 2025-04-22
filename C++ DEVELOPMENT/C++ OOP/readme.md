@@ -1,2 +1,3 @@
 
-![cppthumbnail](https://github.com/user-attachments/assets/e6ae1964-6968-4cd3-972a-6e31fb5bccd1)
+![468359392_1051871803505286_5790402960173501576_n](https://github.com/user-attachments/assets/da099d79-1ff3-4fa7-988d-41d5276c82e0)
+
