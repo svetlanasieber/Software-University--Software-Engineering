@@ -1,23 +1,25 @@
-﻿// See https://aka.ms/new-console-template for more information
-using _11.DesignPatterns;
-using System.Threading;
+﻿
 
-//CEOSingleton cEOSingleton = CEOSingleton.Instance;
+using _01.Singleton;
 
-//cEOSingleton.Name = "Satya Nadella";
-//cEOSingleton.Age = 56;
 
-//CEOSingleton cEOSingletonEx = CEOSingleton.Instance;
-//cEOSingletonEx.Name = "Bill Gates";
-//cEOSingletonEx.Age = 1000;
-
-//Console.WriteLine(cEOSingleton.Name);
-//Console.WriteLine(cEOSingleton.Age);
-
-for (int i = 0; i < 10; i++)
+for (int i = 0; i < 1000; i++)
 {
     new Thread(() =>
     {
-        CEOSingleton cEOSingleton = CEOSingleton.Instance;
+        UserSingleton.Instance.Username = i.ToString();
     }).Start();
 }
+
+
+
+Console.WriteLine("before singleton");
+
+UserSingleton userSingleton = UserSingleton.Instance;
+
+UserSingleton.Instance.Username = "Dimitrichko";
+
+UserSingleton.Instance.Password = "password";
+
+
+Console.WriteLine(UserSingleton.Instance.Username);
