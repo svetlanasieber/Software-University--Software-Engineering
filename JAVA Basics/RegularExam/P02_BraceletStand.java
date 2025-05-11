@@ -4,7 +4,6 @@ public class P02_BraceletStand {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-
                 double dailyIncome = Double.parseDouble(scanner.nextLine());
                 double dailyEarnings = Double.parseDouble(scanner.nextLine());
                 double totalExpenses = Double.parseDouble(scanner.nextLine());
