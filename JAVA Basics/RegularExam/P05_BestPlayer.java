@@ -4,7 +4,6 @@ public class P05_BestPlayer {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-
         String command = scanner.nextLine();
 
         String bestPlayer = "";
