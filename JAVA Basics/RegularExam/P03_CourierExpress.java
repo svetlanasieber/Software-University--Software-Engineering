@@ -4,14 +4,11 @@ public class P03_CourierExpress {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-
-
         double weight = Double.parseDouble(scanner.nextLine());
         String service = scanner.nextLine();
         double range = Double.parseDouble(scanner.nextLine());
 
         double price = 0;
-
 
         if (service.equals("standard")) {
             if (weight < 1) {
