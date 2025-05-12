@@ -1,13 +1,9 @@
 ********************************************************************
-• Relational Databases and Non-Relational Databases;
+• Relational databases and non-relational databases;
 ********************************************************************
-• Working with MySQL and Workbench;
-******************************************************************************
-• Importing Database Scripts, Viewing and Editing Table/Collection Data;
+• Working with SQL;
 ********************************************************************
-• Very Brief SQL Introduction: SELECT, WHERE and JOIN;
+• Very brief SQL intro: SELECT, WHERE, JOIN;
 ********************************************************************
-• Executing Simple Queries in MySQL;
-********************************************************************
-• Demo: Working with MongoDB + Compass and JSON Documents.
+• Executing simple queries in MySQL.
 ********************************************************************
