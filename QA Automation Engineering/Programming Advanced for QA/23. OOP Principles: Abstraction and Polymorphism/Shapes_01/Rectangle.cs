@@ -1,25 +1,25 @@
 ﻿using System;
 namespace Shapes
 {
-    //описва всеки един правоъгълник (геометрична фигура)
+  
     public class Rectangle : IDrawable
     {
-        //характеристики
+       
         private int height;
         private int width;
 
         public int Height { get; set;}
         public int Width { get; set; }
 
-        //конструктор
+      
         public Rectangle(int height, int width)
         {
-            //нов празен обект
+           
             this.Height = height;
             this.Width = width;
         }
 
-        //действия
+      
         public void Draw()
         {
             DrawLine(this.width, '*', '*');
