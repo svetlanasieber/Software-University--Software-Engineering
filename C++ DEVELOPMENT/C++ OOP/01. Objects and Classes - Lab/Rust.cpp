@@ -75,11 +75,9 @@ public:
     void rust() {
 
         putTempRust();
-        //cout << "----" << endl << "Tick: " << ticks << ", applied temp rust." << endl;
-        //printMatrix(matrix);
+
         fixTempRust();
-        //cout << "----" << endl << "Tick: " << ticks << ", fixed temp rust." << endl;
-        //printMatrix(matrix);
+
 
     }
 };
