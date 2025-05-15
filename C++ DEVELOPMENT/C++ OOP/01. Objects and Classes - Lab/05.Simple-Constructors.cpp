@@ -14,7 +14,7 @@ class Person {
         heightMeters = personHeightMeters;
     }
 
-    // Default constructor - allows is to not explicitly initialize when calling
+ 
     Person() {
         name = "<unknown>";
     }
@@ -29,7 +29,6 @@ void printPersonInfo(Person person) {
 int main() {
     Person ben("Ben Dover", 42, 1.69);
     Person chucky = Person("Chuck Norris", 999, 999.999);
-    //NOTE: if we delete the default constructor (Person()) this line won't compile:
     Person defaultPerson;
 
     printPersonInfo(ben);
