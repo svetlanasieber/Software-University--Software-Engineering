@@ -25,7 +25,7 @@ int main() {
 
     typedef map<string, vector<int> > StudentScores;
 
-    // Scores are from here, names are changed: https://judge.softuni.bg/Contests/Compete/Results/Simple/878
+
     StudentScores judgeAssignment2Scores;
     judgeAssignment2Scores["ghost4e"] = {100, 100, 100, 100};
     judgeAssignment2Scores["Reclaimer"] = {100, 80, 0, 100};
