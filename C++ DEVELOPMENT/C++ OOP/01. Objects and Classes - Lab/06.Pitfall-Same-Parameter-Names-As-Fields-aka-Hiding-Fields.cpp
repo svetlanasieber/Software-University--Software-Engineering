@@ -14,12 +14,6 @@ class Person {
         heightMeters = heightMeters;
     }
 
-    // Correct way (for using constructor body) - explicitly accessing the fields through the "this" pointer
-    //Person(string name, int age, double heightMeters) {
-    //    this->name = name;
-    //    this->age = age;
-    //    this->heightMeters = heightMeters;
-    //}
 };
 
 void printPersonInfo(Person person) {
