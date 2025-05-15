@@ -70,8 +70,8 @@ class Locations {
 
             Names::iterator itFound = find(names.begin(), names.end(), name);
             if (itFound != names.end()) {
-                // found!
-                int idx = itFound - names.begin(); // this is the [] index in the vector!
+             
+                int idx = itFound - names.begin(); 
 
                 ostr << names[idx] << ',' << coords[idx].first << ',' << coords[idx].second << endl;
             }
@@ -96,7 +96,7 @@ int main() {
         string resultStr;
 
         if (isdigit(line[0])) {
-            // pair of coordinates
+    
             
             pair<string, string> coordinates;
             istr >> coordinates.first >> coordinates.second;
