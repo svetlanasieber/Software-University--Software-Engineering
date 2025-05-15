@@ -9,7 +9,7 @@ class Person {
         double weightKgs;
     };
 
-    // NOTE: making everything public is not a good approach. We'll discuss access modifiers after a few demos
+
     public:
     string name;
     int age;
@@ -17,7 +17,7 @@ class Person {
     Body body;
 };
 
-// NOTE: A better approach would be methods on the Person class. We'll meet those after a few demos
+
 void printPersonInfo(Person person) {
     cout << "name: " << person.name << ", age: " << person.age
         << ", height: " << person.body.heightMeters << ", weight: " << person.body.weightKgs
@@ -30,11 +30,11 @@ void makePersonOlder(Person& person, int years) {
 
 int main() {
     Person person;
-    // the name should be empty, as it is a string class. The values of the others are not defined
+   
     cout << "person (not initialized) = ";
     printPersonInfo(person);
 
-    // NOTE: this is not the proper way to initialize an object. The proper way is using constructors - we'll see them after a few demos
+  
     person.name = "Lorem";
     person.age = 42;
     person.body.heightMeters = 1.3;
