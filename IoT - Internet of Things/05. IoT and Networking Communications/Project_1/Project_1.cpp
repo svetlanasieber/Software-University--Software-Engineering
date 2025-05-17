@@ -10,11 +10,8 @@ void setup() {
   networks[2] = "Wokwi-GUEST1";
 
 
-
-
-
   WiFi.mode(WIFI_STA);
-  WiFi.disconnect();  // Disconnect any existing connection
+  WiFi.disconnect(); 
   Serial.println("Setup done");
 }
 
@@ -86,6 +83,5 @@ void loop() {
     }
   }
   Serial.println("");
-  // Wait a bit before scanning again
   delay(5000);
 }
