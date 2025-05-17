@@ -111,7 +111,7 @@ void setLedBar(float currentTemerature, float targetTemperature)
 }
 float getTemperature(int analogValue)
 {
-  float BETA = 3950; // should match the Beta Coefficient of the thermistor
+  float BETA = 3950; 
   float celsius = 1 / (log(1 / (4095.0 / analogValue - 1)) / BETA + 1.0 / 298.15) - 273.15;
   return celsius;
 }
@@ -143,5 +143,5 @@ void loop() {
   else 
      turnOffLedBar();
 
-  delay(10); // this speeds up the simulation
+  delay(10); 
 }
