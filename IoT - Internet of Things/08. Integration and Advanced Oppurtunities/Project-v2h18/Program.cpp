@@ -18,13 +18,13 @@ void setup(void) {
   }
   
   Serial.println("MPU6050 1 Found!");
-  // set accelometer range to +-8G
+
   mpu1.setAccelerometerRange(MPU6050_RANGE_8_G);
 
-  //set gyro range to +- 500 deg/s
+  
   mpu1.setGyroRange(MPU6050_RANGE_500_DEG);
 
-  //set filter bandwith to 21 Hz
+  
   mpu1.setFilterBandwidth(MPU6050_BAND_21_HZ);
 
   deviceId = 2;
@@ -38,13 +38,11 @@ void setup(void) {
   }
  
   Serial.println("MPU6050 2 Found!");
-// set accelometer range to +-8G
+
   mpu2.setAccelerometerRange(MPU6050_RANGE_8_G);
 
-  //set gyro range to +- 500 deg/s
   mpu2.setGyroRange(MPU6050_RANGE_500_DEG);
 
-  //set filter bandwith to 21 Hz
   mpu2.setFilterBandwidth(MPU6050_BAND_21_HZ);
 
   
@@ -53,12 +51,11 @@ void setup(void) {
 }
 void getSensor1Data()
 {
-  //Get new sensor events with the readings
+  
   sensors_event_t a1, g1, temp1;
   mpu1.getEvent(&a1, &g1, &temp1);
   
 
-  //Print out the values
   Serial.print("Acceleration 1 x: ");
   Serial.print(a1.acceleration.x);
   Serial.print(", Y: ");
@@ -84,12 +81,11 @@ void getSensor1Data()
 
 void getSensor2Data()
 {
-  //Get new sensor events with the readings
+  
   sensors_event_t a2, g2, temp2;
   mpu2.getEvent(&a2, &g2, &temp2);
   
 
-  //Print out the values
   Serial.print("Acceleration 2 x: ");
   Serial.print(a2.acceleration.x);
   Serial.print(", Y: ");
