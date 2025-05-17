@@ -94,22 +94,22 @@ void sendHtml() {
     </div>
 
     <script>
-      // Example values, replace with actual data in practice
+    
       const currentTemperature = parseFloat(document.getElementById('currentTemperature').textContent);
       const targetTemperature = parseFloat(document.getElementById('targetTemperature').textContent);
 
-      // Check if current temperature is above target temperature
+     
       if (currentTemperature > targetTemperature) {
         document.getElementById('currentTemperature').classList.add('red');
       }
 
-      // Static boolean to control the button state
-      const isOn = btn_status; // Change this value to test the button state
+   
+      const isOn = btn_status; 
 
-      // Get the button element
+  
       const toggleButton = document.getElementById('toggleButton');
 
-      // Set button text and style based on the boolean value
+    
       if (isOn) {
         toggleButton.textContent = 'Turn Off';
         toggleButton.classList.add('on');
@@ -144,12 +144,12 @@ void wifiSetup()
   // Wait for connection
   startTime = millis();
   while (WiFi.status() != WL_CONNECTED && retries < 3) {
-    if (millis() - startTime > 10000) {  //timeout 10seconds
+    if (millis() - startTime > 10000) {  
       Serial.println("Connection Timeout. Retrying...");
       retries++;
       WiFi.disconnect();
-      WiFi.begin(WIFI_SSID, WIFI_PASSWORD);  // Re-initiate connection
-      startTime = millis();  // Reset the timer
+      WiFi.begin(WIFI_SSID, WIFI_PASSWORD); 
+      startTime = millis();  
     }
     delay(500);
   }
@@ -164,7 +164,7 @@ void wifiSetup()
   server.on("/", sendHtml);
   server.on("/toggle", toggleButton);
   server.begin();
- //sendHtml();
+
 }
 
 void setup() {
@@ -239,7 +239,7 @@ void setLedBar(float currentTemerature, float targetTemperature)
 }
 float getTemperature(int analogValue)
 {
-  float BETA = 3950; // should match the Beta Coefficient of the thermistor
+  float BETA = 3950;
   float celsius = 1 / (log(1 / (4095.0 / analogValue - 1)) / BETA + 1.0 / 298.15) - 273.15;
   return celsius;
 }
@@ -272,5 +272,5 @@ void loop() {
   else
     turnOffLedBar();
 
-  delay(10); // this speeds up the simulation
+  delay(10); 
 }
