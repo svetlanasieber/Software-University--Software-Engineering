@@ -1,14 +1,11 @@
 #include <WiFi.h>
 #include <WebServer.h>
 
-// Replace with your network credentials
 const char* ssid = "Wokwi-GUEST";
 const char* password = "";
 
-// Create WebServer object on port 80
 WebServer server(80);
 
-// HTML and JavaScript for the login page
 const char login_html[] PROGMEM = R"rawliteral(
 <!DOCTYPE HTML><html>
 <head>
@@ -45,7 +42,7 @@ const char login_html[] PROGMEM = R"rawliteral(
 </html>
 )rawliteral";
 
-// HTML for the main page
+
 const char main_html[] PROGMEM = R"rawliteral(
 <!DOCTYPE HTML><html>
 <head>
@@ -58,11 +55,11 @@ const char main_html[] PROGMEM = R"rawliteral(
 </html>
 )rawliteral";
 
-// Hardcoded credentials for simplicity
+
 const char* validUsername = "admin";
 const char* validPassword = "admin";
 
-// Function to handle root route
+
 void handleRoot() {
   if (!isAuthenticated()) {
     server.send(200, "text/html", login_html);
@@ -71,7 +68,7 @@ void handleRoot() {
   }
 }
 
-// Function to handle login route
+
 void handleLogin() {
   if (server.method() == HTTP_POST) {
     String username = server.arg("username");
@@ -84,18 +81,16 @@ void handleLogin() {
   }
 }
 
-// Function to check if the user is authenticated
+
 bool isAuthenticated() {
-  // For simplicity, we're not implementing session management here.
-  // In a real application, you would check a session or token.
+
   return false;
 }
 
 void setup() {
-  // Start serial communication
+
   Serial.begin(115200);
 
-  // Connect to Wi-Fi
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
@@ -105,11 +100,9 @@ void setup() {
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 
-  // Define routes
   server.on("/", handleRoot);
   server.on("/login", handleLogin);
 
-  // Start server
   server.begin();
 }
 
