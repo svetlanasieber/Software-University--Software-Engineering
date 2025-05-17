@@ -9,7 +9,7 @@ WebServer server(80);
 
 void handleAllRequests() {
   String message = "URI Requested: ";
-  message += server.uri();  // Get the requested URI
+  message += server.uri(); 
 
 
   if (server.uri() == "/") {
