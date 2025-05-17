@@ -4,7 +4,7 @@
 const char* ssid = "Wokwi-GUEST";
 const char* password = "";
 
-WebServer server(80);  // Create a web server object that listens for HTTP request on port 80
+WebServer server(80);  
 
 
 
@@ -12,9 +12,9 @@ WebServer server(80);  // Create a web server object that listens for HTTP reque
 float cTemp;
 bool btnStatus = true;
 void setup() {
-    WiFi.begin(ssid, password);  // Connect to your WiFi network
+    WiFi.begin(ssid, password);  
 
-  while (WiFi.status() != WL_CONNECTED) {  // Wait until the connection has been established
+  while (WiFi.status() != WL_CONNECTED) {  
     delay(500);
     Serial.print(".");
   }
@@ -24,13 +24,12 @@ void setup() {
   Serial.print(WiFi.localIP());
   Serial.println("/");
 
-  // Setup a catch-all route
+
   server.onNotFound(handleAllRequests);
 
-  server.begin();  // Start the server
-  // put your setup code here, to run once:
+  server.begin();  
 
-  //LED bar initialization
+
   pinMode(18, OUTPUT);
   pinMode(5, OUTPUT);
   pinMode(17, OUTPUT);
@@ -38,10 +37,10 @@ void setup() {
   pinMode(4,OUTPUT);
   pinMode(0,OUTPUT);
   
-  //NTC init
+
   pinMode(25, INPUT);
 
-  //Button init
+
   pinMode(27, INPUT);
   Serial.begin(115200);
   Serial.println("Hello, ESP32!");
@@ -88,7 +87,7 @@ void setLedBar(int currentTemerature, int targetTemperature)
 }
 float getTemperature(int analogValue)
 {
-  float BETA = 3950; // should match the Beta Coefficient of the thermistor
+  float BETA = 3950; 
   float celsius = 1 / (log(1 / (4095.0 / analogValue - 1)) / BETA + 1.0 / 298.15) - 273.15;
   return celsius;
 }
@@ -101,10 +100,8 @@ float getTemperature(int analogValue)
 
 void handleAllRequests() {
   String message = "URI Requested: ";
-  message += server.uri();  // Get the requested URI
+  message += server.uri(); 
 
-  // You can implement different behaviors based on the URI
-  // For example:
   if (server.uri() == "/") {
     server.send(200, "text/html", "<h1>Welcome to the ESP32 Web Server</h1>");
   } else if (server.uri() == "/info") {
@@ -115,7 +112,7 @@ void handleAllRequests() {
   }
 }
 void loop() {
-  //setBtnStatus();
+
 
  
   if(btnStatus){
@@ -126,7 +123,7 @@ void loop() {
   else setLedBar(cTemp, 55);
   }
 
-  server.handleClient();  // Handle client requests
-  // put your main code here, to run repeatedly:
-  delay(10); // this speeds up the simulation
+  server.handleClient();  
+
+  delay(10); 
 }
