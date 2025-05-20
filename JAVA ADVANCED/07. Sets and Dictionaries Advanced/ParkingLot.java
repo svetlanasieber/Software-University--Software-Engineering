@@ -1,29 +1,39 @@
+package sets_and_maps_advanced_lab;
+
 import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class ParkingLot {
+
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
-        LinkedHashSet<String> parkingLot = new LinkedHashSet<>();
+
+        Set<String> carNumbers = new LinkedHashSet<>();
 
         String input = scanner.nextLine();
-
         while (!input.equals("END")) {
-            String registration = input.substring(input.lastIndexOf(" ")).trim();
-            if (input.contains("IN")) {
-                parkingLot.add(registration);
+
+            String direction = input.split(", ")[0];
+            String carNumber = input.split(", ")[1];
+
+            if (direction.equals("IN")) {
+                carNumbers.add(carNumber);
             } else {
-                parkingLot.remove(registration);
+                carNumbers.remove(carNumber);
             }
 
             input = scanner.nextLine();
         }
 
-        String output = parkingLot.isEmpty()
-                ? "Parking Lot is Empty"
-                : String.join(System.lineSeparator(), parkingLot);
-
-        System.out.println(output);
+        if (carNumbers.isEmpty()) {
+            System.out.println("Parking Lot is Empty");
+        } else {
+            for (String carNumber : carNumbers) {
+                System.out.println(carNumber);
+            }
+        }
     }
 }
