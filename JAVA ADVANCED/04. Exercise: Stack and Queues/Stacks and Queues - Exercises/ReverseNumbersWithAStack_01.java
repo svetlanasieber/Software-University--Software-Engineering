@@ -1,5 +1,3 @@
-package Stack_and_Queues_Exercise;
-
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Scanner;
