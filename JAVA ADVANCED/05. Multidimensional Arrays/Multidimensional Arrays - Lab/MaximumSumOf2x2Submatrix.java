@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MaximumSumOfSubmatrix_05 {
+public class MaximumSumOfSubmatrix {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
