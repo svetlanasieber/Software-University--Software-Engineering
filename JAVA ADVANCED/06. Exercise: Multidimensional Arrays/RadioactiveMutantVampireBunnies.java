@@ -38,30 +38,30 @@ public class RadioactiveMutantVampireBunnies {
 
            
             if (cmd.equals("U")) {
-                if (playerRow - 1 < 0) { // wins
+                if (playerRow - 1 < 0) { 
                     hasWon = true;
                     matrix[playerRow][playerCol] = ".";
                 } else {
-                    if (matrix[playerRow - 1][playerCol].equals(".")) { //moves
+                    if (matrix[playerRow - 1][playerCol].equals(".")) { 
                         matrix[playerRow - 1][playerCol] = "P";
                         matrix[playerRow][playerCol] = ".";
                         playerRow--;
-                    } else { // dies
+                    } else { 
                         isDead = true;
                         matrix[playerRow][playerCol] = ".";
                         playerRow--;
                     }
                 }
             } else if (cmd.equals("D")) {
-                if (playerRow + 1 == rows) { //wins
+                if (playerRow + 1 == rows) { 
                     hasWon = true;
                     matrix[playerRow][playerCol] = ".";
                 } else {
-                    if (matrix[playerRow + 1][playerCol].equals(".")) { //moves
+                    if (matrix[playerRow + 1][playerCol].equals(".")) { 
                         matrix[playerRow + 1][playerCol] = "P";
                         matrix[playerRow][playerCol] = ".";
                         playerRow++;
-                    } else { // dies
+                    } else { 
                         isDead = true;
                         matrix[playerRow][playerCol] = ".";
                         playerRow++;
@@ -69,15 +69,15 @@ public class RadioactiveMutantVampireBunnies {
                 }
 
             } else if (cmd.equals("L")) {
-                if (playerCol - 1 < 0) { //wins
+                if (playerCol - 1 < 0) { 
                     hasWon = true;
                     matrix[playerRow][playerCol] = ".";
                 } else {
-                    if (matrix[playerRow][playerCol - 1].equals(".")) { //moves
+                    if (matrix[playerRow][playerCol - 1].equals(".")) { 
                         matrix[playerRow][playerCol - 1] = "P";
                         matrix[playerRow][playerCol] = ".";
                         playerCol--;
-                    } else { // dies
+                    } else { 
                         isDead = true;
                         matrix[playerRow][playerCol] = ".";
                         playerCol--;
@@ -85,15 +85,15 @@ public class RadioactiveMutantVampireBunnies {
                 }
 
             } else if (cmd.equals("R")) {
-                if (playerCol + 1 == cols) { //wins
+                if (playerCol + 1 == cols) { 
                     hasWon = true;
                     matrix[playerRow][playerCol] = ".";
                 } else {
-                    if (matrix[playerRow][playerCol + 1].equals(".")) { //moves
+                    if (matrix[playerRow][playerCol + 1].equals(".")) { 
                         matrix[playerRow][playerCol + 1] = "P";
                         matrix[playerRow][playerCol] = ".";
                         playerCol++;
-                    } else { // dies
+                    } else { 
                         isDead = true;
                         matrix[playerRow][playerCol] = ".";
                         playerCol++;
