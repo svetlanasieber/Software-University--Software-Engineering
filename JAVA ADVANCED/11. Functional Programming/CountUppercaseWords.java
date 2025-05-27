@@ -8,16 +8,16 @@ public class CountUppercaseWords {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Predicate<String> startsWithUppercase =
-                s -> Character.isUpperCase(s.charAt(0));
+        String text = scanner.nextLine();
 
-        List<String> list = Arrays.stream(scanner.nextLine().split("\\s+"))
-                .filter(startsWithUppercase)
-                .toList();
+        Predicate<String> startsWithUppercase = s -> Character.isUpperCase(s.charAt(0));
 
-        Consumer<String> printer = System.out::println;
+        List<String> list = Arrays.stream(text.split("\\s+")).filter(startsWithUppercase).toList();
 
         System.out.println(list.size());
+
+        Consumer<String> printer =  System.out::println;
+
         list.forEach(printer);
     }
 }
