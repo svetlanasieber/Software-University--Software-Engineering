@@ -9,13 +9,13 @@ public class OffroadChallenge {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // STACK -> push()
+      
         ArrayDeque<Integer> fuelQuantity = new ArrayDeque<>();
         fillArrayDeque(scanner, fuelQuantity::push);
-        // QUEUE -> offer()
+       
         ArrayDeque<Integer> consumptionIndex = new ArrayDeque<>();
         fillArrayDeque(scanner, consumptionIndex::offer);
-        // QUEUE -> offer()
+       
         ArrayDeque<Integer> neededFuel = new ArrayDeque<>();
         fillArrayDeque(scanner, neededFuel::offer);
 
