@@ -7,7 +7,6 @@ public class Car {
     private int year;
 
 
-
     public String getBrand() {
         return brand;
     }
