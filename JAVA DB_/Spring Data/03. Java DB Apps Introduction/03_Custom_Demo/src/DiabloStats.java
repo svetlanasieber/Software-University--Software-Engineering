@@ -7,15 +7,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class DiabloStats {
-    /**
-     * 1 - search
-     *      1.1 -
-     * 2 - insert
-     *      2.1
-     * 3 - update
-     * 4 - delete
-     *
-     */
+
 
     public static void main(String[] args) throws SQLException {
         Scanner scanner = new Scanner(System.in);
@@ -39,7 +31,7 @@ public class DiabloStats {
         preparedStatement.setString(1, username);
         ResultSet resultSet = preparedStatement.executeQuery();
 
-        // Our query gives exactly 1 row as result because of COUNT
+        
         resultSet.next();
 
         String firstName = resultSet.getString("first_name");
