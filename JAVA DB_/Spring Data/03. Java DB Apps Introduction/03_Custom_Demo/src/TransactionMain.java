@@ -8,7 +8,7 @@ import java.util.Properties;
 public class TransactionMain {
 
     public static void main(String[] args) throws SQLException {
-        // Connect to SQL Server
+        
         String jdbc = "jdbc:mysql://localhost:3306/soft_uni";
         String username = "root";
         String password = "12345";
@@ -21,7 +21,7 @@ public class TransactionMain {
             DriverManager.getConnection(jdbc, properties);
         connection.setAutoCommit(false);
 
-        // Execute query
+      
         PreparedStatement preparedStatement = connection
             .prepareStatement("UPDATE employees SET salary = 123456 WHERE employee_id = 12");
         preparedStatement.executeUpdate();
