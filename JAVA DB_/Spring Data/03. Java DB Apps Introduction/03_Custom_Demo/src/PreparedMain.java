@@ -8,7 +8,7 @@ import java.util.Properties;
 public class PreparedMain {
 
     public static void main(String[] args) throws SQLException {
-        // Connect to SQL Server
+     
         String jdbc = "jdbc:mysql://localhost:3306/soft_uni";
         String username = "root";
         String password = "12345";
@@ -20,7 +20,7 @@ public class PreparedMain {
         Connection connection =
             DriverManager.getConnection(jdbc, properties);
 
-        // Execute query
+     
         PreparedStatement preparedStatement = connection
             .prepareStatement("SELECT * FROM employees WHERE salary > ?");
 
