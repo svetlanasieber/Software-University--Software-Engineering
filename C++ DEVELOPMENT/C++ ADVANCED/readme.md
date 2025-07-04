@@ -1,2 +1,3 @@
 
-![cpp_advanced_new](https://github.com/user-attachments/assets/4ad82c27-e63f-45b2-90f4-520fd8dfd517)
+
+![491278036_1159486222743843_7483719344024388606_n](https://github.com/user-attachments/assets/29395cd1-1662-45cd-82d8-2b1f48b99370)
