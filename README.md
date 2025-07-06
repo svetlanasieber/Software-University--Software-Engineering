@@ -22,9 +22,12 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+![Java](https://github.com/user-attachments/assets/d776acca-015c-48a2-ad55-10f16195728c)
 
 
+![csharp](https://github.com/user-attachments/assets/38e51e4a-258a-43f4-b1aa-c55080075888)
 
+![js](https://github.com/user-attachments/assets/35c3c230-84e2-48b6-82c4-365b5b63e6f1)
 
 
 
