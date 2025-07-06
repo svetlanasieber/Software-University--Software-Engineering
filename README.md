@@ -31,6 +31,10 @@
 
 ![qaautomation](https://github.com/user-attachments/assets/c1b4ce39-b1d9-4b46-8158-d1a8d5c6f26d)
 
+![Aritificial-Intelligence_facebook](https://github.com/user-attachments/assets/7331d4e8-7cbe-4cfc-8018-20b726a41165)
+
+
+![pytonwizzard_15463182](https://github.com/user-attachments/assets/54b77280-a878-4f2d-bba6-c80dec60a364)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 
