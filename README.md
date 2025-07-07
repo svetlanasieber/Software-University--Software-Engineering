@@ -27,7 +27,7 @@
 
 ![csharp](https://github.com/user-attachments/assets/38e51e4a-258a-43f4-b1aa-c55080075888)
 
-![js](https://github.com/user-attachments/assets/35c3c230-84e2-48b6-82c4-365b5b63e6f1)
+
 
 ![Screenshot 2025-07-06 160200](https://github.com/user-attachments/assets/6676168d-21c7-4aba-8a22-ae0a298ae684)
 
