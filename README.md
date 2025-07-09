@@ -31,7 +31,7 @@
 
 ![Screenshot 2025-07-06 160200](https://github.com/user-attachments/assets/6676168d-21c7-4aba-8a22-ae0a298ae684)
 
-![C-Plus-Plus-Development_facebook](https://github.com/user-attachments/assets/5b26fdc6-75f8-46bf-bd1d-3bc4b09dc4ea)
+
 
 
 ![qaautomation](https://github.com/user-attachments/assets/c1b4ce39-b1d9-4b46-8158-d1a8d5c6f26d)
