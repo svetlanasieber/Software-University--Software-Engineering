@@ -29,16 +29,6 @@
 
 
 
-![Screenshot 2025-07-06 160200](https://github.com/user-attachments/assets/6676168d-21c7-4aba-8a22-ae0a298ae684)
-
-
-
-
-![qaautomation](https://github.com/user-attachments/assets/c1b4ce39-b1d9-4b46-8158-d1a8d5c6f26d)
-
-![Aritificial-Intelligence_facebook](https://github.com/user-attachments/assets/7331d4e8-7cbe-4cfc-8018-20b726a41165)
-
-
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
