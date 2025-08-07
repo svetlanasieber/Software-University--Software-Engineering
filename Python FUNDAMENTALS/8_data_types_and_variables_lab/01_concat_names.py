@@ -1,10 +1,6 @@
-#name_one = input()
-#name_two = input()
-#delimiter = input()
-#print(f"{name_one}{delimiter}{name_two}")
-
-name1 = input()
-name2 = input()
+first_name = input()
+second_name = input()
 delimiter = input()
+final_message = first_name + delimiter + second_name
 
-print(f"{name1}{delimiter}{name2}")
+print(f"{first_name}{delimiter}{second_name}")
