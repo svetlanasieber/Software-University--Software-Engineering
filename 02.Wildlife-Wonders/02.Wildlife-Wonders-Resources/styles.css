@@ -1,0 +1,142 @@
+body {
+  background: url("https://images.pexels.com/photos/2606532/pexels-photo-2606532.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 16px;
+  font-family: "Segoe UI", "Calibri", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  color: #f5f5f5;
+  text-align: center;
+  font-size: 1.5em;
+  background: rgba(34, 85, 34, 0.85); /* тъмно зелено */
+}
+
+header h1 {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+footer {
+  padding: 50px;
+}
+
+.wrapper {
+  justify-content: center;
+}
+
+.wrapper header nav a,
+.wrapper footer nav a {
+  text-decoration: none;
+  color: #cfe7cf;
+  padding: 0px 20px 0 20px;
+}
+
+.wrapper header nav a:hover,
+.wrapper footer nav a:hover {
+  color: #a0e7a0;
+}
+
+
+
+
+.wrapper header nav a:nth-child(2) {
+  border-left: 5px solid #7fbf7f;
+  border-right: 5px solid #7fbf7f;
+}
+
+.wrapper footer nav a:nth-child(even) {
+  border-left: 5px solid #7fbf7f;
+  border-right: 5px solid #7fbf7f;
+}
+
+.animal {
+  color: #f0f8f0;
+  font-size: 1.2em;
+  margin: 25px;
+  width: 45%;
+  display: flex;
+  background: rgb(56, 94, 56); 
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.animal:hover {
+ background: rgba(56, 94, 56, 0.6); 
+  cursor: pointer;
+}
+
+.animal img {
+  width: 55%;
+  height: 100%;
+  display: inline-block;
+  background: #1a1a1a;
+  object-fit: cover;
+}
+
+.animal_info {
+  display: inline-block;
+background: rgba(56, 94, 56, 0.6); 
+  flex: 1;
+}
+
+.animal_info p {
+  padding: 0 20px 10px 20px;
+}
+
+.animal_info h3 {
+  font-size: 1.5em;
+  padding: 20px 20px 0px 20px;
+  margin: 0;
+}
+
+.news {
+  background-color: #d2e3d2; /* светло зелено */
+  padding: 5px;
+  margin: 0;
+}
+
+.news h1 {
+  color: #2e4e2e;
+  text-align: center;
+  font-size: 3em;
+}
+
+.row {
+  display: flex;
+}
+
+.news ul {
+  color: #444;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.news ul li {
+  padding: 30px;
+  text-align: left;
+  background: #f3f9f3;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.news ul li img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
