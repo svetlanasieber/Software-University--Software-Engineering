@@ -1,0 +1,37 @@
+DARIUS
+
+THE HAND OF NOXUS
+
+ROLE(S):
+Top
+
+STORE PRICE:
+225 | 260
+
+CLASS:
+Juggernaut (Fighter, Tank)
+
+RESOURCE:
+Mana
+
+RANGE TYPE:
+Melee
+
+ADAPTIVE TYPE:
+Physical
+
+RELEASE DATE:
+2012-05-23
+
+Base Statistics
+
+HP: 652-2590
+MP: 263-1249
+HP5: 10-26.15
+MP5: 6.6-12.55
+AR: 37-125.4
+AD: 64-149
+MR: 32-66.85
+Crit DMG: 175%
+MS: 340
+Range: 175
