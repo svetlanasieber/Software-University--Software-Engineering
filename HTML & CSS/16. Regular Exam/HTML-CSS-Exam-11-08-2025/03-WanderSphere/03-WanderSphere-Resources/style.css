@@ -1,0 +1,269 @@
+/* CSS for WanderSphere */
+
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    background-image: url('images/bg.png');
+    background-size: cover;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #2b3b64;
+    font-family: 'Lato', sans-serif;
+    padding: 8px 20px;
+    border: 2px solid #000;
+    background-color: white;
+    font-weight: 500;
+    font-size: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 25px;
+}
+
+header nav a.active {
+    color: #D0021B;
+}
+
+.book-trip-container {
+    text-align: center;
+    margin: 10px 0 30px;
+}
+
+.btn-book {
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    color: #2b3b64;
+    border: 1px solid #ddd;
+    padding: 10px 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: 700;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 50px 0;
+    text-align: left;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.hero-buttons .btn {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-family: 'Lato', sans-serif;
+    margin-right: 15px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: #ED5A6B;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #435A8E;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    max-width: 100%;
+}
+
+.tours {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.tour-card {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    padding: 30px 20px;
+    max-width: 600px;
+}
+
+.tour-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.tour-info {
+    padding: 0;
+    margin-top: 0;
+}
+
+
+.tour-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.tour-info p {
+    font-weight: 300;
+    color: #435A8E;
+}
+
+.about {
+    border: 3px dashed #000;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300;
+    color: #435A8E;
+}
+
+.contact {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.contact form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #EAEAEA;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 20px 25px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Merriweather', serif;
+    background-color: #4A4A4A;
+    color: white;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.contact textarea {
+    height: 160px;
+    resize: none;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: #B4B4B4;
+    font-family: 'Merriweather', serif;
+}
+
+.contact .btn {
+    background-color: #4A4A4A;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+}
+
+footer {
+    background-color: #111;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+footer nav a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+footer p {
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 14px;
+    margin: 0;
+}
