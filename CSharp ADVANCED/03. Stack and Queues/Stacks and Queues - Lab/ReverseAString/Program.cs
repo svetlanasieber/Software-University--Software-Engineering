@@ -1,16 +1,16 @@
-//Stack<char>
 
 string input = Console.ReadLine();
 
-Stack<char> stack = new Stack<char>();
+//I Love C#
 
-for (int i = 0; i < input.Length; i++)
+Stack<char> stack = new Stack<char>();
+foreach (var ch in input)
 {
-    stack.Push(input[i]);
+    stack.Push(ch);
 }
 
 while (stack.Count > 0)
 {
-    char current = stack.Pop();
-    Console.Write(current);
+    Console.Write(stack.Pop());
 }
+Console.WriteLine();
