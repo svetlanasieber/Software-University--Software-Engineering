@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@400;600;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/index-fragments :: corner-veil}"></th:block>
+<th:block th:insert="~{/fragments/index-fragments :: particles}"></th:block>
+<div class="auth-blur"></div>
+
+<div class="home-shell">
+
+    <aside class="sidebar panel" role="complementary">
+        <div class="profile-head">
+            <img class="avatar" th:src="${wizard.avatarUrl}">
+            <h2 class="username" th:text="${wizard.username}">Wizard Name</h2>
+            <div class="badges">
+                <span class="badge house" 
+                      th:classappend="${'house-' + wizard.house.name().toLowerCase()}"
+                      th:text="${wizard.house.displayName}">Gryffindor</span>
+
+                <span class="pill" 
+                      th:classappend="${wizard.alignment == T(main.model.WizardAlignment).LIGHT ? 'pill-align-light' : 'pill-align-dark'}"
+                      th:text="${wizard.alignment.displayName + ' Wizard'}">Light Wizard</span>
+            </div>
+
+            <p class="muted created" th:text="${'Member since ' + #temporals.format(wizard.createdOn, 'yyyy-MM-dd')}">Member since 2025-01-28</p>
+        </div>
+
+
+        <div class="note">
+            <p class="note-title">Professor's Note</p>
+            <p class="note-text">"Power without discipline is mere chaos."</p>
+        </div>
+
+        <div class="sidebar-ctas">
+            <a href="/profile" class="btn btn-primary full">Wizard Profile</a>
+            <a href="/arena" class="btn btn-primary full">Arena</a>
+            <a href="/logout" class="btn btn-secondary full">Logout</a>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <section class="section panel">
+            <header class="section-head">
+                <h3>Learned Spells</h3>
+                <span class="count-badge" th:text="${learnedSpells.size()}">1</span>
+            </header>
+            <div class="cards">
+                <article class="spell-card learned" th:each="spell : ${learnedSpells}">
+                    <div class="media">
+                        <img th:src="${spell.image}">
+                        <div class="pills">
+                            <span class="pill pill-cat" th:text="${spell.category.displayName}">Defense</span>
+                            <span class="pill pill-align" 
+                                  th:classappend="${spell.alignment == T(main.model.SpellAlignment).LIGHT ? 'pill-align-light' : (spell.alignment == T(main.model.SpellAlignment).DARK ? 'pill-align-dark' : 'pill-align-neutral')}"
+                                  th:text="${spell.alignment.displayName}">Light</span>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <h4 class="spell-name" th:text="${spell.name}">Protego</h4>
+                        <div class="meta">
+                            <span class="meta-item">Power <strong th:text="${spell.power}">97</strong></span>
+                            <span class="meta-item">Learned <strong th:text="${#temporals.format(spell.createdOn, 'yyyy-MM-dd')}">2025-01-21</strong></span>
+                        </div>
+                        <p class="desc" th:text="${spell.description}">Conjures protective cursed flames that spare allies.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <section class="section panel">
+            <header class="section-head">
+                <h3>Other Spells</h3>
+            </header>
+            <div class="cards">
+
+                <article class="spell-card eligible" th:each="spell : ${eligibleSpells}">
+                    <div class="media">
+                        <img th:src="${spell.image}">
+                        <div class="pills">
+                            <span class="pill pill-cat" th:text="${spell.category.substring(0,1) + spell.category.substring(1).toLowerCase()}">Offense</span>
+                            <span class="pill pill-align" 
+                                  th:classappend="${spell.alignment == 'LIGHT' ? 'pill-align-light' : (spell.alignment == 'DARK' ? 'pill-align-dark' : 'pill-align-neutral')}"
+                                  th:text="${spell.alignment.substring(0,1) + spell.alignment.substring(1).toLowerCase()}">Dark</span>
+                        </div>
+                        <div class="consequence" th:if="${wizard.alignment == T(main.model.WizardAlignment).LIGHT && spell.alignment == 'DARK'}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <h4 class="spell-name" th:text="${spell.name}">Avada Kedavra</h4>
+                        <div class="meta">
+                            <span class="meta-item">Power <strong th:text="${spell.power}">271</strong></span>
+                        </div>
+                        <p class="desc" th:text="${spell.description}">The Killing Curse - dark spell that causes instant death to its target.</p>
+                        <form class="learn-form" method="post" th:action="@{/spells(spell-code=${spell.code})}">
+                            <button type="submit" class="btn btn-secondary full">Learn</button>
+                        </form>
+                    </div>
+                </article>
+
+
+                <article class="spell-card locked" th:each="spell : ${lockedSpells}">
+                    <div class="media">
+                        <img th:src="${spell.image}">
+                        <div class="pills">
+                            <span class="pill pill-cat" th:text="${spell.category.substring(0,1) + spell.category.substring(1).toLowerCase()}">Offense</span>
+                            <span class="pill pill-align" 
+                                  th:classappend="${spell.alignment == 'LIGHT' ? 'pill-align-light' : (spell.alignment == 'DARK' ? 'pill-align-dark' : 'pill-align-neutral')}"
+                                  th:text="${spell.alignment.substring(0,1) + spell.alignment.substring(1).toLowerCase()}">Dark</span>
+                        </div>
+                        <div class="ribbon">LOCKED</div>
+                        <div class="consequence" th:if="${wizard.alignment == T(main.model.WizardAlignment).LIGHT && spell.alignment == 'DARK'}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <h4 class="spell-name" th:text="${spell.name}">Imperio</h4>
+                        <div class="meta">
+                            <span class="meta-item">Power <strong th:text="${spell.power}">90</strong></span>
+                            <span class="meta-item notyet">Requires <strong th:text="${spell.minLearned}">2</strong> learned</span>
+                        </div>
+                        <p class="desc" th:text="${spell.description}">The Imperius Curse - dark spell that bends the will of the target.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

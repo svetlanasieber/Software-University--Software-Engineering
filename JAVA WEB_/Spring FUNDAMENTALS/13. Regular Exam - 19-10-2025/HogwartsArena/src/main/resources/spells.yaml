@@ -1,0 +1,144 @@
+spells:
+  - code: "LUMOS"
+    name: "Lumos"
+    image: "/images/spells/lumos.png"
+    category: "UTILITY"
+    alignment: "LIGHT"
+    minLearned: 0
+    power: 20
+    description: "Produces light at the wand tip to illuminate darkness."
+
+  - code: "ALOHOMORA"
+    name: "Alohomora"
+    image: "/images/spells/alohomora.png"
+    category: "UTILITY"
+    alignment: "NEUTRAL"
+    minLearned: 0
+    power: 40
+    description: "Unlocks doors and simple locks."
+
+  - code: "WINGARDIUM_LEVIOSA"
+    name: "Wingardium Leviosa"
+    image: "/images/spells/wingardium-leviosa.png"
+    category: "UTILITY"
+    alignment: "NEUTRAL"
+    minLearned: 1
+    power: 65
+    description: "Levitates and moves objects through the air."
+
+  - code: "REPARO"
+    name: "Reparo"
+    image: "/images/spells/reparo.png"
+    category: "UTILITY"
+    alignment: "LIGHT"
+    minLearned: 1
+    power: 70
+    description: "Mends broken objects and repairs minor damage."
+
+  - code: "EXPELLIARMUS"
+    name: "Expelliarmus"
+    image: "/images/spells/expelliarmus.png"
+    category: "OFFENSE"
+    alignment: "LIGHT"
+    minLearned: 1
+    power: 95
+    description: "Disarms an opponent, forcing their wand or weapon away."
+
+  - code: "PROTEGO"
+    name: "Protego"
+    image: "/images/spells/protego.png"
+    category: "DEFENSE"
+    alignment: "LIGHT"
+    minLearned: 1
+    power: 97
+    description: "Summons a magical shield that blocks spells and hexes."
+
+  - code: "AGUAMENTI"
+    name: "Aguamenti"
+    image: "/images/spells/aguamenti.png"
+    category: "UTILITY"
+    alignment: "NEUTRAL"
+    minLearned: 2
+    power: 105
+    description: "Conjures a jet of water; douses flames or fills containers."
+
+  - code: "GLACIUS"
+    name: "Glacius"
+    image: "/images/spells/glacius.png"
+    category: "OFFENSE"
+    alignment: "NEUTRAL"
+    minLearned: 2
+    power: 115
+    description: "Emits freezing air to encase targets in ice."
+
+  - code: "INCENDIO"
+    name: "Incendio"
+    image: "/images/spells/incendio.png"
+    category: "OFFENSE"
+    alignment: "NEUTRAL"
+    minLearned: 2
+    power: 125
+    description: "Conjures flames to ignite targets or illuminate areas."
+
+  - code: "STUPEFY"
+    name: "Stupefy"
+    image: "/images/spells/stupefy.png"
+    category: "OFFENSE"
+    alignment: "NEUTRAL"
+    minLearned: 3
+    power: 150
+    description: "Stuns targets, knocking them unconscious."
+
+  - code: "OBLIVIATE"
+    name: "Obliviate"
+    image: "/images/spells/obliviate.png"
+    category: "UTILITY"
+    alignment: "NEUTRAL"
+    minLearned: 3
+    power: 165
+    description: "Erases or alters memories of the target."
+
+  - code: "SECTUMSEMPRA"
+    name: "Sectumsempra"
+    image: "/images/spells/sectumsempra.png"
+    category: "OFFENSE"
+    alignment: "DARK"
+    minLearned: 3
+    power: 185
+    description: "Slices the target with invisible blades, causing deep wounds."
+
+  - code: "PATRONUS"
+    name: "Patronus"
+    image: "/images/spells/patronus.png"
+    category: "DEFENSE"
+    alignment: "LIGHT"
+    minLearned: 3
+    power: 190
+    description: "Conjures a Patronus to repel Dementors and Lethifolds."
+
+  - code: "IMPERIO"
+    name: "Imperio"
+    image: "/images/spells/imperio.png"
+    category: "OFFENSE"
+    alignment: "DARK"
+    minLearned: 4
+    power: 210
+    description: "The Imperius Curse - dark spell that bends the will of the target."
+
+  - code: "CRUCIO"
+    name: "Crucio"
+    image: "/images/spells/crucio.png"
+    category: "OFFENSE"
+    alignment: "DARK"
+    minLearned: 4
+    power: 235
+    description: "The Cruciatus Curse - dark spell that inflicts unbearable pain on its target."
+
+  - code: "AVADA_KEDAVRA"
+    name: "Avada Kedavra"
+    image: "/images/spells/avada-kedavra.png"
+    category: "OFFENSE"
+    alignment: "DARK"
+    minLearned: 5
+    power: 271
+    description: "The Killing Curse - dark spell that causes instant death to its target."

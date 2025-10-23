@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Arena</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@400;600;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/arena.css">
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/index-fragments :: corner-veil}"></th:block>
+<th:block th:insert="~{/fragments/index-fragments :: particles}"></th:block>
+<div class="auth-blur"></div>
+<main class="arena-shell">
+
+    <h1 class="arena-title">Hogwarts Arena</h1>
+
+    <div class="back-actions">
+        <a href="/home" class="btn btn-secondary">Back to Home</a>
+    </div>
+
+
+    <section class="section panel">
+        <header class="section-head">
+            <h3>Gryffindor</h3>
+            <span class="count-badge house-gryffindor" th:text="${gryffindorWizards.size()}">99</span>
+        </header>
+        <div class="cards wiz-cards">
+            <article class="spell-card wiz-card" th:each="wizard : ${gryffindorWizards}">
+                <div class="media">
+                    <img th:src="${wizard.avatarUrl}">
+                    <div class="pills">
+                        <span class="pill" 
+                              th:classappend="${wizard.alignment == T(main.model.WizardAlignment).LIGHT ? 'pill-align-light' : 'pill-align-dark'}"
+                              th:text="${wizard.alignment.displayName}">Light</span>
+                    </div>
+                </div>
+                <div class="body">
+                    <h4 class="spell-name" th:text="${wizard.username}">Wanda</h4>
+                    <div class="meta">
+                        <span class="meta-item">Spells <strong th:text="${wizard.spells.size()}">5</strong></span>
+                        <span class="meta-item">Power <strong th:text="${wizard.totalPower}">312</strong></span>
+                    </div>
+                </div>
+            </article>
+            <p th:if="${gryffindorWizards.isEmpty()}" class="empty muted">No students yet.</p>
+        </div>
+    </section>
+
+
+    <section class="section panel">
+        <header class="section-head">
+            <h3>Slytherin</h3>
+            <span class="count-badge house-slytherin" th:text="${slytherinWizards.size()}">99</span>
+        </header>
+        <div class="cards wiz-cards">
+            <article class="spell-card wiz-card" th:each="wizard : ${slytherinWizards}">
+                <div class="media">
+                    <img th:src="${wizard.avatarUrl}">
+                    <div class="pills">
+                        <span class="pill" 
+                              th:classappend="${wizard.alignment == T(main.model.WizardAlignment).LIGHT ? 'pill-align-light' : 'pill-align-dark'}"
+                              th:text="${wizard.alignment.displayName}">Light</span>
+                    </div>
+                </div>
+                <div class="body">
+                    <h4 class="spell-name" th:text="${wizard.username}">Wanda</h4>
+                    <div class="meta">
+                        <span class="meta-item">Spells <strong th:text="${wizard.spells.size()}">5</strong></span>
+                        <span class="meta-item">Power <strong th:text="${wizard.totalPower}">312</strong></span>
+                    </div>
+                </div>
+            </article>
+            <p th:if="${slytherinWizards.isEmpty()}" class="empty muted">No students yet.</p>
+        </div>
+    </section>
+
+
+    <section class="section panel">
+        <header class="section-head">
+            <h3>Ravenclaw</h3>
+            <span class="count-badge house-ravenclaw" th:text="${ravenclawWizards.size()}">99</span>
+        </header>
+        <div class="cards wiz-cards">
+            <article class="spell-card wiz-card" th:each="wizard : ${ravenclawWizards}">
+                <div class="media">
+                    <img th:src="${wizard.avatarUrl}">
+                    <div class="pills">
+                        <span class="pill" 
+                              th:classappend="${wizard.alignment == T(main.model.WizardAlignment).LIGHT ? 'pill-align-light' : 'pill-align-dark'}"
+                              th:text="${wizard.alignment.displayName}">Light</span>
+                    </div>
+                </div>
+                <div class="body">
+                    <h4 class="spell-name" th:text="${wizard.username}">Wanda</h4>
+                    <div class="meta">
+                        <span class="meta-item">Spells <strong th:text="${wizard.spells.size()}">5</strong></span>
+                        <span class="meta-item">Power <strong th:text="${wizard.totalPower}">312</strong></span>
+                    </div>
+                </div>
+            </article>
+            <p th:if="${ravenclawWizards.isEmpty()}" class="empty muted">No students yet.</p>
+        </div>
+    </section>
+
+
+    <section class="section panel">
+        <header class="section-head">
+            <h3>Hufflepuff</h3>
+            <span class="count-badge house-hufflepuff" th:text="${hufflepuffWizards.size()}">99</span>
+        </header>
+        <div class="cards wiz-cards">
+            <article class="spell-card wiz-card" th:each="wizard : ${hufflepuffWizards}">
+                <div class="media">
+                    <img th:src="${wizard.avatarUrl}">
+                    <div class="pills">
+                        <span class="pill" 
+                              th:classappend="${wizard.alignment == T(main.model.WizardAlignment).LIGHT ? 'pill-align-light' : 'pill-align-dark'}"
+                              th:text="${wizard.alignment.displayName}">Light</span>
+                    </div>
+                </div>
+                <div class="body">
+                    <h4 class="spell-name" th:text="${wizard.username}">Wanda</h4>
+                    <div class="meta">
+                        <span class="meta-item">Spells <strong th:text="${wizard.spells.size()}">5</strong></span>
+                        <span class="meta-item">Power <strong th:text="${wizard.totalPower}">312</strong></span>
+                    </div>
+                </div>
+            </article>
+            <p th:if="${hufflepuffWizards.isEmpty()}" class="empty muted">No students yet.</p>
+        </div>
+    </section>
+</main>
+</body>
+</html>

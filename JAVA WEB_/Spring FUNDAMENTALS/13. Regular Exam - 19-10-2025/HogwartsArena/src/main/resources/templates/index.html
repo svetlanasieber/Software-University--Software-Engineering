@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css"/>
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/index-fragments :: corner-veil}"></th:block>
+<th:block th:insert="~{/fragments/index-fragments :: particles}"></th:block>
+
+<main class="content" role="main" aria-label="Intro">
+
+    <header class="hero-head">
+        <h1>
+            <span>Wizarding</span> <span>Arena</span>
+        </h1>
+
+        <p class="lead">
+            Step into the mist over Black Lake beneath the shadow of Hogwarts spires.
+            Master legendary spells, challenge fierce rivals, and etch your name in the annals of magic.
+            The Arena is open — will you rise with glory or be swallowed by the fog?
+        </p>
+
+        <nav class="btns" aria-label="Primary">
+            <a href="/register" class="btn btn-primary">Create Account</a>
+            <a href="/login" class="btn btn-secondary">Login</a>
+        </nav>
+    </header>
+
+    <th:block th:insert="~{/fragments/index-fragments :: index-details}"></th:block>
+</main>
+<footer class="site-footer" role="contentinfo">
+    <p>© 2025 Wizarding Arena — SoftUni Exam — Spring Fundamentals</p>
+</footer>
+</body>
+</html>

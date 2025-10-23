@@ -1,0 +1,234 @@
+/* ===== Overlay on top of index background ===== */
+.auth-page {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--mist-100);
+  background: url('/images/index-bg.jpeg') center/cover no-repeat fixed;
+  display: grid;
+  place-items: center;
+}
+
+.auth-blur {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,.38);
+}
+
+/* ===== Modal panel — matches .content from index ===== */
+.auth-modal {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 520px);
+  padding: clamp(1.2rem, 2.2vw, 2.4rem);
+  border-radius: 22px;
+
+  /* clone of .content gradient & depth */
+  background: linear-gradient(to right,
+              rgba(22,26,30,0.62) 0%,
+              rgba(22,26,30,0.45) 42%,
+              rgba(22,26,30,0.30) 100%);
+  border: 1px solid var(--panel-stroke);
+  backdrop-filter: blur(var(--panel-blur));
+  box-shadow: 0 26px 86px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,0.06);
+  animation: riseIn .6s ease-out both;
+}
+
+/* Close (X) – same gentle style as your UI */
+.auth-close {
+  position: absolute; top: 10px; right: 10px;
+  width: 36px; height: 36px; border-radius: 10px;
+  display: grid; place-items: center;
+  color: var(--mist-300); text-decoration: none;
+  border: 1px solid transparent;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.auth-close:hover { background:#ffffff14; border-color:#ffffff22; color:var(--gold-soft); }
+
+/* Title styling to echo hero */
+.auth-title {
+  margin: .2rem 0 1rem 0;
+  text-align: left;
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  letter-spacing: .6px;
+  color: var(--gold-soft);
+  font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.2rem);
+}
+.auth-title::after {
+  content:"";
+  display:block;
+  margin-top:.45rem;
+  width: 26%;
+  height:1px;
+  background: linear-gradient(90deg, var(--gold-soft), rgba(245,231,197,0.08));
+  border-radius:9px;
+  box-shadow: 0 0 16px rgba(245,231,197,.35);
+}
+
+/* Form */
+.auth-form {
+margin-top: 2.4rem;
+display: flex;
+flex-direction: column;
+}
+.form-group { margin-bottom: 1.0rem; }
+.form-group label {
+  display:flex; margin:0 0 .35rem; font-weight:600; color: var(--mist-200);
+  letter-spacing:.2px;
+  font-size: 0.8rem;
+  align-items: center;
+}
+
+/* Inputs/selects aligned & consistent */
+.form-control, .form-select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 10px;
+  color: var(--mist-100);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.20);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease, background .15s ease;
+}
+.form-control::placeholder { color: var(--mist-400); }
+.form-control:focus, .form-select:focus {
+  border-color: rgba(245,231,197,.45);
+  background: #f5e7c508;
+}
+
+/* Password icon inside field (Font Awesome) */
+.password-wrap { position: relative; }
+.password-wrap .form-control { padding-right: 42px; }
+.toggle-password {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  color: var(--mist-300);
+  cursor: pointer;
+  transition: color .15s ease, background .15s ease;
+  border-radius: 8px; padding: 4px;
+}
+.toggle-password:hover { color: var(--gold-soft); background: #ffffff12; }
+
+/* Buttons – reuse your index button classes */
+.btn.full {
+width: 100%;
+text-align: center;
+width: 70%;
+margin-top: 16px;
+text-align: center;
+align-self: center;
+cursor: pointer;
+font-size: 14px;
+}
+
+/* Helper text / links */
+.switch-line {
+text-align:center;
+margin-top: .9rem;
+color: var(--mist-300);
+font-size: 0.8rem;
+filter: opacity(0.8);
+}
+.switch-line a {
+color: var(--gold-soft);
+text-decoration: none;
+transition: all .15s ease;
+}
+.switch-line a:hover {
+text-decoration: none;
+color: #fff5dd;
+text-shadow: 0 0px 6px rgb(250 232 184 / 55%);
+}
+
+/* Avatar preview (register) */
+.avatar-preview {
+  margin-top:.6rem; display:flex; gap:12px; align-items:center;
+}
+.avatar-preview img {
+  width:72px; height:72px; border-radius:50%; object-fit:cover;
+  border: 2px solid var(--gold-soft);
+}
+
+/* Motion (reuse from index) */
+@keyframes riseIn { from{ transform:translateY(14px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+
+.fa-eye:before {
+    margin-right: 1px;
+}
+
+.form-control:hover, .form-select:hover {
+    background: #f5e7c508;
+}
+
+.label-with-badge{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:.6rem; margin-bottom:.35rem;
+}
+.label-with-badge > span:first-child{
+  font-weight:600; color:var(--mist-200); letter-spacing:.2px;
+}
+
+/* badge base */
+.badge{
+  display:inline-flex; align-items:center; gap:.35rem;
+  padding: .22rem .55rem;
+  border-radius: 999px;
+  font-size: .7rem;
+  line-height: 1;
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+/* soft “glass” badge with gold accent */
+.badge-soft{
+  color: var(--gold-soft);
+  background: rgba(245,231,197,.06);
+  border: 1px solid rgba(245,231,197,.35);
+  text-shadow: 0 0 10px rgba(245,231,197,.28);
+}
+
+.badge-error {
+  color: var(--error-text);
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  margin-left: auto;
+}
+
+.auth-modal.register::before {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 101px;
+    right: 16%;
+    top: 4%;
+    background: url(/images/quidditch-harry-potter.svg) center / contain no-repeat;
+    opacity: .10;
+    transform: rotate(-15deg) scaleX(-1);
+    transform-origin: 50% 50%;
+    filter: drop-shadow(0 3px 24px rgba(0, 0, 0, 0.25));
+    pointer-events: none;
+    z-index: 0;
+}
+
+.auth-modal.login::before {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 101px;
+    right: 24%;
+    top: 8%;
+    background: url(/images/quidditch-harry-potter.svg) center / contain no-repeat;
+    opacity: .10;
+    transform: rotate(-15deg) scaleX(-1);
+    transform-origin: 50% 50%;
+    filter: drop-shadow(0 3px 24px rgba(0, 0, 0, 0.25));
+    pointer-events: none;
+    z-index: 0;
+}
+
+.form-select option {
+    background-color: #171C22;
+}

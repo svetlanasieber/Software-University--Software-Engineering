@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/auth-overlay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="auth-page">
+<th:block th:insert="~{/fragments/index-fragments :: corner-veil}"></th:block>
+<th:block th:insert="~{/fragments/index-fragments :: particles}"></th:block>
+<div class="auth-blur"></div>
+
+<main class="auth-modal login">
+    <a class="auth-close" href="/" aria-label="Back to home">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <h1 class="auth-title">Login</h1>
+
+    <p class="alert-warning" th:if="${loginAttemptMessage}" th:text="${loginAttemptMessage}" style="color: #ff6b6b; text-align: center; margin-bottom: 1rem; padding: 0.5rem; background: rgba(255,107,107,0.1); border-radius: 4px;"></p>
+
+    <form class="auth-form" th:action="@{/login}" th:object="${loginDto}" method="post">
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input class="form-control" th:field="*{username}" id="username" type="text" placeholder="Enter your username">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-wrap">
+                <input class="form-control" th:field="*{password}" id="password" type="password" placeholder="Enter your password" required>
+                <i class="fa-solid fa-eye toggle-password" onclick="togglePassword()" id="toggleIcon" aria-label="Show password"></i>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary full">Login</button>
+
+        <p class="switch-line">Don’t have an account? <a href="/register">Register</a></p>
+    </form>
+</main>
+<footer class="site-footer" role="contentinfo">
+    <p>© 2025 Wizarding Arena — SoftUni Exam — Spring Fundamentals</p>
+</footer>
+<script>
+    function togglePassword() {
+      const input = document.getElementById("password");
+      const icon = document.getElementById("toggleIcon");
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye"); icon.classList.add("fa-eye-slash");
+        icon.setAttribute('aria-label','Hide password');
+      } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye-slash"); icon.classList.add("fa-eye");
+        icon.setAttribute('aria-label','Show password');
+      }
+    }
+</script>
+</body>
+</html>

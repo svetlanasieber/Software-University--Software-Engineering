@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Wizard Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/auth-overlay.css">
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/index-fragments :: corner-veil}"></th:block>
+<th:block th:insert="~{/fragments/index-fragments :: particles}"></th:block>
+<div class="auth-blur"></div>
+
+<main class="profile-shell">
+
+    <h1 class="page-title">Wizard Profile</h1>
+
+    <div class="profile-content">
+        <div class="page-actions">
+            <a href="/home" class="btn btn-secondary">Back to Home</a>
+        </div>
+        <section class="profile-row">
+            <article class="window">
+                <div class="auth-modal auth-embedded">
+                    <h2 class="auth-title">Edit Profile</h2>
+
+                    <form class="auth-form" th:action="@{/profile}" th:object="${editProfileDto}" method="post">
+                        <input type="hidden" name="_method" value="PUT">
+                        <div class="form-group">
+                            <label for="username">
+                                <span>Username</span>
+                                <span class="badge badge-error" th:if="${#fields.hasErrors('username')}">invalid username</span>
+                            </label>
+                            <input class="form-control" th:field="*{username}" id="username" type="text" placeholder="Your wizard name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="avatarUrl">
+                                <span>Avatar URL</span>
+                                <span class="badge badge-error" th:if="${#fields.hasErrors('avatarUrl')}">invalid url</span>
+                            </label>
+                            <input class="form-control" th:field="*{avatarUrl}" id="avatarUrl" type="url" placeholder="Paste image URL">
+                        </div>
+                        <button type="submit" class="btn btn-primary full">Save Changes</button>
+                    </form>
+                </div>
+            </article>
+
+            <article class="window">
+                <div class="align-card-wrap">
+                    <div class="spell-card profile-card">
+                        <div class="media">
+                            <img src="/images/dark-alignement-form.jpg">
+                            <div class="consequence"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg></div>
+                        </div>
+                        <div class="body">
+                            <h4 class="spell-name">Choose Your Path</h4>
+                            <p class="desc">Power at a price. Embracing darkness is irreversible.</p>
+                            <form th:if="${wizard.alignment == T(main.model.WizardAlignment).LIGHT}" th:action="@{/profile/alignment}" method="post">
+                                <input type="hidden" name="_method" value="PATCH">
+                                <button type="submit" class="btn btn-secondary full">Embrace Darkness</button>
+                            </form>
+                            <p th:if="${wizard.alignment == T(main.model.WizardAlignment).DARK}" class="muted" style="margin-top:.6rem;">You have chosen the Dark path. This choice is permanent.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+</main>
+</body>
+</html>

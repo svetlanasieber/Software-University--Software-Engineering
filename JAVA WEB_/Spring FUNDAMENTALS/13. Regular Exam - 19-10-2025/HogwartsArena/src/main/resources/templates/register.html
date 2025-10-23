@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/auth-overlay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="auth-page">
+<th:block th:insert="~{/fragments/index-fragments :: corner-veil}"></th:block>
+<th:block th:insert="~{/fragments/index-fragments :: particles}"></th:block>
+<div class="auth-blur"></div>
+
+<main class="auth-modal register">
+
+    <a class="auth-close" href="/" aria-label="Back to home">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <h1 class="auth-title">Register</h1>
+
+    <div th:if="${error}" style="color: #ff6b6b; text-align: center; margin-bottom: 1rem; padding: 0.5rem; background: rgba(255,107,107,0.1); border-radius: 4px;">
+        <span th:text="${error}">Error message</span>
+    </div>
+
+    <form class="auth-form" th:action="@{/register}" th:object="${registerDto}" method="post">
+
+        <div class="form-group">
+            <label for="reg-username">
+                <span>Username</span>
+                <span class="badge badge-error" th:if="${#fields.hasErrors('username')}">invalid username</span>
+            </label>
+            <input class="form-control" th:field="*{username}" id="reg-username" type="text" placeholder="Enter your username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="reg-password">
+                <span>Password</span>
+                <span class="badge badge-error" th:if="${#fields.hasErrors('password')}">invalid password</span>
+            </label>
+            <div class="password-wrap">
+                <input class="form-control" th:field="*{password}" id="reg-password" type="password" placeholder="Enter your password">
+                <i class="fa-solid fa-eye toggle-password" onclick="togglePasswordReg()" id="toggleIconReg" aria-label="Show password"></i>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="avatarUrl" class="label-with-badge">
+                <span>Avatar URL</span>
+                <span class="badge badge-error" th:if="${#fields.hasErrors('avatarUrl')}">invalid url</span>
+            </label>
+            <input class="form-control" th:field="*{avatarUrl}" id="avatarUrl" type="url" placeholder="Paste image URL">
+        </div>
+
+        <div class="form-group">
+            <label for="house" class="label-with-badge">
+                <span>House</span>
+                <span class="badge badge-error" th:if="${#fields.hasErrors('house')}">not null</span>
+                <span class="badge badge-soft">choose wisely</span>
+            </label>
+            <select class="form-select" th:field="*{house}" id="house" required>
+                <option value="">Select your house</option>
+                <option th:each="h : ${houses}" th:value="${h}" th:text="${h.displayName}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="path" class="label-with-badge">
+                <span>Alignment</span>
+                <span class="badge badge-error" th:if="${#fields.hasErrors('alignment')}">not null</span>
+                <span class="badge badge-soft">light or dark wizard</span>
+            </label>
+            <select class="form-select" th:field="*{alignment}" id="path" required>
+                <option value="">Choose your path</option>
+                <option th:each="a : ${alignments}" th:value="${a}" th:text="${a.displayName}"></option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary full">Create Account</button>
+        <p class="switch-line">Already have an account? <a href="/login">Log In</a></p>
+    </form>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+    <p>© 2025 Wizarding Arena — SoftUni Exam — Spring Fundamentals</p>
+</footer>
+<script>
+    function togglePasswordReg() {
+      const input = document.getElementById("reg-password");
+      const icon  = document.getElementById("toggleIconReg");
+      if (input.type === "password") {
+        input.type = "text";  icon.classList.replace("fa-eye","fa-eye-slash");
+        icon.setAttribute('aria-label','Hide password');
+      } else {
+        input.type = "password"; icon.classList.replace("fa-eye-slash","fa-eye");
+        icon.setAttribute('aria-label','Show password');
+      }
+    }
+    function previewAvatar(url){
+      const box = document.getElementById('avatarPreview');
+      if(!box) return;
+      box.innerHTML = url ? `<img src="${url}" alt="Avatar preview">` : "";
+    }
+</script>
+</body>
+</html>

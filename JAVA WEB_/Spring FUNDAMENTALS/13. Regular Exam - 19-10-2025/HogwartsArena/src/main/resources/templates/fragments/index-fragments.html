@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="corner-veil" class="corner-veil" aria-hidden="true"></div>
+
+<div th:fragment="particles" class="particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<section th:fragment="index-details" class="steps" aria-label="How it works">
+    <div class="step">
+        <div class="bullet" aria-hidden="true">1</div>
+        <div class="step-body">
+            <h3 class="step-title">Create your account</h3>
+            <p class="step-sub">Choose a wizard name and your path — Good or Evil.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="bullet" aria-hidden="true">2</div>
+        <div class="step-body">
+            <h3 class="step-title">Learn spells</h3>
+            <p class="step-sub">Unlock powerful cards as you level up and meet each spell’s requirements.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="bullet" aria-hidden="true">3</div>
+        <div class="step-body">
+            <h3 class="step-title">Fight in the arena</h3>
+            <p class="step-sub">Pick a spell, choose an opponent, and let the duel decide your fate.</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

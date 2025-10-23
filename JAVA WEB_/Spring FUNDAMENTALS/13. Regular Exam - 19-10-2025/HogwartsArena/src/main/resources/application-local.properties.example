@@ -1,0 +1,6 @@
+# If your MySQL password is NOT empty, copy this file to application-local.properties
+# and set your password below
+
+# MySQL Database Configuration (override)
+spring.datasource.password=YOUR_MYSQL_PASSWORD_HERE
+
