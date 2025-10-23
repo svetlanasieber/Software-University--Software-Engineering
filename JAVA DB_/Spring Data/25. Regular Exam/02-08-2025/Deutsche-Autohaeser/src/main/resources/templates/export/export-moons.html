@@ -1,0 +1,24 @@
+<th:block th:fragment>
+    <div class="container justify-content-center mt-3">
+        <div class="export d-flex justify-content-center" style="color: white">
+            <div class="container">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <h3>All moons that are satellites of gas giants <br> and
+                        have radius between 700km and 2000km.</h3>
+                </div>
+                <hr class="hr-background my-hr"/>
+                <form>
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <label for="export-moons-textarea"><h5>Moons from Solar moons DB</h5></label>
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="col-md-8 d-flex justify-content-center">
+                            <textarea class="form-control" id="export-moons-textarea" rows="10"
+                                      th:text="${moons}" readonly></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</th:block>

@@ -1,0 +1,31 @@
+</body>
+</html>
+<th:block th:fragment xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="container justify-content-center mt-3">
+        <div class="jumbotron index-jumbo d-flex justify-content-center">
+            <div class="container">
+                <div class="col-md-12 d-flex border-left border-bottom w-50 ">
+                    <h1 class="myBackgroundColor ">Deutsche Auto-haeuser</h1>
+                </div>
+                <div class="col-md-12 d-flex mt-3">
+                    <h4>
+                        &nbsp;&nbsp;Car dealers in Germany are a key part of the country’s strong automotive industry.
+                        They range from official brand dealerships offering new cars and services to independent sellers focused on used vehicles.
+                        German dealers are known for professionalism, strict regulation, and a wide selection of both domestic and imported cars
+                    </h4>
+                </div>
+                <div class="col-md-12 text-center">
+                    <th:block th:if="${areImported == true}">
+                        <p><a class="btn btn-info export-button text-white" th:href="@{/export/cars}">Export cars</a></p>
+                    </th:block>
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <th:block th:if="${areImported == false}">
+                            <p class="bg-dark rounded p-2">Тo see the next task, first import all JSON and XML files.</p>
+                        </th:block>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</th:block>

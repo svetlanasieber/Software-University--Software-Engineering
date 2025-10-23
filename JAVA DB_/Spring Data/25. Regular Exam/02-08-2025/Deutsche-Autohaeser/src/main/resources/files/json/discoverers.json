@@ -1,0 +1,68 @@
+[
+  {
+    "firstName": "Galileo",
+    "lastName": "Galilei",
+    "nationality": "Italian",
+    "occupation": "astronomer"
+  },
+  {
+    "firstName": "Galileo",
+    "lastName": "Galilei",
+    "nationality": "Italian",
+    "occupation": "astronomer"
+  },
+  {
+    "firstName": "C",
+    "lastName": "Huygens",
+    "nationality": "Dutch",
+    "occupation": "mathematician"
+  },
+  {
+    "firstName": "Christiaan",
+    "lastName": "Huygens",
+    "nationality": "Dutch",
+    "occupation": "mathematician"
+  },
+  {
+    "firstName": "Giovanni",
+    "lastName": "Cassini",
+    "nationality": "Italian",
+    "occupation": "astronomer"
+  },
+  {
+    "firstName": "William",
+    "lastName": "Herschel",
+    "nationality": "German-British",
+    "occupation": "astronomer"
+  },
+  {
+    "firstName": "Gerard",
+    "lastName": "Kuiper",
+    "nationality": "Dutch-American",
+    "occupation": "planetary scientist"
+  },
+  {
+    "firstName": "Asaph",
+    "lastName": "Hall",
+    "nationality": "American",
+    "occupation": "mathematician"
+  },
+  {
+    "firstName": "William",
+    "lastName": "Lassell",
+    "nationality": "British",
+    "occupation": "merchant"
+  },
+  {
+    "firstName": "James",
+    "lastName": "Christy",
+    "nationality": "American",
+    "occupation": "astronomer"
+  },
+  {
+    "firstName": "Stephen",
+    "lastName": "Synnott",
+    "nationality": "American",
+    "occupation": "scientist"
+  }
+]
