@@ -1,0 +1,3 @@
+TRUNCATE TABLE dealers;
+TRUNCATE TABLE cars;
+TRUNCATE TABLE dealerships;
