@@ -1,24 +1,8 @@
-
-# Според броят на дните, в които ще остане в хотела (пример: 11 дни = 10 нощувки)
-# и видът на помещението, което ще избере, той може да ползва различно намаление.
-
-#	"room for one person" – 18.00 лв за нощувка
-#	"apartment" – 25.00 лв за нощувка
-#	"president apartment" – 35.00 лв за нощувка
-
-# Вход
-# •	Първи ред - дни за престой - цяло число в интервала [0...365]
-# •	Втори ред - вид помещение - "room for one person", "apartment" или "president apartment"
-# •	Трети ред - оценка - "positive"  или "negative"
-
-# Изход
-#Цената за престоят му в хотела, форматирана до втория знак след десетичната запетая.
-
 days = int(input())
 type_of_the_room = input()
 value_positiv_or_negative = input()
 
-# Първо трябва да си определим нощувките 11 days = 10 nights
+
 nights = days - 1
 price_per_night = 0
 
@@ -50,6 +34,7 @@ elif value_positiv_or_negative == "negative":
     total_sum *= 0.9
 
 print(f"{total_sum:.2f}")
+
 
 
 
