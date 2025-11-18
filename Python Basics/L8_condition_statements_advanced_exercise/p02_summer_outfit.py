@@ -1,9 +1,3 @@
-# •	Градусите - цяло число;
-# •	Време от денонощието - текст с три възможности "Morning", "Afternoon" или "Evening".
-
-
-
-
 degrees = int(input())
 time_of_day = input()
 
@@ -41,5 +35,6 @@ elif time_of_day == "Evening":
         shoes = "Moccasins"
 
 print(f"It's {degrees} degrees, get your {outfit} and {shoes}.")
+
 
 
