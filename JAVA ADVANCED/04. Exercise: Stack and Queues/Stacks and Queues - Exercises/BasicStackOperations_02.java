@@ -1,40 +1,35 @@
+package stack_and_queues_exercise;
+
 import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class BasicQueueOperations_02 {
+public class BasicStackOperations_02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt(); 
-        int s = scanner.nextInt(); 
-        int x = scanner.nextInt(); 
 
-       
-        ArrayDeque<Integer> queue = new ArrayDeque<>();
+        int numbersToPush = scanner.nextInt();
+        int numbersToPop = scanner.nextInt();
+        int numberToCheck = scanner.nextInt();
 
-      
-        for (int count = 1; count <= n; count++) {
-           
-            queue.offer(scanner.nextInt());
+        ArrayDeque<Integer> stack = new ArrayDeque<>();
+
+        for (int i = 1; i <= numbersToPush; i++) {
+            stack.push(scanner.nextInt());
+
         }
 
-       
-        for (int count = 1; count <= s; count++) {
-            queue.poll();
+        for (int i = 1; i <= numbersToPop; i++) {
+            stack.pop();
+
         }
 
-        
-        if (queue.contains(x)) {
+        if (stack.contains(numberToCheck)) {
             System.out.println("true");
+        } else if (stack.isEmpty()) {
+            System.out.println(0);
         } else {
-          
-            if (queue.isEmpty()) {
-               
-                System.out.println(0);
-            } else {
-               
-                System.out.println(Collections.min(queue));
-            }
+            System.out.println(Collections.min(stack));
         }
     }
 }
