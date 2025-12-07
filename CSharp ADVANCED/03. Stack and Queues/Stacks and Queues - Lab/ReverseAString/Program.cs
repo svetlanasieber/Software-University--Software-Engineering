@@ -1,14 +1,15 @@
-string text = Console.ReadLine();
+string input = Console.ReadLine();
+
+//I Love C#
 
 Stack<char> stack = new Stack<char>();
-
-foreach (char symbol in text)
+foreach (var ch in input)
 {
-    stack.Push(symbol);
+    stack.Push(ch);
 }
 
 while (stack.Count > 0)
 {
-    var symbol = stack.Pop();
-    Console.Write(symbol);
+    Console.Write(stack.Pop());
 }
+Console.WriteLine();
