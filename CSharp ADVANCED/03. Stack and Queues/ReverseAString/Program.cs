@@ -10,4 +10,5 @@ while (stack.Count > 0)
 {
     Console.Write(stack.Pop());
 }
+
 Console.WriteLine();
