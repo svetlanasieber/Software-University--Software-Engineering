@@ -2,6 +2,7 @@ int[] dimensions = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyE
 int rows = dimensions[0], cols = dimensions[1];
 
 string[,] matrix = new string[rows, cols];
+
 for (int i = 0; i < rows; i++)
 {
     string[] data = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -10,6 +11,7 @@ for (int i = 0; i < rows; i++)
 }
 
 string command = Console.ReadLine();
+
 while (command != "END")
 {
     string[] data = command.Split(' ', StringSplitOptions.RemoveEmptyEntries);
