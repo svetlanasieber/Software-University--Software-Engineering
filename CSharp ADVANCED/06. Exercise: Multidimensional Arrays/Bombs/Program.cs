@@ -8,10 +8,12 @@ for (int i = 0; i < n; i++)
 }
 
 string[] bombsInfo = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
 foreach (string[] coordinates in bombsInfo.Select(x => x.Split(',')))
 {
     int row = int.Parse(coordinates[0]), col = int.Parse(coordinates[1]);
     int damage = matrix[row, col];
+
     if (damage <= 0) continue;
 
     int rowIterStart = Math.Max(0, row - 1), rowIterEnd = Math.Min(n - 1, row + 1);
@@ -28,6 +30,7 @@ foreach (string[] coordinates in bombsInfo.Select(x => x.Split(',')))
 }
 
 int aliveCells = 0, sum = 0;
+
 for (int i = 0; i < n; i++)
 {
     for (int j = 0; j < n; j++)
