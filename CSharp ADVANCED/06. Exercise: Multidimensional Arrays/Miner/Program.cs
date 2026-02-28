@@ -10,6 +10,7 @@ int n = int.Parse(Console.ReadLine());
 string[] commands = Console.ReadLine().Split();
 
 string[,] matrix = new string[n, n];
+
 for (int i = 0; i < n; i++)
 {
     string[] data = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -19,6 +20,7 @@ for (int i = 0; i < n; i++)
 int minerRow = -1, minerCol = -1;
 int endRow = -1, endCol = -1;
 int totalCoals = 0, collectedCoals = 0;
+
 for (int i = 0; i < n; i++)
 {
     for (int j = 0; j < n; j++)
