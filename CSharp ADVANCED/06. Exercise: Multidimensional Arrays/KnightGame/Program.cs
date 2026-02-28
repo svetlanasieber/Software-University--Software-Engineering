@@ -8,10 +8,10 @@ for (int i = 0; i < n; i++)
     string data = Console.ReadLine();
     for (int j = 0; j < n; j++) board[i, j] = data[j];
 }
-
+ 
 int removalsCount = 0;
-
 bool tryRemove = true;
+
 while (tryRemove)
 {
     int maxThreats = 0, maxRow = -1, maxCol = -1;
@@ -20,7 +20,7 @@ while (tryRemove)
     {
         for (int j = 0; j < n; j++)
         {
-            if (board[i, j] != 'K') continue;
+            if (board[i, j] != 'K') continue; 
 
             int currentThreats = 0;
             for (int k = 0; k < directions.GetLength(0); k++)
