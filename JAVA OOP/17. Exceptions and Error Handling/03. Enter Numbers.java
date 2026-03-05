@@ -1,5 +1,3 @@
-//03. Enter Numbers
-
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -36,4 +34,5 @@ public class P03EnterNumbers {
             }
         }
     }
+
 }
