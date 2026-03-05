@@ -1,5 +1,3 @@
-//02. Square Root
-
 import java.util.Scanner;
 
 public class SquareRoot {
@@ -19,4 +17,5 @@ public class SquareRoot {
         }
         System.out.println("Goodbye");
     }
+
 }
