@@ -1,5 +1,3 @@
-// 01. Number in Range
-
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -36,4 +34,5 @@ public class numberInRange {
         System.out.println(output);
         return numberIsValid;
     }
+
 }
