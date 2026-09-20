@@ -1,0 +1,14 @@
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\bin\Debug\net6.0\MythicLegion.exe
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\bin\Debug\net6.0\MythicLegion.deps.json
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\bin\Debug\net6.0\MythicLegion.runtimeconfig.json
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\bin\Debug\net6.0\MythicLegion.dll
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\bin\Debug\net6.0\MythicLegion.pdb
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\obj\Debug\net6.0\MythicLegion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\obj\Debug\net6.0\MythicLegion.AssemblyInfoInputs.cache
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\obj\Debug\net6.0\MythicLegion.AssemblyInfo.cs
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\obj\Debug\net6.0\MythicLegion.csproj.CoreCompileInputs.cache
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\obj\Debug\net6.0\MythicLegion.dll
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\obj\Debug\net6.0\refint\MythicLegion.dll
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\obj\Debug\net6.0\MythicLegion.pdb
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\obj\Debug\net6.0\MythicLegion.genruntimeconfig.cache
+C:\Users\siebe\OneDrive\Documents\CSharp_OOP_Regular_Exam\03_UnitTests\MythicLegion-Skeleton (1)\MythicLegion\obj\Debug\net6.0\ref\MythicLegion.dll
