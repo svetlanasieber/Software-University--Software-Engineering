@@ -1,0 +1,112 @@
+﻿Warrior Thorne awakened with RuneMark Bloodfang-Sigil.
+Sorcerer Mira awakened with RuneMark Starshroud-Glint.
+Spellblade Kael awakened with RuneMark Moonveil-Runespark.
+The winds whisper no knowledge of a Ranger.
+A hero bearing the RuneMark Bloodfang-Sigil already walks among us.
+Warrior Alaric awakened with RuneMark Ironcrest-Crownmark.
+Sorcerer Isolde awakened with RuneMark Emberthrone-Aetherseal.
+Spellblade Dorian awakened with RuneMark Kingsblade-Veilstorm.
+Sorcerer Seraphina awakened with RuneMark Crownlight-Fatespire.
+A hero bearing the RuneMark Ironcrest-Crownmark already walks among us.
+Warrior Cedric awakened with RuneMark Stormbane-Ironwolf.
+Warrior Roderic awakened with RuneMark Dawnhelm-Furybrand.
+Warrior Galen awakened with RuneMark Ashguard-Warcrest.
+Sorcerer Elowen awakened with RuneMark Glimmerhex-Stargaze.
+Sorcerer Thalor awakened with RuneMark Moonshroud-Spellweft.
+Spellblade Aelric awakened with RuneMark Shadowflame-Nightsurge.
+Spellblade Evelyne awakened with RuneMark Frostthorn-Runeveil.
+Spellblade Lucien awakened with RuneMark Starforged-Soulbind.
+Guild WarriorGuild has been founded with 5000 gold.
+Guild SorcererGuild has been founded with 5000 gold.
+No hero bearing the RuneMark Voidwhisper-Sigil walks this realm.
+No guild known as ShadowGuild has been founded.
+Guild ShadowGuild has been founded with 5000 gold.
+The banners of WarriorGuild already fly high in the realm.
+The path of the Warrior does not align with the SorcererGuild.
+The path of the Sorcerer does not align with the WarriorGuild.
+The path of the Spellblade does not align with the ShadowGuild.
+Hero Mira has joined the SorcererGuild.
+Hero Kael has joined the SorcererGuild.
+Hero Alaric has joined the ShadowGuild.
+Hero Isolde has joined the ShadowGuild.
+Hero Dorian has joined the SorcererGuild.
+Hero Seraphina has joined the ShadowGuild.
+Hero Cedric has joined the WarriorGuild.
+Hero Roderic has joined the ShadowGuild.
+Hero Galen has joined the WarriorGuild.
+Hero Elowen has joined the ShadowGuild.
+Hero Thalor has joined the SorcererGuild.
+Hero Thorne has joined the WarriorGuild.
+Hero Aelric has joined the WarriorGuild.
+Hero Evelyne has joined the WarriorGuild.
+Hero Lucien has joined the SorcererGuild.
+Hero Isolde has already sworn loyalty to a guild.
+Hero Isolde has already sworn loyalty to a guild.
+Warrior Brynden awakened with RuneMark Flameheart-Oathsteel.
+Warrior Nyra awakened with RuneMark Dusksong-Mindflare.
+Warrior Caelum awakened with RuneMark Ironveil-Stormbind.
+Warrior Thorne awakened with RuneMark Wolfwrath-Grimblade.
+Warrior Selene awakened with RuneMark Nightflare-Starweave.
+Hero Brynden has joined the WarriorGuild.
+Hero Nyra has joined the WarriorGuild.
+Hero Caelum has joined the WarriorGuild.
+Hero Thorne has joined the WarriorGuild.
+Hero Selene has joined the WarriorGuild.
+Warrior Varek awakened with RuneMark Stoneborn-Embermark.
+The coffers of the WarriorGuild run dry — recruitment is impossible.
+Hero Varek has joined the ShadowGuild.
+The coffers of the WarriorGuild cannot bear the weight of this training day.
+ShadowGuild has completed training for 6 heroes – costing 1200 gold.
+War won! WarriorGuild has vanquished ShadowGuild and claimed 800 gold.
+The clash cannot commence — one or more guilds have fallen.
+The coffers of the WarriorGuild cannot bear the weight of this training day.
+The fallen ShadowGuild can no longer rally its legion.
+SorcererGuild has completed training for 5 heroes – costing 1000 gold.
+No guild known as RogueGuild has been founded.
+The clash cannot commence — one or more guilds are yet to be founded.
+Valor State:
+SorcererGuild (Wealth: 1500)
+-Hero: [Dorian] of the Guild 'SorcererGuild' - RuneMark: Kingsblade-Veilstorm
+--Essence Revealed - Power [65] Mana [70] Stamina [70]
+-Hero: [Kael] of the Guild 'SorcererGuild' - RuneMark: Moonveil-Runespark
+--Essence Revealed - Power [65] Mana [70] Stamina [70]
+-Hero: [Lucien] of the Guild 'SorcererGuild' - RuneMark: Starforged-Soulbind
+--Essence Revealed - Power [65] Mana [70] Stamina [70]
+-Hero: [Mira] of the Guild 'SorcererGuild' - RuneMark: Starshroud-Glint
+--Essence Revealed - Power [60] Mana [145] Stamina [0]
+-Hero: [Thalor] of the Guild 'SorcererGuild' - RuneMark: Moonshroud-Spellweft
+--Essence Revealed - Power [60] Mana [145] Stamina [0]
+WarriorGuild (Wealth: 800)
+-Hero: [Aelric] of the Guild 'WarriorGuild' - RuneMark: Shadowflame-Nightsurge
+--Essence Revealed - Power [50] Mana [60] Stamina [60]
+-Hero: [Brynden] of the Guild 'WarriorGuild' - RuneMark: Flameheart-Oathsteel
+--Essence Revealed - Power [60] Mana [0] Stamina [100]
+-Hero: [Caelum] of the Guild 'WarriorGuild' - RuneMark: Ironveil-Stormbind
+--Essence Revealed - Power [60] Mana [0] Stamina [100]
+-Hero: [Cedric] of the Guild 'WarriorGuild' - RuneMark: Stormbane-Ironwolf
+--Essence Revealed - Power [60] Mana [0] Stamina [100]
+-Hero: [Evelyne] of the Guild 'WarriorGuild' - RuneMark: Frostthorn-Runeveil
+--Essence Revealed - Power [50] Mana [60] Stamina [60]
+-Hero: [Galen] of the Guild 'WarriorGuild' - RuneMark: Ashguard-Warcrest
+--Essence Revealed - Power [60] Mana [0] Stamina [100]
+-Hero: [Nyra] of the Guild 'WarriorGuild' - RuneMark: Dusksong-Mindflare
+--Essence Revealed - Power [60] Mana [0] Stamina [100]
+-Hero: [Selene] of the Guild 'WarriorGuild' - RuneMark: Nightflare-Starweave
+--Essence Revealed - Power [60] Mana [0] Stamina [100]
+-Hero: [Thorne] of the Guild 'WarriorGuild' - RuneMark: Bloodfang-Sigil
+--Essence Revealed - Power [60] Mana [0] Stamina [100]
+-Hero: [Thorne] of the Guild 'WarriorGuild' - RuneMark: Wolfwrath-Grimblade
+--Essence Revealed - Power [60] Mana [0] Stamina [100]
+ShadowGuild (Wealth: 0)
+-Hero: [Alaric] of the Guild 'ShadowGuild' - RuneMark: Ironcrest-Crownmark
+--Essence Revealed - Power [90] Mana [0] Stamina [110]
+-Hero: [Elowen] of the Guild 'ShadowGuild' - RuneMark: Glimmerhex-Stargaze
+--Essence Revealed - Power [60] Mana [145] Stamina [0]
+-Hero: [Isolde] of the Guild 'ShadowGuild' - RuneMark: Emberthrone-Aetherseal
+--Essence Revealed - Power [60] Mana [145] Stamina [0]
+-Hero: [Roderic] of the Guild 'ShadowGuild' - RuneMark: Dawnhelm-Furybrand
+--Essence Revealed - Power [90] Mana [0] Stamina [110]
+-Hero: [Seraphina] of the Guild 'ShadowGuild' - RuneMark: Crownlight-Fatespire
+--Essence Revealed - Power [60] Mana [145] Stamina [0]
+-Hero: [Varek] of the Guild 'ShadowGuild' - RuneMark: Stoneborn-Embermark
+--Essence Revealed - Power [90] Mana [0] Stamina [110]
